@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FacadeContainer from '@/components/FacadeContainer';
 import TechSpecs from '@/components/TechSpecs';
+import NewsletterSection from '@/components/NewsletterSection';
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
         <Navigation />
         <HeroSection />
         <FacadeContainer />
+        <NewsletterSection />
         <TechSpecs />
       </main>
     </>
