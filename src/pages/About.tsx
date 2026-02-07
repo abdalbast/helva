@@ -1,6 +1,6 @@
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
-
+import Footer from '@/components/Footer';
 const About = () => {
     return (
         <>
@@ -170,17 +170,7 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Footer */}
-                <footer className="col-span-12 py-12 border-t border-border/30">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        <div className="font-display font-extrabold text-lg tracking-tighter uppercase text-muted-foreground">
-                            Helva
-                        </div>
-                        <div className="font-mono text-xs text-muted-foreground tracking-wide">
-                            Stockholm // Digital Architecture
-                        </div>
-                    </div>
-                </footer>
+                <Footer />
             </main>
         </>
     );

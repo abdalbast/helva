@@ -7,7 +7,7 @@ const segments = [
     label: 'Whole',
     index: '01',
     windowCount: 6,
-    colorClass: 'bg-ochre-600',
+    colorClass: 'bg-gamla-sage',
     heightClass: 'h-full',
   },
   {
@@ -15,7 +15,7 @@ const segments = [
     label: 'Human',
     index: '02',
     windowCount: 8,
-    colorClass: 'bg-terracotta',
+    colorClass: 'bg-gamla-coral',
     heightClass: 'h-[85%]',
   },
   {
@@ -23,7 +23,7 @@ const segments = [
     label: 'Scalable',
     index: '03',
     windowCount: 6,
-    colorClass: 'bg-ochre-500',
+    colorClass: 'bg-gamla-ochre',
     heightClass: 'h-[95%]',
   },
   {
@@ -31,7 +31,7 @@ const segments = [
     label: 'Enduring',
     index: '04',
     windowCount: 4,
-    colorClass: 'bg-cobblestone',
+    colorClass: 'bg-gamla-yellow',
     heightClass: 'h-[75%]',
   },
 ];

@@ -44,6 +44,12 @@
     --cobblestone: 20 8% 15%;
     --stone-wash: 40 33% 89%;
 
+    /* Gamla Stan pastel palette */
+    --gamla-sage: 93 30% 54%;
+    --gamla-coral: 13 58% 59%;
+    --gamla-ochre: 38 78% 58%;
+    --gamla-yellow: 48 75% 59%;
+
     /* Fonts */
     --font-display: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -162,5 +168,36 @@
   .window-lit {
     background: hsl(var(--stone-wash)) !important;
     box-shadow: 0 0 15px hsla(var(--stone-wash), 0.4);
+  }
+
+  /* City hub animations */
+  @keyframes citySlideOut {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes citySlideIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .city-slide-out {
+    animation: citySlideOut 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  .city-slide-in {
+    animation: citySlideIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 }
