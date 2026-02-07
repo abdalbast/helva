@@ -2,6 +2,7 @@ import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FacadeContainer from '@/components/FacadeContainer';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
@@ -11,10 +12,10 @@ const Index = () => {
         <Navigation />
         <HeroSection />
         <FacadeContainer />
+        <Footer />
       </main>
     </>
   );
 };
 
 export default Index;
-

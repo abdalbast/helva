@@ -58,6 +58,12 @@ export default {
         terracotta: "hsl(var(--terracotta))",
         cobblestone: "hsl(var(--cobblestone))",
         "stone-wash": "hsl(var(--stone-wash))",
+        gamla: {
+          sage: "hsl(var(--gamla-sage))",
+          coral: "hsl(var(--gamla-coral))",
+          ochre: "hsl(var(--gamla-ochre))",
+          yellow: "hsl(var(--gamla-yellow))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
