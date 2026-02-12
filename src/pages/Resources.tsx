@@ -1,6 +1,7 @@
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import PageMeta from '@/components/PageMeta';
 
 const articles = [
   {
@@ -50,6 +51,7 @@ const resources = [
 const Resources = () => {
   return (
     <>
+      <PageMeta title="Resources" description="Insights, templates, and guides from Helva's experience building digital products. Open knowledge for the community." path="/resources" />
       <GrainOverlay />
       <main className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
         <Navigation />

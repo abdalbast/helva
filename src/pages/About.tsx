@@ -1,9 +1,11 @@
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import PageMeta from '@/components/PageMeta';
 const About = () => {
     return (
         <>
+            <PageMeta title="About" description="Helva exists to bring things back to whole — building warm, structured digital products that reduce friction and increase momentum." path="/about" />
             <GrainOverlay />
             <main className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
                 <Navigation />

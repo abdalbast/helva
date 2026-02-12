@@ -83,7 +83,7 @@ const Footer = () => {
       {/* Bottom section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8">
         <p className="font-mono text-[0.65rem] text-muted-foreground/60 tracking-wide">
-          © 2024 Helva Group. All rights reserved.
+          © 2026 Helva Group. All rights reserved.
         </p>
         <a
           href="mailto:updates@helva.group"
