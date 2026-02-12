@@ -1,6 +1,7 @@
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import PageMeta from '@/components/PageMeta';
 
 const projects = [
   {
@@ -40,6 +41,7 @@ const projects = [
 const Projects = () => {
   return (
     <>
+      <PageMeta title="Projects" description="Explore Helva's family of products — Forma, Pulse, Lingua, and Nexus — designed to feel like they belong together." path="/projects" />
       <GrainOverlay />
       <main className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
         <Navigation />

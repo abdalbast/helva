@@ -1,6 +1,7 @@
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import PageMeta from '@/components/PageMeta';
 
 const capabilities = [
   {
@@ -43,6 +44,7 @@ const principles = [
 const AI = () => {
   return (
     <>
+      <PageMeta title="AI" description="Helva's AI philosophy — intelligent automation, personalization, and natural language capabilities built with intention." path="/ai" />
       <GrainOverlay />
       <main className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
         <Navigation />
