@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import { useTheme } from '@/hooks/use-theme';
 const cities = ['Edinburgh', 'Stockholm', 'Columbus', 'Portland', 'Sulaimani', 'Erbil'];
 
 const navItems = [
@@ -15,6 +15,7 @@ const Navigation = () => {
   const location = useLocation();
   const [currentCityIndex, setCurrentCityIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,6 +61,17 @@ const Navigation = () => {
         {/* Divider */}
         <span className="hidden md:block w-px h-4 bg-border/50" />
 
+        {/* Theme Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+          aria-label="Toggle theme"
+        >
+          {theme === 'dark' ? '☀' : '●'}
+        </button>
+
+        {/* Divider */}
+        <span className="hidden md:block w-px h-4 bg-border/50" />
         {/* Animated City Hub */}
         <div className="relative h-4 overflow-hidden min-w-[80px] flex items-center justify-end">
           <span
