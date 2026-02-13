@@ -1,54 +1,19 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
-
-const articles = [
-  {
-    category: 'Design Systems',
-    title: 'Building Design Systems That Scale',
-    excerpt: 'How to create component libraries that grow with your organization without becoming unwieldy.',
-    readTime: '8 min read',
-    date: 'Dec 2024',
-  },
-  {
-    category: 'Product Strategy',
-    title: 'The Case for Slower Product Development',
-    excerpt: 'Why taking time to build foundations pays dividends in the long run.',
-    readTime: '5 min read',
-    date: 'Nov 2024',
-  },
-  {
-    category: 'Engineering',
-    title: 'Choosing Boring Technology',
-    excerpt: 'Proven tools over shiny new frameworks. A philosophy for sustainable technical decisions.',
-    readTime: '6 min read',
-    date: 'Oct 2024',
-  },
-];
-
-const resources = [
-  {
-    type: 'Template',
-    title: 'Design Token Starter',
-    description: 'A minimal foundation for building your own design token system.',
-    format: 'Figma + Code',
-  },
-  {
-    type: 'Guide',
-    title: 'Component Documentation',
-    description: 'How we document our components for clarity and maintainability.',
-    format: 'PDF',
-  },
-  {
-    type: 'Checklist',
-    title: 'Product Launch Readiness',
-    description: 'Everything to verify before shipping a new product or feature.',
-    format: 'Notion',
-  },
-];
+import { articles, categories } from '@/data/articles';
+import { resources } from '@/data/resources';
 
 const Resources = () => {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const filtered = activeCategory
+    ? articles.filter((a) => a.category === activeCategory)
+    : articles;
+
   return (
     <>
       <PageMeta title="Resources" description="Insights, templates, and guides from Helva's experience building digital products. Open knowledge for the community." path="/resources" />
@@ -69,16 +34,46 @@ const Resources = () => {
           </p>
         </section>
 
+        {/* Category Filters */}
+        <section className="col-span-12 py-4">
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${
+                activeCategory === null
+                  ? 'border-primary text-primary'
+                  : 'border-border/30 text-muted-foreground hover:text-foreground hover:border-primary/30'
+              }`}
+            >
+              All
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${
+                  activeCategory === cat
+                    ? 'border-primary text-primary'
+                    : 'border-border/30 text-muted-foreground hover:text-foreground hover:border-primary/30'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </section>
+
         {/* Articles */}
-        <section className="col-span-12 py-8">
+        <section className="col-span-12 py-4">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8 block">
-            Latest Articles
+            Articles · {filtered.length}
           </span>
           <div className="space-y-6">
-            {articles.map((article, idx) => (
-              <article
-                key={article.title}
-                className={`animate-reveal stagger-${idx + 1} group p-6 lg:p-8 bg-card/30 border border-border/30 hover:border-primary/30 transition-all duration-500 cursor-pointer`}
+            {filtered.map((article, idx) => (
+              <Link
+                key={article.slug}
+                to={`/resources/${article.slug}`}
+                className={`animate-reveal stagger-${Math.min(idx + 1, 4)} group block p-6 lg:p-8 bg-card/30 border border-border/30 hover:border-primary/30 transition-all duration-500`}
               >
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                   <div className="flex-1">
@@ -106,7 +101,7 @@ const Resources = () => {
                     </span>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>

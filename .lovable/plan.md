@@ -66,9 +66,9 @@ The site is a React + Vite + Tailwind frontend deployed on Vercel with:
 
 ---
 
-## Phase 4 -- Backend & Database
+## Phase 4 -- Backend & Database (DEFERRED)
 
-**Goal:** Move from static content to a manageable, dynamic system.
+**Goal:** Move from static content to a manageable, dynamic system. *Skipped for now — will revisit when dynamic content is needed.*
 
 | Task | Details |
 |------|---------|
@@ -82,19 +82,19 @@ The site is a React + Vite + Tailwind frontend deployed on Vercel with:
 
 ---
 
-## Phase 5 -- Blog / Resources Engine
+## Phase 5 -- Blog / Resources Engine ✅ COMPLETE
 
 **Goal:** Turn Resources into a real content engine for SEO and thought leadership.
 
-| Task | Details |
-|------|---------|
-| Blog listing page | Paginated article list at `/resources` with category filters |
-| Article detail pages | `/resources/:slug` with full article rendering (Markdown or rich text) |
-| Resource downloads | Gated or open download links for templates and guides |
-| RSS feed | Auto-generated RSS at `/feed.xml` |
-| Reading time calculation | Dynamic based on article word count |
-| Related articles | Show 2-3 related posts at the bottom of each article |
-| Social sharing | Share buttons for LinkedIn, X, and copy-link |
+| Task | Status |
+|------|--------|
+| Blog listing page with category filters | ✅ Done |
+| Article detail pages (`/resources/:slug`) | ✅ Done |
+| Resource downloads section | ✅ Done |
+| RSS feed | ⏳ Deferred to backend phase |
+| Reading time calculation | ✅ Done (static) |
+| Related articles (tag-based) | ✅ Done |
+| Social sharing (LinkedIn, X, copy link) | ✅ Done |
 
 ---
 
