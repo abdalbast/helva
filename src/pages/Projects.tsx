@@ -1,44 +1,21 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
-
-const projects = [
-  {
-    index: '01',
-    title: 'Forma',
-    category: 'Design System',
-    description: 'A comprehensive design system built for scale. Unified components, tokens, and patterns that bring consistency across all Helva products.',
-    status: 'Active',
-    year: '2024',
-  },
-  {
-    index: '02',
-    title: 'Pulse',
-    category: 'Health & Fitness',
-    description: 'Intelligent fitness tracking that adapts to your rhythm. Personalized programs, progress insights, and seamless integration with your daily life.',
-    status: 'In Development',
-    year: '2024',
-  },
-  {
-    index: '03',
-    title: 'Lingua',
-    category: 'Language Learning',
-    description: 'Language learning reimagined. Contextual immersion, spaced repetition, and real-world application combined into one cohesive experience.',
-    status: 'Coming Soon',
-    year: '2025',
-  },
-  {
-    index: '04',
-    title: 'Nexus',
-    category: 'Operations',
-    description: 'Digital operations infrastructure for growing teams. Workflow automation, knowledge management, and seamless collaboration tools.',
-    status: 'Planning',
-    year: '2025',
-  },
-];
+import { projects, categories, statuses } from '@/data/projects';
 
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeStatus, setActiveStatus] = useState('All');
+
+  const filtered = projects.filter((p) => {
+    const catMatch = activeCategory === 'All' || p.category === activeCategory;
+    const statusMatch = activeStatus === 'All' || p.status === activeStatus;
+    return catMatch && statusMatch;
+  });
+
   return (
     <>
       <PageMeta title="Projects" description="Explore Helva's family of products — Forma, Pulse, Lingua, and Nexus — designed to feel like they belong together." path="/projects" />
@@ -59,11 +36,50 @@ const Projects = () => {
           </p>
         </section>
 
+        {/* Filters */}
+        <section className="col-span-12 lg:col-span-8 lg:col-start-3 pb-4 animate-reveal stagger-3">
+          <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground mr-1">Category</span>
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${
+                    activeCategory === cat
+                      ? 'border-primary text-primary bg-primary/5'
+                      : 'border-border/30 text-muted-foreground hover:border-primary/30 hover:text-foreground'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground mr-1">Status</span>
+              {statuses.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setActiveStatus(s)}
+                  className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${
+                    activeStatus === s
+                      ? 'border-primary text-primary bg-primary/5'
+                      : 'border-border/30 text-muted-foreground hover:border-primary/30 hover:text-foreground'
+                  }`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Projects Grid */}
         <section className="col-span-12 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {projects.map((project, idx) => (
-              <div
+            {filtered.map((project, idx) => (
+              <Link
+                to={`/projects/${project.slug}`}
                 key={project.title}
                 className={`animate-reveal stagger-${(idx % 4) + 1} group p-8 bg-card/30 border border-border/30 hover:border-primary/30 transition-all duration-500 hover:bg-card/50`}
               >
@@ -91,12 +107,17 @@ const Projects = () => {
                     {project.year}
                   </span>
                   <span className="font-mono text-xs text-primary/70 group-hover:text-primary transition-colors duration-300">
-                    Learn more →
+                    View case study →
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
+          {filtered.length === 0 && (
+            <p className="text-center text-muted-foreground py-12 font-mono text-sm">
+              No projects match the selected filters.
+            </p>
+          )}
         </section>
 
         <Footer />
