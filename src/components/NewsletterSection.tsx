@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
@@ -51,6 +52,7 @@ const NewsletterSection = () => {
 
       setMessage(data.message);
       setIsSubmitted(true);
+      trackEvent('newsletter_signup', { email });
       setEmail('');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');

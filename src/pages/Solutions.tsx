@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import GrainOverlay from '@/components/GrainOverlay';
+import { trackEvent } from '@/lib/analytics';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
@@ -126,12 +128,13 @@ const Solutions = () => {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Let's discuss how we can help you create systems that last.
           </p>
-          <a
-            href="mailto:hello@helva.group"
+          <Link
+            to="/contact"
+            onClick={() => trackEvent('cta_click', { location: 'solutions_page', label: 'Start a conversation' })}
             className="inline-block font-mono text-xs uppercase tracking-[0.15em] px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300"
           >
             Start a conversation
-          </a>
+          </Link>
         </section>
 
         <Footer />

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { z } from 'zod';
+import { trackEvent } from '@/lib/analytics';
 import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -49,7 +50,7 @@ const Contact = () => {
     const subject = encodeURIComponent(`Contact from ${result.data.name}${result.data.company ? ` (${result.data.company})` : ''}`);
     const body = encodeURIComponent(`Name: ${result.data.name}\nEmail: ${result.data.email}\nCompany: ${result.data.company || 'N/A'}\n\n${result.data.message}`);
     window.location.href = `mailto:hello@helva.group?subject=${subject}&body=${body}`;
-
+    trackEvent('contact_form_submit', { company: result.data.company || undefined });
     setStatus('sent');
   };
 
