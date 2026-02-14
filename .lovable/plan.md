@@ -112,17 +112,18 @@ The site is a React + Vite + Tailwind frontend deployed on Vercel with:
 
 ---
 
-## Phase 7 -- Analytics & Monitoring
+## Phase 7 -- Analytics & Monitoring ✅ COMPLETE
 
 **Goal:** Understand user behavior and site health.
 
-| Task | Details |
-|------|---------|
-| Analytics integration | Plausible, Fathom, or PostHog (privacy-friendly, no cookie banner needed) |
-| Event tracking | Track CTA clicks, newsletter signups, contact form submissions, page views |
-| Error monitoring | Sentry integration for runtime error tracking |
-| Uptime monitoring | External service (e.g., BetterStack) for uptime alerts |
-| Performance monitoring | Web Vitals tracking (LCP, CLS, FID) |
+| Task | Status |
+|------|--------|
+| PostHog analytics integration (privacy-friendly, autocapture off) | ✅ Done |
+| Page view tracking on every route change | ✅ Done |
+| Event tracking: newsletter signups, contact form, CTA clicks | ✅ Done |
+| Web Vitals reporting (CLS, INP, LCP, FCP, TTFB) → PostHog | ✅ Done |
+| Error monitoring (Sentry) | ⏳ Deferred |
+| Uptime monitoring (external) | ⏳ Deferred (use BetterStack or similar) |
 
 ---
 
