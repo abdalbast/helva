@@ -71,3 +71,7 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## TODO
+
+- [ ] **Activate PostHog Analytics:** Set `VITE_POSTHOG_KEY` to your PostHog project API key (found in PostHog → Settings → Project API Key). Optionally set `VITE_POSTHOG_HOST` if self-hosting.
