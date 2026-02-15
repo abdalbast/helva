@@ -1,0 +1,265 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "solutions": "Solutions",
+    "ai": "AI",
+    "resources": "Resources",
+    "about": "About"
+  },
+  "footer": {
+    "tagline": "Digital architecture for the modern world",
+    "copyright": "© 2026 Helva Group. All rights reserved."
+  },
+  "home": {
+    "headline": "Built to<br/>be Whole.",
+    "subheadline": "Build life as a whole — with products that feel human and work like systems.",
+    "joinCircle": "Join the Circle",
+    "emailPlaceholder": "your@email.com",
+    "join": "Join",
+    "joining": "Joining...",
+    "subscribeAnother": "Subscribe another email",
+    "welcomeMessage": "✓ Welcome to the circle! You're now subscribed.",
+    "alreadyMessage": "✓ You're already part of the circle!",
+    "errorMessage": "Something went wrong. Please try again."
+  },
+  "about": {
+    "label": "Brand Story",
+    "title": "Helva",
+    "intro": "The modern world doesn't need more noise — it needs better systems.",
+    "challengeLabel": "The Challenge",
+    "challengeTitle": "Everything is fragmented.",
+    "challengeP1": "Everything we build today is fragmented. Tools don't talk to each other. Brands feel inconsistent. Learning, health, work, and creativity live in separate boxes.",
+    "challengeP2": "People end up stitching their lives together with hacks, tabs, and half-finished plans.",
+    "challengeHighlight": "Helva exists to bring it back to whole.",
+    "nameLabel": "The Name",
+    "nameIntro": "The name carries three truths:",
+    "completeness": "Completeness",
+    "completenessDesc": "In Swedish it echoes <i>hel</i> — the feeling of something finished, balanced, and complete.",
+    "warmth": "Warmth",
+    "warmthDesc": "In Sorani Kurdish it nods to <i>halva</i> — something made with care and shared in meaningful moments.",
+    "shareability": "Shareability",
+    "shareabilityDesc": "In English, it stays clean and open — a word we get to define through what we make.",
+    "buildLabel": "What We Build",
+    "buildTitle": "A family of products.",
+    "buildP1": "We are building a family of products and services designed to feel like they belong together: <strong>beautifully crafted, deeply practical, and quietly powerful</strong>.",
+    "buildP2": "Whether it's fitness, language learning, design systems, or digital operations — Helva is about making things that reduce friction and increase momentum.",
+    "obsessionsLabel": "Our Obsessions",
+    "details": "Details",
+    "detailsDesc": "We obsess over details because small details create trust.",
+    "clarity": "Clarity",
+    "clarityDesc": "We design for clarity because clarity creates action.",
+    "longevity": "Longevity",
+    "longevityDesc": "We build for longevity because the best products don't just launch — they last.",
+    "quote": "Helva is a modern foundation: <span class='text-primary'>warm enough to feel human, structured enough to scale</span>.",
+    "quoteFollow": "We don't chase trends. We build things that make life feel simpler, cleaner, and more complete."
+  },
+  "projects": {
+    "label": "Our Work",
+    "title": "Projects",
+    "subtitle": "A family of products designed to feel like they belong together — beautifully crafted, deeply practical, and quietly powerful.",
+    "category": "Category",
+    "status": "Status",
+    "all": "All",
+    "viewCaseStudy": "View case study →",
+    "noMatch": "No projects match the selected filters.",
+    "backToProjects": "← Projects",
+    "theProblem": "The Problem",
+    "ourSolution": "Our Solution",
+    "theOutcome": "The Outcome",
+    "otherProjects": "Other Projects",
+    "projectNotFound": "Project Not Found",
+    "projectNotFoundDesc": "The project you're looking for doesn't exist."
+  },
+  "solutions": {
+    "label": "What We Offer",
+    "title": "Solutions",
+    "subtitle": "Tailored approaches for different stages and scales. From founding teams to established enterprises.",
+    "forStartups": "For Startups",
+    "forStartupsDesc": "Launch faster with foundational systems. Design infrastructure, operational frameworks, and scalable architecture from day one.",
+    "forEnterprises": "For Enterprises",
+    "forEnterprisesDesc": "Modernize legacy systems without disruption. Phased migration, unified design language, and seamless integration.",
+    "forAgencies": "For Agencies",
+    "forAgenciesDesc": "White-label solutions and partnership frameworks. Extend your capabilities with our expertise and infrastructure.",
+    "approachLabel": "Our Approach",
+    "discovery": "Discovery",
+    "discoveryDesc": "We start by understanding your world — your challenges, your users, your vision. No assumptions, just listening.",
+    "architecture": "Architecture",
+    "architectureDesc": "We design systems, not just screens. Every decision considers scale, maintenance, and long-term evolution.",
+    "execution": "Execution",
+    "executionDesc": "We build with precision and care. Regular checkpoints, transparent progress, and quality at every step.",
+    "evolution": "Evolution",
+    "evolutionDesc": "Launch is just the beginning. We partner for the long term, iterating and improving as you grow.",
+    "ctaTitle": "Ready to build something meaningful?",
+    "ctaSubtitle": "Let's discuss how we can help you create systems that last.",
+    "ctaButton": "Start a conversation",
+    "designSystems": "Design Systems",
+    "brandIdentity": "Brand Identity",
+    "productStrategy": "Product Strategy",
+    "technicalArchitecture": "Technical Architecture",
+    "systemModernization": "System Modernization",
+    "designUnification": "Design Unification",
+    "processAutomation": "Process Automation",
+    "teamTraining": "Team Training",
+    "whiteLabelProducts": "White-Label Products",
+    "technicalPartnership": "Technical Partnership",
+    "resourceAugmentation": "Resource Augmentation",
+    "jointVentures": "Joint Ventures"
+  },
+  "ai": {
+    "label": "Intelligence Layer",
+    "title": "AI",
+    "subtitle": "Artificial intelligence that feels natural. We integrate AI thoughtfully across our products — not as a gimmick, but as genuine capability.",
+    "capabilitiesLabel": "Capabilities",
+    "intelligentAutomation": "Intelligent Automation",
+    "intelligentAutomationDesc": "Automate repetitive workflows while maintaining quality and consistency. From content generation to data processing.",
+    "personalizationEngines": "Personalization Engines",
+    "personalizationEnginesDesc": "Dynamic experiences that adapt to individual users. Learning systems that get smarter with every interaction.",
+    "naturalLanguage": "Natural Language",
+    "naturalLanguageDesc": "Conversational interfaces and text analysis. Making human-computer interaction feel natural and intuitive.",
+    "predictiveAnalytics": "Predictive Analytics",
+    "predictiveAnalyticsDesc": "Turn data into foresight. Pattern recognition and forecasting that helps you make better decisions.",
+    "philosophyLabel": "Philosophy",
+    "philosophyTitle": "AI with intention.",
+    "philosophyP1": "The best AI is invisible. It doesn't demand attention — it simply makes everything work better.",
+    "philosophyP2": "We don't add AI to check a box. We integrate it where it genuinely improves the experience, and we leave it out where it doesn't.",
+    "humanCentered": "Human-Centered",
+    "humanCenteredDesc": "AI should augment human capability, not replace human judgment. We build tools that empower, not automate away.",
+    "transparent": "Transparent",
+    "transparentDesc": "No black boxes. We believe in explainable AI that users can understand, trust, and control.",
+    "ethical": "Ethical",
+    "ethicalDesc": "Privacy by design, bias awareness, and responsible deployment. Technology that serves everyone fairly.",
+    "integratingLabel": "Currently Integrating",
+    "integratingDesc": "AI capabilities are being woven into <span class='text-primary font-medium'>Pulse</span>, <span class='text-primary font-medium'>Lingua</span>, and <span class='text-primary font-medium'>Nexus</span> — our upcoming product family."
+  },
+  "resources": {
+    "label": "Learn & Build",
+    "title": "Resources",
+    "subtitle": "Insights, templates, and guides from our experience building digital products. Open knowledge for the community.",
+    "all": "All",
+    "articles": "Articles",
+    "freeResources": "Free Resources",
+    "download": "Download →",
+    "read": "Read →",
+    "stayInLoop": "Stay in the loop",
+    "stayInLoopDesc": "Occasional updates on new resources, articles, and product launches. No spam, unsubscribe anytime.",
+    "subscribeToUpdates": "Subscribe to updates",
+    "shareArticle": "Share this article",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "by": "By",
+    "articleNotFound": "Article not found",
+    "backToResources": "← Resources",
+    "relatedArticles": "Related Articles"
+  },
+  "contact": {
+    "label": "Get In Touch",
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's talk about how we can build something meaningful together.",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company",
+    "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@company.com",
+    "companyPlaceholder": "Your company (optional)",
+    "messagePlaceholder": "Tell us about your project...",
+    "send": "Send message",
+    "sending": "Sending...",
+    "thankYou": "Thank you",
+    "thankYouDesc": "Your mail client should have opened with the message. If not, feel free to email us directly at",
+    "emailLabel": "Email",
+    "updatesLabel": "Updates",
+    "required": "*"
+  },
+  "notFound": {
+    "label": "Page Not Found",
+    "title": "404",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "returnHome": "Return home"
+  },
+  "newsletter": {
+    "stayConnected": "Stay Connected",
+    "joinCircle": "Join the Helva circle.",
+    "subtitle": "Thoughtful updates on systems, products, and ideas built to last.",
+    "join": "Join",
+    "joining": "Joining..."
+  },
+  "data": {
+    "projects": {
+      "forma": {
+        "title": "Forma",
+        "description": "A comprehensive design system built for scale. Unified components, tokens, and patterns that bring consistency across all Helva products.",
+        "heroTagline": "One system. Every product. Total consistency.",
+        "problem": "As Helva's product family grew, each team developed its own component library and visual language. The result was fragmented user experiences, duplicated engineering effort, and a brand that felt inconsistent across touchpoints. Designers spent more time recreating components than solving real problems.",
+        "solution": "We built Forma -- a living design system with a shared token architecture, a versioned component library, and documentation that bridges design and engineering. Every color, spacing value, and interaction pattern flows from a single source of truth. Teams adopt Forma incrementally, and contributions feed back into the system.",
+        "outcome": "Forma now powers every Helva product. Design-to-development handoff time dropped dramatically, and new features ship with pixel-perfect brand consistency from day one. The system has become a competitive advantage -- new products launch faster because the foundations are already in place.",
+        "testimonialQuote": "Forma changed how we think about building products. We stopped arguing about button styles and started solving real user problems.",
+        "testimonialAuthor": "Sara Lindstrom",
+        "testimonialRole": "Lead Designer, Helva"
+      },
+      "pulse": {
+        "title": "Pulse",
+        "description": "Intelligent fitness tracking that adapts to your rhythm. Personalized programs, progress insights, and seamless integration with your daily life.",
+        "heroTagline": "Fitness that learns your rhythm.",
+        "problem": "Most fitness apps treat users as data points -- generic programs, overwhelming metrics, and no understanding of real-life constraints. People start motivated but disengage within weeks because the experience doesn't adapt to their changing schedules, energy levels, or goals.",
+        "solution": "Pulse uses adaptive algorithms to build fitness programs around your actual life. It learns from your activity patterns, adjusts difficulty based on recovery signals, and integrates with calendar data to suggest optimal workout windows. The interface strips away noise -- you see only what matters for today.",
+        "outcome": "Early beta users show significantly higher retention compared to traditional fitness apps. The adaptive scheduling feature alone accounts for a major increase in weekly workout completion. Pulse is on track for public launch in Q3 2025.",
+        "testimonialQuote": "It's the first app that actually understands I have a life outside the gym. The suggestions feel human, not algorithmic.",
+        "testimonialAuthor": "Marcus Eriksson",
+        "testimonialRole": "Beta Tester"
+      },
+      "lingua": {
+        "title": "Lingua",
+        "description": "Language learning reimagined. Contextual immersion, spaced repetition, and real-world application combined into one cohesive experience.",
+        "heroTagline": "Language through context, not drills.",
+        "problem": "Traditional language apps gamify vocabulary memorization but fail at producing confident speakers. Learners accumulate streaks without being able to hold a basic conversation. The gap between knowing words and using them in context remains enormous.",
+        "solution": "Lingua builds language skills through contextual immersion. Instead of isolated flashcards, learners engage with real-world scenarios -- ordering at a cafe, navigating a city, discussing work projects. Spaced repetition is woven into narrative arcs so review feels natural, not repetitive. AI-powered conversation partners adapt to your proficiency in real time.",
+        "outcome": "Internal testing shows learners reach conversational proficiency in roughly half the time compared to traditional methods. The contextual approach produces higher confidence scores and lower dropout rates. Lingua is currently in closed alpha with an initial focus on Swedish and Kurdish (Sorani)."
+      },
+      "nexus": {
+        "title": "Nexus",
+        "description": "Digital operations infrastructure for growing teams. Workflow automation, knowledge management, and seamless collaboration tools.",
+        "heroTagline": "Operations infrastructure that scales with you.",
+        "problem": "Growing teams drown in tooling fragmentation. Knowledge lives in scattered documents, workflows depend on tribal memory, and collaboration requires constant context-switching between platforms. The operational overhead of scaling becomes the bottleneck, not the work itself.",
+        "solution": "Nexus unifies workflow automation, knowledge management, and team collaboration into a single platform. It connects to existing tools rather than replacing them, creating an operational layer that captures institutional knowledge and automates recurring processes. The design philosophy is radical simplicity -- powerful features surfaced only when needed.",
+        "outcome": "Nexus is in the architectural planning phase, with a design sprint scheduled for Q2 2025. Early research interviews with 30+ teams have validated the core thesis: the biggest productivity drain for scaling teams is not missing features -- it is missing connections between existing ones."
+      }
+    },
+    "articles": {
+      "building-design-systems-that-scale": {
+        "title": "Building Design Systems That Scale",
+        "excerpt": "How to create component libraries that grow with your organization without becoming unwieldy."
+      },
+      "the-case-for-slower-product-development": {
+        "title": "The Case for Slower Product Development",
+        "excerpt": "Why taking time to build foundations pays dividends in the long run."
+      },
+      "choosing-boring-technology": {
+        "title": "Choosing Boring Technology",
+        "excerpt": "Proven tools over shiny new frameworks. A philosophy for sustainable technical decisions."
+      },
+      "accessibility-is-not-optional": {
+        "title": "Accessibility Is Not Optional",
+        "excerpt": "Building inclusive digital products isn't just ethical — it's good business."
+      },
+      "remote-collaboration-that-works": {
+        "title": "Remote Collaboration That Actually Works",
+        "excerpt": "Lessons from running distributed teams across Edinburgh, Stockholm, and beyond."
+      }
+    },
+    "resourceItems": {
+      "designTokenStarter": {
+        "title": "Design Token Starter",
+        "description": "A minimal foundation for building your own design token system."
+      },
+      "componentDocumentation": {
+        "title": "Component Documentation",
+        "description": "How we document our components for clarity and maintainability."
+      },
+      "productLaunchReadiness": {
+        "title": "Product Launch Readiness",
+        "description": "Everything to verify before shipping a new product or feature."
+      }
+    }
+  }
+}

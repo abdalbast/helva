@@ -2,10 +2,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
 import { usePageTracking } from "@/hooks/usePageTracking";
+import '@/i18n/config';
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -24,16 +25,23 @@ const AppRoutes = () => {
   usePageTracking();
   return (
     <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/projects/:slug" element={<ProjectDetail />} />
-      <Route path="/solutions" element={<Solutions />} />
-      <Route path="/ai" element={<AI />} />
-      <Route path="/resources" element={<Resources />} />
-      <Route path="/resources/:slug" element={<ArticleDetail />} />
-      <Route path="/contact" element={<Contact />} />
-      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      {/* Redirect root to default language */}
+      <Route path="/" element={<Navigate to="/en" replace />} />
+      
+      {/* Language-prefixed routes */}
+      <Route path="/:lang">
+        <Route index element={<Index />} />
+        <Route path="about" element={<About />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="projects/:slug" element={<ProjectDetail />} />
+        <Route path="solutions" element={<Solutions />} />
+        <Route path="ai" element={<AI />} />
+        <Route path="resources" element={<Resources />} />
+        <Route path="resources/:slug" element={<ArticleDetail />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+
+      {/* Catch-all */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

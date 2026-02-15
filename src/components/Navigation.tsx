@@ -1,23 +1,29 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useTheme } from '@/hooks/use-theme';
+import { useLanguage } from '@/hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
+import { supportedLanguages, languageNames, SupportedLanguage } from '@/i18n/config';
 
 const cities = ['Edinburgh', 'Stockholm', 'Columbus', 'Portland', 'Sulaimani', 'Erbil'];
-
-const navItems = [
-  { label: 'Projects', to: '/projects' },
-  { label: 'Solutions', to: '/solutions' },
-  { label: 'AI', to: '/ai' },
-  { label: 'Resources', to: '/resources' },
-  { label: 'About', to: '/about' },
-];
 
 const Navigation = () => {
   const location = useLocation();
   const [currentCityIndex, setCurrentCityIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { currentLang, changeLanguage } = useLanguage();
+  const { t } = useTranslation();
+
+  const navItems = [
+    { label: t('nav.projects'), to: `/${currentLang}/projects` },
+    { label: t('nav.solutions'), to: `/${currentLang}/solutions` },
+    { label: t('nav.ai'), to: `/${currentLang}/ai` },
+    { label: t('nav.resources'), to: `/${currentLang}/resources` },
+    { label: t('nav.about'), to: `/${currentLang}/about` },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,16 +36,16 @@ const Navigation = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
+    setLangOpen(false);
   }, [location.pathname]);
 
   return (
     <nav className="col-span-12 border-b border-foreground/10 pb-5 mb-10">
       <div className="flex justify-between items-center">
         <Link
-          to="/"
+          to={`/${currentLang}`}
           className="font-display font-extrabold text-2xl tracking-tighter uppercase hover:text-primary transition-colors duration-300"
         >
           Helva
@@ -62,6 +68,39 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+          </div>
+
+          <span className="hidden md:block w-px h-4 bg-border/50" />
+
+          {/* Language Switcher */}
+          <div className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+              aria-label="Change language"
+            >
+              {currentLang.toUpperCase()}
+            </button>
+            {langOpen && (
+              <div className="absolute top-full right-0 mt-2 bg-background border border-border/50 shadow-lg z-50 min-w-[120px]">
+                {supportedLanguages.map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => {
+                      changeLanguage(lang as SupportedLanguage);
+                      setLangOpen(false);
+                    }}
+                    className={`block w-full text-start px-4 py-2 font-mono text-xs transition-colors duration-200 ${
+                      currentLang === lang
+                        ? 'text-primary bg-primary/5'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                    }`}
+                  >
+                    {languageNames[lang]}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <span className="hidden md:block w-px h-4 bg-border/50" />
@@ -111,7 +150,7 @@ const Navigation = () => {
       {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-          mobileOpen ? 'max-h-80 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
+          mobileOpen ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
         }`}
       >
         <div className="flex flex-col gap-4 pb-2">
@@ -128,6 +167,23 @@ const Navigation = () => {
               {item.label}
             </Link>
           ))}
+
+          {/* Language options - mobile */}
+          <div className="flex flex-wrap gap-2 pt-2 border-t border-border/20">
+            {supportedLanguages.map((lang) => (
+              <button
+                key={lang}
+                onClick={() => changeLanguage(lang as SupportedLanguage)}
+                className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${
+                  currentLang === lang
+                    ? 'border-primary text-primary'
+                    : 'border-border/30 text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {languageNames[lang]}
+              </button>
+            ))}
+          </div>
 
           {/* City Hub - mobile */}
           <div className="relative h-4 overflow-hidden flex items-center pt-2 border-t border-border/20">
