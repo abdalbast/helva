@@ -1,0 +1,265 @@
+{
+  "nav": {
+    "projects": "Projekt",
+    "solutions": "Lösningar",
+    "ai": "AI",
+    "resources": "Resurser",
+    "about": "Om oss"
+  },
+  "footer": {
+    "tagline": "Digital arkitektur för den moderna världen",
+    "copyright": "© 2026 Helva Group. Alla rättigheter förbehållna."
+  },
+  "home": {
+    "headline": "Byggt för att<br/>vara Helt.",
+    "subheadline": "Bygg livet som en helhet — med produkter som känns mänskliga och fungerar som system.",
+    "joinCircle": "Gå med i kretsen",
+    "emailPlaceholder": "din@epost.se",
+    "join": "Gå med",
+    "joining": "Ansluter...",
+    "subscribeAnother": "Prenumerera med en annan e-post",
+    "welcomeMessage": "✓ Välkommen till kretsen! Du är nu prenumerant.",
+    "alreadyMessage": "✓ Du är redan en del av kretsen!",
+    "errorMessage": "Något gick fel. Försök igen."
+  },
+  "about": {
+    "label": "Varumärkesberättelse",
+    "title": "Helva",
+    "intro": "Den moderna världen behöver inte mer brus — den behöver bättre system.",
+    "challengeLabel": "Utmaningen",
+    "challengeTitle": "Allt är fragmenterat.",
+    "challengeP1": "Allt vi bygger idag är fragmenterat. Verktyg kommunicerar inte med varandra. Varumärken känns inkonsekventa. Lärande, hälsa, arbete och kreativitet lever i separata lådor.",
+    "challengeP2": "Människor lagar ihop sina liv med genvägar, flikar och halvfärdiga planer.",
+    "challengeHighlight": "Helva finns för att göra det helt igen.",
+    "nameLabel": "Namnet",
+    "nameIntro": "Namnet bär tre sanningar:",
+    "completeness": "Fullständighet",
+    "completenessDesc": "På svenska ekar det av <i>hel</i> — känslan av något färdigt, balanserat och komplett.",
+    "warmth": "Värme",
+    "warmthDesc": "På soranisk kurdiska nickar det mot <i>halva</i> — något gjort med omsorg och delat i meningsfulla stunder.",
+    "shareability": "Delbarhet",
+    "shareabilityDesc": "På engelska förblir det rent och öppet — ett ord vi får definiera genom det vi skapar.",
+    "buildLabel": "Vad vi bygger",
+    "buildTitle": "En familj av produkter.",
+    "buildP1": "Vi bygger en familj av produkter och tjänster designade att kännas som att de hör ihop: <strong>vackert utformade, djupt praktiska och tyst kraftfulla</strong>.",
+    "buildP2": "Oavsett om det handlar om fitness, språkinlärning, designsystem eller digitala operationer — Helva handlar om att skapa saker som minskar friktion och ökar momentum.",
+    "obsessionsLabel": "Våra passioner",
+    "details": "Detaljer",
+    "detailsDesc": "Vi är besatta av detaljer eftersom små detaljer skapar förtroende.",
+    "clarity": "Klarhet",
+    "clarityDesc": "Vi designar för klarhet eftersom klarhet skapar handling.",
+    "longevity": "Långsiktighet",
+    "longevityDesc": "Vi bygger för långsiktighet eftersom de bästa produkterna inte bara lanseras — de varar.",
+    "quote": "Helva är en modern grund: <span class='text-primary'>varm nog att kännas mänsklig, strukturerad nog att skala</span>.",
+    "quoteFollow": "Vi jagar inte trender. Vi bygger saker som får livet att kännas enklare, renare och mer komplett."
+  },
+  "projects": {
+    "label": "Vårt arbete",
+    "title": "Projekt",
+    "subtitle": "En familj av produkter designade att kännas som att de hör ihop — vackert utformade, djupt praktiska och tyst kraftfulla.",
+    "category": "Kategori",
+    "status": "Status",
+    "all": "Alla",
+    "viewCaseStudy": "Visa fallstudie →",
+    "noMatch": "Inga projekt matchar de valda filtren.",
+    "backToProjects": "← Projekt",
+    "theProblem": "Problemet",
+    "ourSolution": "Vår lösning",
+    "theOutcome": "Resultatet",
+    "otherProjects": "Andra projekt",
+    "projectNotFound": "Projekt hittades inte",
+    "projectNotFoundDesc": "Projektet du letar efter finns inte."
+  },
+  "solutions": {
+    "label": "Vad vi erbjuder",
+    "title": "Lösningar",
+    "subtitle": "Skräddarsydda tillvägagångssätt för olika faser och skalor. Från grundarteam till etablerade företag.",
+    "forStartups": "För startups",
+    "forStartupsDesc": "Lansera snabbare med grundläggande system. Designinfrastruktur, operativa ramverk och skalbar arkitektur från dag ett.",
+    "forEnterprises": "För företag",
+    "forEnterprisesDesc": "Modernisera äldre system utan avbrott. Stegvis migration, enhetligt designspråk och sömlös integration.",
+    "forAgencies": "För byråer",
+    "forAgenciesDesc": "White-label-lösningar och partnerskapsramverk. Utöka dina möjligheter med vår expertis och infrastruktur.",
+    "approachLabel": "Vårt tillvägagångssätt",
+    "discovery": "Utforskning",
+    "discoveryDesc": "Vi börjar med att förstå din värld — dina utmaningar, dina användare, din vision. Inga antaganden, bara lyssnande.",
+    "architecture": "Arkitektur",
+    "architectureDesc": "Vi designar system, inte bara skärmar. Varje beslut tar hänsyn till skala, underhåll och långsiktig utveckling.",
+    "execution": "Utförande",
+    "executionDesc": "Vi bygger med precision och omsorg. Regelbundna kontroller, transparent framsteg och kvalitet i varje steg.",
+    "evolution": "Utveckling",
+    "evolutionDesc": "Lansering är bara början. Vi samarbetar långsiktigt, itererar och förbättrar allteftersom du växer.",
+    "ctaTitle": "Redo att bygga något meningsfullt?",
+    "ctaSubtitle": "Låt oss diskutera hur vi kan hjälpa dig skapa system som håller.",
+    "ctaButton": "Starta ett samtal",
+    "designSystems": "Designsystem",
+    "brandIdentity": "Varumärkesidentitet",
+    "productStrategy": "Produktstrategi",
+    "technicalArchitecture": "Teknisk arkitektur",
+    "systemModernization": "Systemmodernisering",
+    "designUnification": "Designenhetlighet",
+    "processAutomation": "Processautomation",
+    "teamTraining": "Teamutbildning",
+    "whiteLabelProducts": "White-label-produkter",
+    "technicalPartnership": "Tekniskt partnerskap",
+    "resourceAugmentation": "Resursförstärkning",
+    "jointVentures": "Joint ventures"
+  },
+  "ai": {
+    "label": "Intelligenslagret",
+    "title": "AI",
+    "subtitle": "Artificiell intelligens som känns naturlig. Vi integrerar AI genomtänkt i våra produkter — inte som en gimmick, utan som genuin kapacitet.",
+    "capabilitiesLabel": "Förmågor",
+    "intelligentAutomation": "Intelligent automation",
+    "intelligentAutomationDesc": "Automatisera repetitiva arbetsflöden med bibehållen kvalitet och konsekvens. Från innehållsgenerering till databehandling.",
+    "personalizationEngines": "Personaliseringsmotorer",
+    "personalizationEnginesDesc": "Dynamiska upplevelser som anpassar sig till individuella användare. Lärande system som blir smartare med varje interaktion.",
+    "naturalLanguage": "Naturligt språk",
+    "naturalLanguageDesc": "Konversationsgränssnitt och textanalys. Gör människa-dator-interaktion naturlig och intuitiv.",
+    "predictiveAnalytics": "Prediktiv analys",
+    "predictiveAnalyticsDesc": "Förvandla data till framsyn. Mönsterigenkänning och prognoser som hjälper dig fatta bättre beslut.",
+    "philosophyLabel": "Filosofi",
+    "philosophyTitle": "AI med avsikt.",
+    "philosophyP1": "Den bästa AI:n är osynlig. Den kräver inte uppmärksamhet — den gör helt enkelt allting bättre.",
+    "philosophyP2": "Vi lägger inte till AI för att kryssa i en ruta. Vi integrerar det där det genuint förbättrar upplevelsen, och lämnar det där det inte gör det.",
+    "humanCentered": "Människocentrerad",
+    "humanCenteredDesc": "AI bör förstärka mänsklig förmåga, inte ersätta mänskligt omdöme. Vi bygger verktyg som ger kraft, inte automatiserar bort.",
+    "transparent": "Transparent",
+    "transparentDesc": "Inga svarta lådor. Vi tror på förklarbar AI som användare kan förstå, lita på och kontrollera.",
+    "ethical": "Etisk",
+    "ethicalDesc": "Integritet genom design, medvetenhet om fördomar och ansvarsfull driftsättning. Teknik som tjänar alla rättvist.",
+    "integratingLabel": "Integreras just nu",
+    "integratingDesc": "AI-förmågor vävs in i <span class='text-primary font-medium'>Pulse</span>, <span class='text-primary font-medium'>Lingua</span> och <span class='text-primary font-medium'>Nexus</span> — vår kommande produktfamilj."
+  },
+  "resources": {
+    "label": "Lär & Bygg",
+    "title": "Resurser",
+    "subtitle": "Insikter, mallar och guider från vår erfarenhet av att bygga digitala produkter. Öppen kunskap för gemenskapen.",
+    "all": "Alla",
+    "articles": "Artiklar",
+    "freeResources": "Gratis resurser",
+    "download": "Ladda ner →",
+    "read": "Läs →",
+    "stayInLoop": "Håll dig uppdaterad",
+    "stayInLoopDesc": "Enstaka uppdateringar om nya resurser, artiklar och produktlanseringar. Ingen spam, avprenumerera när som helst.",
+    "subscribeToUpdates": "Prenumerera på uppdateringar",
+    "shareArticle": "Dela denna artikel",
+    "copyLink": "Kopiera länk",
+    "copied": "Kopierad!",
+    "by": "Av",
+    "articleNotFound": "Artikeln hittades inte",
+    "backToResources": "← Resurser",
+    "relatedArticles": "Relaterade artiklar"
+  },
+  "contact": {
+    "label": "Kontakta oss",
+    "title": "Kontakt",
+    "subtitle": "Har du ett projekt i åtanke? Låt oss prata om hur vi kan bygga något meningsfullt tillsammans.",
+    "name": "Namn",
+    "email": "E-post",
+    "company": "Företag",
+    "message": "Meddelande",
+    "namePlaceholder": "Ditt namn",
+    "emailPlaceholder": "du@foretag.se",
+    "companyPlaceholder": "Ditt företag (valfritt)",
+    "messagePlaceholder": "Berätta om ditt projekt...",
+    "send": "Skicka meddelande",
+    "sending": "Skickar...",
+    "thankYou": "Tack",
+    "thankYouDesc": "Din e-postklient borde ha öppnats med meddelandet. Om inte, skicka gärna direkt till",
+    "emailLabel": "E-post",
+    "updatesLabel": "Uppdateringar",
+    "required": "*"
+  },
+  "notFound": {
+    "label": "Sidan hittades inte",
+    "title": "404",
+    "description": "Sidan du letar efter finns inte eller har flyttats.",
+    "returnHome": "Tillbaka hem"
+  },
+  "newsletter": {
+    "stayConnected": "Håll kontakten",
+    "joinCircle": "Gå med i Helva-kretsen.",
+    "subtitle": "Genomtänkta uppdateringar om system, produkter och idéer byggda för att hålla.",
+    "join": "Gå med",
+    "joining": "Ansluter..."
+  },
+  "data": {
+    "projects": {
+      "forma": {
+        "title": "Forma",
+        "description": "Ett omfattande designsystem byggt för skalning. Enhetliga komponenter, tokens och mönster som ger konsekvens över alla Helvas produkter.",
+        "heroTagline": "Ett system. Varje produkt. Total konsekvens.",
+        "problem": "När Helvas produktfamilj växte utvecklade varje team sitt eget komponentbibliotek och visuella språk. Resultatet blev fragmenterade användarupplevelser, duplicerat ingenjörsarbete och ett varumärke som kändes inkonsekvent. Designers lade mer tid på att återskapa komponenter än att lösa riktiga problem.",
+        "solution": "Vi byggde Forma — ett levande designsystem med en delad tokenarkitektur, ett versionerat komponentbibliotek och dokumentation som bygger broar mellan design och ingenjörskonst. Varje färg, avståndsvärde och interaktionsmönster flödar från en enda källa av sanning.",
+        "outcome": "Forma driver nu varje Helva-produkt. Tiden för överlämning från design till utveckling minskade dramatiskt, och nya funktioner levereras med pixelperfekt varumärkeskonsekvens från dag ett.",
+        "testimonialQuote": "Forma förändrade hur vi tänker kring att bygga produkter. Vi slutade bråka om knappformat och började lösa riktiga användarproblem.",
+        "testimonialAuthor": "Sara Lindstrom",
+        "testimonialRole": "Ledande designer, Helva"
+      },
+      "pulse": {
+        "title": "Pulse",
+        "description": "Intelligent fitnessuppföljning som anpassar sig till din rytm. Personliga program, framstegsinsikter och sömlös integration med ditt dagliga liv.",
+        "heroTagline": "Fitness som lär sig din rytm.",
+        "problem": "De flesta fitnessappar behandlar användare som datapunkter — generiska program, överväldigande mätvärden och ingen förståelse för verklighetens begränsningar. Människor börjar motiverade men tappar intresset inom veckor.",
+        "solution": "Pulse använder adaptiva algoritmer för att bygga fitnessprogram runt ditt faktiska liv. Den lär sig av dina aktivitetsmönster, justerar svårighetsgraden baserat på återhämtningssignaler och integrerar med kalenderdata.",
+        "outcome": "Tidiga betaanvändare visar avsevärt högre retention jämfört med traditionella fitnessappar. Den adaptiva schemaläggningsfunktionen ensam står för en stor ökning av veckovisa träningsgenomföranden.",
+        "testimonialQuote": "Det är den första appen som faktiskt förstår att jag har ett liv utanför gymmet. Förslagen känns mänskliga, inte algoritmiska.",
+        "testimonialAuthor": "Marcus Eriksson",
+        "testimonialRole": "Betatestare"
+      },
+      "lingua": {
+        "title": "Lingua",
+        "description": "Språkinlärning omtänkt. Kontextuell immersion, utspridda repetitioner och verklig tillämpning kombinerat i en sammanhängande upplevelse.",
+        "heroTagline": "Språk genom kontext, inte övningar.",
+        "problem": "Traditionella språkappar spelar på ordförrådsmemorering men misslyckas med att producera säkra talare. Inlärare samlar streaks utan att kunna hålla en grundläggande konversation.",
+        "solution": "Lingua bygger språkfärdigheter genom kontextuell immersion. Istället för isolerade flashcards engagerar sig inlärare i verkliga scenarier — beställa på ett café, navigera i en stad, diskutera arbetsprojekt.",
+        "outcome": "Interna tester visar att inlärare når konversationsförmåga på ungefär hälften av tiden jämfört med traditionella metoder. Lingua är för närvarande i stängd alfa med fokus på svenska och kurdiska (sorani)."
+      },
+      "nexus": {
+        "title": "Nexus",
+        "description": "Digital driftinfrastruktur för växande team. Arbetsflödesautomation, kunskapshantering och sömlösa samarbetsverktyg.",
+        "heroTagline": "Driftinfrastruktur som skalar med dig.",
+        "problem": "Växande team drunknar i verktygsfragmentering. Kunskap lever i spridda dokument, arbetsflöden beror på muntlig tradition och samarbete kräver konstant kontextbyte mellan plattformar.",
+        "solution": "Nexus förenar arbetsflödesautomation, kunskapshantering och teamsamarbete i en enda plattform. Den ansluter till befintliga verktyg istället för att ersätta dem.",
+        "outcome": "Nexus är i arkitektplanfasen. Tidig forskning med 30+ team har validerat kärnhypotesen: den största produktivitetsdräneringen för skalande team är inte saknade funktioner — det är saknade kopplingar."
+      }
+    },
+    "articles": {
+      "building-design-systems-that-scale": {
+        "title": "Att bygga designsystem som skalar",
+        "excerpt": "Hur man skapar komponentbibliotek som växer med din organisation utan att bli ohanterliga."
+      },
+      "the-case-for-slower-product-development": {
+        "title": "Argumentet för långsammare produktutveckling",
+        "excerpt": "Varför det lönar sig att ta tid att bygga grunder på lång sikt."
+      },
+      "choosing-boring-technology": {
+        "title": "Att välja tråkig teknik",
+        "excerpt": "Beprövade verktyg framför glittrande nya ramverk. En filosofi för hållbara tekniska beslut."
+      },
+      "accessibility-is-not-optional": {
+        "title": "Tillgänglighet är inte valfritt",
+        "excerpt": "Att bygga inkluderande digitala produkter är inte bara etiskt — det är god affär."
+      },
+      "remote-collaboration-that-works": {
+        "title": "Distanssamarbete som faktiskt fungerar",
+        "excerpt": "Lärdomar från att driva distribuerade team i Edinburgh, Stockholm och bortom."
+      }
+    },
+    "resourceItems": {
+      "designTokenStarter": {
+        "title": "Design Token Starter",
+        "description": "En minimal grund för att bygga ditt eget designtokensystem."
+      },
+      "componentDocumentation": {
+        "title": "Komponentdokumentation",
+        "description": "Hur vi dokumenterar våra komponenter för tydlighet och underhållbarhet."
+      },
+      "productLaunchReadiness": {
+        "title": "Lanseringsberedskap",
+        "description": "Allt att verifiera innan du skickar en ny produkt eller funktion."
+      }
+    }
+  }
+}
