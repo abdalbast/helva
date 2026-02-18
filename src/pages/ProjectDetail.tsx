@@ -16,8 +16,9 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
         <GrainOverlay />
-        <main className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
+        <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
           <Navigation />
           <section className="col-span-12 lg:col-span-6 lg:col-start-4 py-24 text-center">
             <h1 className="font-display font-extrabold text-4xl text-primary tracking-tighter mb-4">{t('projects.projectNotFound')}</h1>
@@ -36,8 +37,9 @@ const ProjectDetail = () => {
   return (
     <>
       <PageMeta title={tp('title')} description={tp('description')} path={`/projects/${project.slug}`} lang={currentLang} />
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
       <GrainOverlay />
-      <main className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
+      <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
         <Navigation />
         <section className="col-span-12 lg:col-span-8 lg:col-start-3 py-16 lg:py-24">
           <Link to={`/${currentLang}/projects`} className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors mb-8 inline-block animate-reveal">{t('projects.backToProjects')}</Link>
