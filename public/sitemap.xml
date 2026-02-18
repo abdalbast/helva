@@ -1,39 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
   <url>
-    <loc>https://helva.group/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://helva.group/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar" />
+    <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Projects -->
   <url>
-    <loc>https://helva.group/projects</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://helva.group/en/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/projects" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/projects" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/projects" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/projects" />
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Solutions -->
   <url>
-    <loc>https://helva.group/solutions</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://helva.group/en/solutions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/solutions" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/solutions" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/solutions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/solutions" />
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- AI -->
   <url>
-    <loc>https://helva.group/ai</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://helva.group/en/ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/ai" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/ai" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/ai" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/ai" />
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Resources -->
   <url>
-    <loc>https://helva.group/resources</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://helva.group/en/resources</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/resources" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/resources" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/resources" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/resources" />
+    <lastmod>2026-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- About -->
   <url>
-    <loc>https://helva.group/about</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://helva.group/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/about" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/about" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/about" />
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://helva.group/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/contact" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/contact" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/contact" />
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

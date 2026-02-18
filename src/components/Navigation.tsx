@@ -23,6 +23,7 @@ const Navigation = () => {
     { label: t('nav.ai'), to: `/${currentLang}/ai` },
     { label: t('nav.resources'), to: `/${currentLang}/resources` },
     { label: t('nav.about'), to: `/${currentLang}/about` },
+    { label: t('nav.contact'), to: `/${currentLang}/contact` },
   ];
 
   useEffect(() => {

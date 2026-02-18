@@ -52,8 +52,9 @@ const Contact = () => {
   return (
     <>
       <PageMeta title={t('contact.title')} description={t('contact.subtitle')} path="/contact" lang={currentLang} />
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
       <GrainOverlay />
-      <main className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
+      <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
         <Navigation />
         <section className="col-span-12 lg:col-span-8 lg:col-start-3 py-16 lg:py-24">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6 block animate-reveal">{t('contact.label')}</span>
