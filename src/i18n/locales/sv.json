@@ -9,7 +9,46 @@
   },
   "footer": {
     "tagline": "Digital arkitektur för den moderna världen",
-    "copyright": "© 2026 Helva Group. Alla rättigheter förbehållna."
+    "copyright": "© 2026 Helva Group. Alla rättigheter förbehållna.",
+    "privacy": "Integritet",
+    "terms": "Villkor"
+  },
+  "cookie": {
+    "title": "Vi värnar om din integritet",
+    "description": "Vi använder analyticscookies för att förstå hur du använder vår webbplats och förbättra din upplevelse. Inga personuppgifter säljs eller delas med tredje part.",
+    "accept": "Acceptera",
+    "decline": "Avböj",
+    "learnMore": "Läs mer"
+  },
+  "privacy": {
+    "label": "Juridiskt",
+    "title": "Integritetspolicy",
+    "subtitle": "Hur vi samlar in, använder och skyddar din information.",
+    "dataCollectionTitle": "Data vi samlar in",
+    "dataCollectionDesc": "Vi samlar in minimal data nödvändig för att förbättra våra tjänster: e-postadresser när du prenumererar på vårt nyhetsbrev, och anonym användningsanalys när du samtycker till cookies.",
+    "cookiesTitle": "Cookies",
+    "cookiesDesc": "Vi använder en enda analystjänst (PostHog) för att förstå hur besökare använder vår webbplats. Denna cookie sätts bara efter att du uttryckligen samtyckt via vår cookiebanner.",
+    "analyticsTitle": "Analys",
+    "analyticsDesc": "När du accepterar analyticscookies samlar vi in anonyma sidvisningsdata, sessionslängd och allmän enhetsinformation. Ingen data delas med tredje part för reklamändamål.",
+    "rightsTitle": "Dina rättigheter",
+    "rightsDesc": "Du har rätt att få tillgång till, korrigera eller radera dina personuppgifter när som helst. Du kan återkalla cookiesamtycke genom att rensa din webbläsares lokala lagring.",
+    "contactTitle": "Kontakt",
+    "contactDesc": "För integritetsrelaterade frågor, kontakta oss på updates@helva.group.",
+    "lastUpdated": "Senast uppdaterad: februari 2026"
+  },
+  "terms": {
+    "label": "Juridiskt",
+    "title": "Användarvillkor",
+    "subtitle": "Villkoren som styr din användning av vår webbplats och tjänster.",
+    "useTitle": "Användning av tjänsten",
+    "useDesc": "Genom att besöka denna webbplats godkänner du att använda den i god tro och i enlighet med tillämplig lagstiftning.",
+    "ipTitle": "Immateriella rättigheter",
+    "ipDesc": "Allt innehåll på denna webbplats — inklusive text, grafik, logotyper och design — tillhör Helva Group och skyddas av immaterialrättsliga lagar.",
+    "liabilityTitle": "Ansvarsbegränsning",
+    "liabilityDesc": "Helva Group tillhandahåller denna webbplats och dess innehåll i befintligt skick. Vi lämnar inga garantier och ansvarar inte för skador som uppstår vid användning av våra tjänster.",
+    "changesTitle": "Ändringar av villkoren",
+    "changesDesc": "Vi förbehåller oss rätten att uppdatera dessa villkor när som helst. Fortsatt användning av webbplatsen efter ändringar innebär godkännande av de nya villkoren.",
+    "lastUpdated": "Senast uppdaterad: februari 2026"
   },
   "home": {
     "headline": "Byggt för att<br/>vara Helt.",

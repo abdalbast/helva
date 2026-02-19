@@ -16,7 +16,10 @@ import AI from "./pages/AI";
 import Resources from "./pages/Resources";
 import ArticleDetail from "./pages/ArticleDetail";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +42,8 @@ const AppRoutes = () => {
         <Route path="resources" element={<Resources />} />
         <Route path="resources/:slug" element={<ArticleDetail />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="privacy" element={<Privacy />} />
+        <Route path="terms" element={<Terms />} />
       </Route>
 
       {/* Catch-all */}
@@ -56,6 +61,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <AppRoutes />
+          <CookieConsent />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
