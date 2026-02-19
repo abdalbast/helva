@@ -5,6 +5,7 @@ const POSTHOG_HOST = (import.meta.env.VITE_POSTHOG_HOST as string) || 'https://u
 
 let initialized = false;
 
+/** Initialize analytics — only call after user has given cookie consent */
 export function initAnalytics() {
   if (initialized || !POSTHOG_KEY) {
     if (!POSTHOG_KEY) {
@@ -15,7 +16,7 @@ export function initAnalytics() {
 
   posthog.init(POSTHOG_KEY, {
     api_host: POSTHOG_HOST,
-    capture_pageview: false, // we handle manually via router
+    capture_pageview: false,
     capture_pageleave: true,
     persistence: 'localStorage',
     autocapture: false,
