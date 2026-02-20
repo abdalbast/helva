@@ -206,7 +206,10 @@
     "send": "Send message",
     "sending": "Sending...",
     "thankYou": "Thank you",
-    "thankYouDesc": "Your mail client should have opened with the message. If not, feel free to email us directly at",
+    "thankYouDesc": "Your message has been sent successfully. We'll get back to you soon.",
+    "errorTitle": "Something went wrong",
+    "errorDesc": "We couldn't send your message. Please try again or email us directly at hello@helva.group.",
+    "tryAgain": "← Try again",
     "emailLabel": "Email",
     "updatesLabel": "Updates",
     "required": "*"
@@ -223,6 +226,18 @@
     "subtitle": "Thoughtful updates on systems, products, and ideas built to last.",
     "join": "Join",
     "joining": "Joining..."
+  },
+  "categories": {
+    "Design System": "Design System",
+    "Health & Fitness": "Health & Fitness",
+    "Language Learning": "Language Learning",
+    "Operations": "Operations"
+  },
+  "statuses": {
+    "Active": "Active",
+    "In Development": "In Development",
+    "Coming Soon": "Coming Soon",
+    "Planning": "Planning"
   },
   "data": {
     "projects": {

@@ -42,11 +42,22 @@ const Contact = () => {
       return;
     }
     setStatus('sending');
-    const subject = encodeURIComponent(`Contact from ${result.data.name}${result.data.company ? ` (${result.data.company})` : ''}`);
-    const body = encodeURIComponent(`Name: ${result.data.name}\nEmail: ${result.data.email}\nCompany: ${result.data.company || 'N/A'}\n\n${result.data.message}`);
-    window.location.href = `mailto:hello@helva.group?subject=${subject}&body=${body}`;
-    trackEvent('contact_form_submit', { company: result.data.company || undefined });
-    setStatus('sent');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(result.data),
+      });
+      const data = await res.json();
+      if (data.success) {
+        trackEvent('contact_form_submit', { company: result.data.company || undefined });
+        setStatus('sent');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -65,7 +76,13 @@ const Contact = () => {
           {status === 'sent' ? (
             <div className="animate-reveal p-8 bg-card/30 border border-primary/30 text-center">
               <span className="font-mono text-xs uppercase tracking-[0.3em] text-primary mb-4 block">{t('contact.thankYou')}</span>
-              <p className="text-foreground/70 leading-relaxed">{t('contact.thankYouDesc')}{' '}<a href="mailto:hello@helva.group" className="text-primary hover:text-primary/80 transition-colors">hello@helva.group</a>.</p>
+              <p className="text-foreground/70 leading-relaxed">{t('contact.thankYouDesc')}</p>
+            </div>
+          ) : status === 'error' ? (
+            <div className="animate-reveal p-8 bg-card/30 border border-destructive/30 text-center">
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-destructive mb-4 block">{t('contact.errorTitle')}</span>
+              <p className="text-foreground/70 leading-relaxed mb-4">{t('contact.errorDesc')}</p>
+              <button onClick={() => setStatus('idle')} className="font-mono text-xs uppercase tracking-[0.15em] text-primary hover:text-primary/80 transition-colors">{t('contact.tryAgain')}</button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>

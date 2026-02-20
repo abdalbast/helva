@@ -206,7 +206,10 @@
     "send": "Skicka meddelande",
     "sending": "Skickar...",
     "thankYou": "Tack",
-    "thankYouDesc": "Din e-postklient borde ha öppnats med meddelandet. Om inte, skicka gärna direkt till",
+    "thankYouDesc": "Ditt meddelande har skickats. Vi återkommer snart.",
+    "errorTitle": "Något gick fel",
+    "errorDesc": "Vi kunde inte skicka ditt meddelande. Försök igen eller maila oss direkt på hello@helva.group.",
+    "tryAgain": "← Försök igen",
     "emailLabel": "E-post",
     "updatesLabel": "Uppdateringar",
     "required": "*"
@@ -223,6 +226,18 @@
     "subtitle": "Genomtänkta uppdateringar om system, produkter och idéer byggda för att hålla.",
     "join": "Gå med",
     "joining": "Ansluter..."
+  },
+  "categories": {
+    "Design System": "Designsystem",
+    "Health & Fitness": "Hälsa & Fitness",
+    "Language Learning": "Språkinlärning",
+    "Operations": "Drift"
+  },
+  "statuses": {
+    "Active": "Aktiv",
+    "In Development": "Under utveckling",
+    "Coming Soon": "Kommer snart",
+    "Planning": "Planering"
   },
   "data": {
     "projects": {
