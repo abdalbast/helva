@@ -44,9 +44,9 @@ const ProjectDetail = () => {
         <section className="col-span-12 lg:col-span-8 lg:col-start-3 py-16 lg:py-24">
           <Link to={`/${currentLang}/projects`} className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors mb-8 inline-block animate-reveal">{t('projects.backToProjects')}</Link>
           <div className="flex items-center gap-3 mb-6 animate-reveal stagger-1">
-            <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">{project.category}</span>
+             <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">{t(`categories.${project.category}`, project.category)}</span>
             <span className="w-1 h-1 rounded-full bg-muted-foreground/40" />
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-primary/70 px-2 py-1 border border-primary/20">{project.status}</span>
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-primary/70 px-2 py-1 border border-primary/20">{t(`statuses.${project.status}`, project.status)}</span>
           </div>
           <h1 className="animate-reveal stagger-2 font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-primary tracking-tighter mb-6">{tp('title')}</h1>
           <p className="animate-reveal stagger-3 text-xl lg:text-2xl text-foreground/80 max-w-2xl leading-relaxed font-light">{tp('heroTagline')}</p>
@@ -97,10 +97,10 @@ const ProjectDetail = () => {
                 <Link key={p.slug} to={`/${currentLang}/projects/${p.slug}`} className="group p-8 bg-card/30 border border-border/30 hover:border-primary/30 transition-all duration-500 hover:bg-card/50">
                   <div className="flex justify-between items-start mb-6">
                     <span className="font-mono text-xs text-muted-foreground tracking-wide">{p.index}</span>
-                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-primary/70 px-2 py-1 border border-primary/20">{p.status}</span>
+                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-primary/70 px-2 py-1 border border-primary/20">{t(`statuses.${p.status}`, p.status)}</span>
                   </div>
                   <h3 className="font-display font-extrabold text-2xl text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors duration-300">{t(`data.projects.${p.slug}.title`)}</h3>
-                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">{p.category}</p>
+                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">{t(`categories.${p.category}`, p.category)}</p>
                 </Link>
               ))}
             </div>
