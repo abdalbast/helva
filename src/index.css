@@ -70,7 +70,7 @@
     --secondary: 12 60% 34%;
     --secondary-foreground: 40 33% 89%;
     --muted: 20 8% 15%;
-    --muted-foreground: 40 33% 60%;
+    --muted-foreground: 40 20% 68%;
     --accent: 40 68% 43%;
     --accent-foreground: 15 16% 8%;
     --border: 40 33% 20%;
@@ -99,6 +99,12 @@
 
   .font-mono {
     font-family: var(--font-mono);
+  }
+
+  /* Focus-visible accessibility ring */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 
   /* Grain overlay */
