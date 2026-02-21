@@ -6,6 +6,7 @@ import GrainOverlay from '@/components/GrainOverlay';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
+import AnimatedPage from '@/components/AnimatedPage';
 import { projects, categories, statuses } from '@/data/projects';
 
 const Projects = () => {
@@ -21,60 +22,62 @@ const Projects = () => {
   });
 
   return (
-    <>
-      <PageMeta title={t('projects.title')} description={t('projects.subtitle')} path="/projects" lang={currentLang} />
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
-      <GrainOverlay />
-      <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
-        <Navigation />
-        <section className="col-span-12 lg:col-span-8 lg:col-start-3 py-16 lg:py-24">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6 block animate-reveal">{t('projects.label')}</span>
-          <h1 className="animate-reveal stagger-1 font-display font-extrabold text-[clamp(2.5rem,6vw,4.5rem)] leading-[0.95] text-primary tracking-tighter mb-8">{t('projects.title')}</h1>
-          <p className="animate-reveal stagger-2 text-xl lg:text-2xl text-foreground/80 max-w-2xl leading-relaxed font-light">{t('projects.subtitle')}</p>
-        </section>
-        <section className="col-span-12 lg:col-span-8 lg:col-start-3 pb-4 animate-reveal stagger-3">
-          <div className="flex flex-wrap gap-6">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground mr-1">{t('projects.category')}</span>
-              {categories.map((cat) => (
-                <button key={cat} onClick={() => setActiveCategory(cat)} className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${activeCategory === cat ? 'border-primary text-primary bg-primary/5' : 'border-border/30 text-muted-foreground hover:border-primary/30 hover:text-foreground'}`}>
-                  {cat === 'All' ? t('projects.all') : t(`categories.${cat}`, cat)}
-                </button>
+    <AnimatedPage>
+      <>
+        <PageMeta title={t('projects.title')} description={t('projects.subtitle')} path="/projects" lang={currentLang} />
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
+        <GrainOverlay />
+        <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
+          <Navigation />
+          <section className="col-span-12 lg:col-span-8 lg:col-start-3 py-16 lg:py-24">
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6 block animate-reveal">{t('projects.label')}</span>
+            <h1 className="animate-reveal stagger-1 font-display font-extrabold text-[clamp(2.5rem,6vw,4.5rem)] leading-[0.95] text-primary tracking-tighter mb-8">{t('projects.title')}</h1>
+            <p className="animate-reveal stagger-2 text-xl lg:text-2xl text-foreground/80 max-w-2xl leading-relaxed font-light">{t('projects.subtitle')}</p>
+          </section>
+          <section className="col-span-12 lg:col-span-8 lg:col-start-3 pb-4 animate-reveal stagger-3">
+            <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground mr-1">{t('projects.category')}</span>
+                {categories.map((cat) => (
+                  <button key={cat} onClick={() => setActiveCategory(cat)} className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${activeCategory === cat ? 'border-primary text-primary bg-primary/5' : 'border-border/30 text-muted-foreground hover:border-primary/30 hover:text-foreground'}`}>
+                    {cat === 'All' ? t('projects.all') : t(`categories.${cat}`, cat)}
+                  </button>
+                ))}
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground mr-1">{t('projects.status')}</span>
+                {statuses.map((s) => (
+                  <button key={s} onClick={() => setActiveStatus(s)} className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${activeStatus === s ? 'border-primary text-primary bg-primary/5' : 'border-border/30 text-muted-foreground hover:border-primary/30 hover:text-foreground'}`}>
+                    {s === 'All' ? t('projects.all') : t(`statuses.${s}`, s)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+          <section className="col-span-12 py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {filtered.map((project, idx) => (
+                <Link to={`/${currentLang}/projects/${project.slug}`} key={project.title} className={`animate-reveal stagger-${(idx % 4) + 1} group p-8 bg-card/30 border border-border/30 hover:border-primary/30 transition-all duration-500 hover:bg-card/50`}>
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="font-mono text-xs text-muted-foreground tracking-wide">{project.index}</span>
+                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-primary/70 px-2 py-1 border border-primary/20">{t(`statuses.${project.status}`, project.status)}</span>
+                  </div>
+                  <h3 className="font-display font-extrabold text-2xl text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors duration-300">{t(`data.projects.${project.slug}.title`)}</h3>
+                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground mb-4">{t(`categories.${project.category}`, project.category)}</p>
+                  <p className="text-foreground/60 leading-relaxed mb-6">{t(`data.projects.${project.slug}.description`)}</p>
+                  <div className="flex justify-between items-center pt-4 border-t border-border/20">
+                    <span className="font-mono text-[0.65rem] text-muted-foreground/60">{project.year}</span>
+                    <span className="font-mono text-xs text-primary/70 group-hover:text-primary transition-colors duration-300">{t('projects.viewCaseStudy')}</span>
+                  </div>
+                </Link>
               ))}
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground mr-1">{t('projects.status')}</span>
-              {statuses.map((s) => (
-                <button key={s} onClick={() => setActiveStatus(s)} className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-3 py-1.5 border transition-all duration-300 ${activeStatus === s ? 'border-primary text-primary bg-primary/5' : 'border-border/30 text-muted-foreground hover:border-primary/30 hover:text-foreground'}`}>
-                  {s === 'All' ? t('projects.all') : t(`statuses.${s}`, s)}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section className="col-span-12 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {filtered.map((project, idx) => (
-              <Link to={`/${currentLang}/projects/${project.slug}`} key={project.title} className={`animate-reveal stagger-${(idx % 4) + 1} group p-8 bg-card/30 border border-border/30 hover:border-primary/30 transition-all duration-500 hover:bg-card/50`}>
-                <div className="flex justify-between items-start mb-6">
-                  <span className="font-mono text-xs text-muted-foreground tracking-wide">{project.index}</span>
-                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-primary/70 px-2 py-1 border border-primary/20">{t(`statuses.${project.status}`, project.status)}</span>
-                </div>
-                <h3 className="font-display font-extrabold text-2xl text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors duration-300">{t(`data.projects.${project.slug}.title`)}</h3>
-                <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground mb-4">{t(`categories.${project.category}`, project.category)}</p>
-                <p className="text-foreground/60 leading-relaxed mb-6">{t(`data.projects.${project.slug}.description`)}</p>
-                <div className="flex justify-between items-center pt-4 border-t border-border/20">
-                  <span className="font-mono text-[0.65rem] text-muted-foreground/60">{project.year}</span>
-                  <span className="font-mono text-xs text-primary/70 group-hover:text-primary transition-colors duration-300">{t('projects.viewCaseStudy')}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-          {filtered.length === 0 && <p className="text-center text-muted-foreground py-12 font-mono text-sm">{t('projects.noMatch')}</p>}
-        </section>
-        <Footer />
-      </main>
-    </>
+            {filtered.length === 0 && <p className="text-center text-muted-foreground py-12 font-mono text-sm">{t('projects.noMatch')}</p>}
+          </section>
+          <Footer />
+        </main>
+      </>
+    </AnimatedPage>
   );
 };
 

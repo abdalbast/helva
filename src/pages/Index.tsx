@@ -6,13 +6,14 @@ import HeroSection from '@/components/HeroSection';
 import FacadeContainer from '@/components/FacadeContainer';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
+import AnimatedPage from '@/components/AnimatedPage';
 
 const Index = () => {
   const { currentLang } = useLanguage();
   const { t } = useTranslation();
 
   return (
-    <>
+    <AnimatedPage>
       <PageMeta title={t('home.headline').replace(/<br\/?>/g, ' ')} description={t('home.subheadline')} path="/" lang={currentLang} />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
       <GrainOverlay />
@@ -22,7 +23,7 @@ const Index = () => {
         <FacadeContainer />
         <Footer />
       </main>
-    </>
+    </AnimatedPage>
   );
 };
 

@@ -2,8 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
 import { usePageTracking } from "@/hooks/usePageTracking";
 import '@/i18n/config';
@@ -26,29 +27,32 @@ const queryClient = new QueryClient();
 /** Inner component so usePageTracking has access to router context */
 const AppRoutes = () => {
   usePageTracking();
+  const location = useLocation();
   return (
-    <Routes>
-      {/* Redirect root to default language */}
-      <Route path="/" element={<Navigate to="/en" replace />} />
-      
-      {/* Language-prefixed routes */}
-      <Route path="/:lang">
-        <Route index element={<Index />} />
-        <Route path="about" element={<About />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="projects/:slug" element={<ProjectDetail />} />
-        <Route path="solutions" element={<Solutions />} />
-        <Route path="ai" element={<AI />} />
-        <Route path="resources" element={<Resources />} />
-        <Route path="resources/:slug" element={<ArticleDetail />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="privacy" element={<Privacy />} />
-        <Route path="terms" element={<Terms />} />
-      </Route>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        {/* Redirect root to default language */}
+        <Route path="/" element={<Navigate to="/en" replace />} />
+        
+        {/* Language-prefixed routes */}
+        <Route path="/:lang">
+          <Route index element={<Index />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="projects/:slug" element={<ProjectDetail />} />
+          <Route path="solutions" element={<Solutions />} />
+          <Route path="ai" element={<AI />} />
+          <Route path="resources" element={<Resources />} />
+          <Route path="resources/:slug" element={<ArticleDetail />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="terms" element={<Terms />} />
+        </Route>
 
-      {/* Catch-all */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        {/* Catch-all */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 
