@@ -21,6 +21,9 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
+import AboutAbdalbast from "./pages/AboutAbdalbast";
+import PortfolioAbdalbast from "./pages/PortfolioAbdalbast";
+import ProjectsAbdalbast from "./pages/ProjectsAbdalbast";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +36,11 @@ const AppRoutes = () => {
       <Routes location={location} key={location.pathname}>
         {/* Redirect root to default language */}
         <Route path="/" element={<Navigate to="/en" replace />} />
+
+        {/* SEO landing pages */}
+        <Route path="/about-abdalbast-khdhir" element={<AboutAbdalbast />} />
+        <Route path="/abdalbast-khdhir-portfolio" element={<PortfolioAbdalbast />} />
+        <Route path="/abdalbast-khdhir-projects" element={<ProjectsAbdalbast />} />
         
         {/* Language-prefixed routes */}
         <Route path="/:lang">
