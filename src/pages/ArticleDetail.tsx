@@ -8,6 +8,7 @@ import PageMeta from '@/components/PageMeta';
 import AnimatedPage from '@/components/AnimatedPage';
 import { getArticleBySlug, getRelatedArticles } from '@/data/articles';
 import { useState } from 'react';
+import DOMPurify from 'dompurify';
 
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -47,7 +48,7 @@ const ArticleDetail = () => {
     let key = 0;
     const flushList = () => {
       if (listItems.length > 0) {
-        elements.push(<ul key={key++} className="list-disc list-inside space-y-2 text-foreground/80 leading-relaxed mb-6 ml-4">{listItems.map((item, i) => <li key={i} dangerouslySetInnerHTML={{ __html: formatInline(item) }} />)}</ul>);
+        elements.push(<ul key={key++} className="list-disc list-inside space-y-2 text-foreground/80 leading-relaxed mb-6 ml-4">{listItems.map((item, i) => <li key={i} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(formatInline(item)) }} />)}</ul>);
         listItems = [];
       }
     };
@@ -59,7 +60,7 @@ const ArticleDetail = () => {
       else if (trimmed.startsWith('## ')) { flushList(); elements.push(<h2 key={key++} className="font-display font-extrabold text-2xl text-foreground tracking-tight mt-12 mb-4">{trimmed.slice(3)}</h2>); }
       else if (trimmed.startsWith('- ')) { listItems.push(trimmed.slice(2)); }
       else if (/^\d+\.\s/.test(trimmed)) { listItems.push(trimmed.replace(/^\d+\.\s/, '')); }
-      else { flushList(); elements.push(<p key={key++} className="text-foreground/80 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: formatInline(trimmed) }} />); }
+      else { flushList(); elements.push(<p key={key++} className="text-foreground/80 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(formatInline(trimmed)) }} />); }
     }
     flushList();
     return elements;

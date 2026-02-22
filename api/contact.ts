@@ -55,7 +55,7 @@ async function getFileFromGitHub(): Promise<{ content: string; sha: string } | n
     },
   });
   if (response.status === 404) return null;
-  if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+  if (!response.ok) throw new Error('GitHub API request failed');
   const data = await response.json();
   return { content: Buffer.from(data.content, 'base64').toString('utf-8'), sha: data.sha };
 }
@@ -79,8 +79,7 @@ async function updateFileOnGitHub(newContent: string, sha?: string): Promise<voi
     body: JSON.stringify(body),
   });
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`GitHub API error: ${response.status} - ${errorText}`);
+    throw new Error('GitHub API request failed');
   }
 }
 
@@ -102,6 +101,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ success: false, error: 'Method not allowed' });
+
+  // CSRF: Reject requests without a valid origin
+  if (!origin || !ALLOWED_ORIGINS.includes(origin)) {
+    return res.status(403).json({ success: false, error: 'Forbidden' });
+  }
 
   if (!GITHUB_TOKEN || !GITHUB_OWNER || !GITHUB_REPO) {
     console.error('Missing required environment variables');

@@ -95,7 +95,7 @@ async function getFileFromGitHub(): Promise<{ content: string; sha: string } | n
     }
 
     if (!response.ok) {
-        throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+        throw new Error('GitHub API request failed');
     }
 
     const data = await response.json();
@@ -129,8 +129,7 @@ async function updateFileOnGitHub(newContent: string, sha?: string): Promise<voi
     });
 
     if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`GitHub API error: ${response.status} - ${errorText}`);
+        throw new Error('GitHub API request failed');
     }
 }
 
@@ -163,6 +162,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             success: false,
             error: 'Method not allowed'
         });
+    }
+
+    // CSRF: Reject requests without a valid origin
+    if (!origin || !ALLOWED_ORIGINS.includes(origin)) {
+        return res.status(403).json({ success: false, error: 'Forbidden' });
     }
 
     // Check required env vars
