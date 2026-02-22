@@ -1,67 +1,72 @@
 
 
-# Improvement & Feature Plan
+# Build Three SEO Pages for Abdalbast Khdhir
 
-This plan batches the audit findings and new features into 4 implementation rounds, grouping similar work to minimize token usage.
-
----
-
-## Round 1: Navigation, Footer & Sitemap Fixes
-
-**What changes:**
-- Add "Contact" link to both desktop and mobile navigation in `Navigation.tsx`
-- Add "Contact" link to the footer link list in `Footer.tsx`
-- Update social links in Footer from placeholder URLs (`https://linkedin.com`, etc.) to real Helva URLs (or `#` with a TODO comment if real URLs aren't available yet)
-- Add a "skip to content" accessibility link at the top of each page layout
-- Regenerate `public/sitemap.xml` with all language-prefixed routes (`/en/projects`, `/sv/projects`, `/ar/projects`, `/ku/projects`, etc.) and add `hreflang` annotations
-
-**Files touched:** `Navigation.tsx`, `Footer.tsx`, `public/sitemap.xml`, all page files (add `id="main-content"` to the main element)
+Three standalone pages outside the language-prefixed routing structure, each with distinct layout, copy, and SEO markup.
 
 ---
 
-## Round 2: Legal Pages & Cookie Consent
+## Architecture Decision
 
-**What changes:**
-- Create `/privacy` and `/terms` pages with placeholder legal content, matching the site's aesthetic (Navigation, GrainOverlay, Footer)
-- Add routes for `/:lang/privacy` and `/:lang/terms` in `App.tsx`
-- Add Privacy and Terms links to the Footer
-- Build a GDPR cookie consent banner component that:
-  - Shows on first visit (checks localStorage)
-  - Gates PostHog initialization behind consent (modify `analytics.ts` to only init after acceptance)
-  - Styled to match the site's minimal mono aesthetic
-- Add translation keys for all new strings in all 4 locale files
+These pages sit at root-level routes (`/about-abdalbast-khdhir`, `/abdalbast-khdhir-portfolio`, `/abdalbast-khdhir-projects`) rather than under `/:lang/`. They are English-only SEO landing pages and do not use the i18n system or the existing Navigation/Footer/GrainOverlay components. Each page has its own minimal footer as specified.
 
-**Files touched:** New `Privacy.tsx`, `Terms.tsx`, `CookieConsent.tsx`; modified `App.tsx`, `Footer.tsx`, `analytics.ts`, all locale JSON files
+Routes will be added to `App.tsx` above the `/:lang` block.
 
 ---
 
-## Round 3: Localize Project Data & Contact Form Backend
+## Files to Create
 
-**What changes:**
-- Move all hardcoded project strings (title, description, problem, solution, outcome, testimonials, metrics labels) from `src/data/projects.ts` into the 4 translation JSON files under a `projects.items` namespace
-- Update `projects.ts` to use translation keys instead of raw English strings, and update `Projects.tsx` / `ProjectDetail.tsx` to resolve them via `t()`
-- Replace the `mailto:` fallback in `Contact.tsx` with a proper form submission using an existing Vercel serverless function pattern (similar to `api/subscribe.ts`) -- create `api/contact.ts` that sends an email via Resend or stores the submission
+### 1. `src/pages/AboutAbdalbast.tsx`
+- Route: `/about-abdalbast-khdhir`
+- Max width 760px, white background, single column
+- Sections: Hero (H1, two paragraphs, 3 buttons), Proof of Work (5 project cards with soft borders), Background (4 bullets), How I Work (5 bullets), Collaboration (3 bullets), Contact (email + form posting to `/api/contact`)
+- Internal links to Portfolio and Projects pages
+- Helmet: unique title, meta description, canonical, OG tags, Person JSON-LD, breadcrumb JSON-LD
 
-**Files touched:** `src/data/projects.ts`, `Projects.tsx`, `ProjectDetail.tsx`, all locale JSON files, new `api/contact.ts`, `Contact.tsx`
+### 2. `src/pages/PortfolioAbdalbast.tsx`
+- Route: `/abdalbast-khdhir-portfolio`
+- Max width 900px, white background
+- Sections: Hero (H1, paragraph), 5 case study cards (Problem/Approach/Outcome/Stack/Status grid on desktop), What You Can Expect (paragraph + 6 bullets), Links (4 buttons), Contact (email + form)
+- Internal links to About and Projects pages
+- Helmet: unique title, meta description, canonical, OG tags, WebPage JSON-LD, breadcrumb JSON-LD
+
+### 3. `src/pages/ProjectsAbdalbast.tsx`
+- Route: `/abdalbast-khdhir-projects`
+- Max width 1000px, white background
+- Sections: Hero (H1, intro), search input, filter pills (category + status), 8 project cards in 2-col grid on desktop, footer with links
+- Client-side filtering by title/summary text and by category/status pills
+- Internal links to About and Portfolio pages
+- Helmet: unique title, meta description, canonical, OG tags, CollectionPage JSON-LD, breadcrumb JSON-LD
 
 ---
 
-## Round 4: Page Transitions & UX Polish
+## File to Modify
 
-**What changes:**
-- Add `framer-motion` and create an `AnimatedPage` wrapper component with fade/slide-up transitions
-- Wrap each page's content in `AnimatedPage` using `AnimatePresence` in `App.tsx`
-- Improve dark mode contrast ratios for muted text elements (audit `text-muted-foreground/60` and similar low-opacity classes)
-- Add focus-visible ring styles to all interactive elements (buttons, links, form inputs) for keyboard navigation
-
-**Files touched:** New `AnimatedPage.tsx`; modified `App.tsx`, `index.css` (focus-visible utilities), all page components (wrap in AnimatedPage)
+### `src/App.tsx`
+- Import the three new page components
+- Add three `<Route>` entries before the `/:lang` block:
+  - `path="about-abdalbast-khdhir"` renders `AboutAbdalbast`
+  - `path="abdalbast-khdhir-portfolio"` renders `PortfolioAbdalbast`
+  - `path="abdalbast-khdhir-projects"` renders `ProjectsAbdalbast`
 
 ---
 
-## Technical Notes
+## Shared Patterns Across All Three Pages
 
-- **Token efficiency:** Each round groups related file edits together so locale files and shared components are only touched once per round
-- **No backend required:** All changes are frontend-only except the optional `api/contact.ts` Vercel serverless function
-- **Dependencies added:** `framer-motion` (Round 4 only)
-- **Translation approach:** Project data keys follow the pattern `projects.items.{slug}.title` etc., keeping the data file as a structural skeleton with `t()` lookups
+- **Footer**: Simple `<footer>` with copyright line and links to Home (`/en`) and Privacy (`/en/privacy`), plus internal cluster links
+- **Form**: Reuse the existing `/api/contact` endpoint; each form has Name, Email, Message fields with Zod validation
+- **Styling**: Tailwind utility classes; white bg (`bg-white`), system font stack via a `font-sans` override on the page wrapper, soft bordered cards (`border border-gray-200 rounded-lg`), generous padding/margin
+- **SEO**: `react-helmet-async` for meta tags; JSON-LD injected via `<script>` tags in Helmet
+- **No animations**: Pages will not use the `AnimatedPage` wrapper
+- **No i18n**: Hardcoded British English copy as specified
+
+---
+
+## Technical Details
+
+- No new dependencies required
+- No database changes
+- Contact form posts to existing `/api/contact` serverless function
+- All copy is taken verbatim from the specification above
+- Project card links use `"#"` as placeholder hrefs where specified
 
