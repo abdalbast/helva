@@ -86,4 +86,28 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- About Abdalbast Khdhir -->
+  <url>
+    <loc>https://helva.group/about-abdalbast-khdhir</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Abdalbast Khdhir Portfolio -->
+  <url>
+    <loc>https://helva.group/abdalbast-khdhir-portfolio</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Abdalbast Khdhir Projects -->
+  <url>
+    <loc>https://helva.group/abdalbast-khdhir-projects</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
