@@ -18,7 +18,69 @@ const About = () => {
         <GrainOverlay />
         <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
           <Navigation />
-          {/* ... keep existing code (all sections) ... */}
+
+          {/* Label */}
+          <div className="col-span-12 mb-2">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">{t('about.label')}</span>
+          </div>
+
+          {/* Hero */}
+          <section className="col-span-12 lg:col-span-8 mb-16">
+            <h1 className="font-display font-extrabold text-5xl lg:text-7xl tracking-tighter uppercase leading-[0.9] mb-8">{t('about.title')}</h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">{t('about.intro')}</p>
+          </section>
+
+          {/* The Challenge */}
+          <section className="col-span-12 lg:col-span-10 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('about.challengeLabel')}</span>
+            <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-6">{t('about.challengeTitle')}</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl">{t('about.challengeP1')}</p>
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">{t('about.challengeP2')}</p>
+            <p className="text-primary font-medium text-lg">{t('about.challengeHighlight')}</p>
+          </section>
+
+          {/* The Name */}
+          <section className="col-span-12 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('about.nameLabel')}</span>
+            <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl">{t('about.nameIntro')}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {(['completeness', 'warmth', 'shareability'] as const).map((key) => (
+                <div key={key} className="border border-border/30 p-6">
+                  <h3 className="font-display font-bold text-lg mb-3">{t(`about.${key}`)}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: t(`about.${key}Desc`) }} />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* What We Build */}
+          <section className="col-span-12 lg:col-span-10 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('about.buildLabel')}</span>
+            <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-6">{t('about.buildTitle')}</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl" dangerouslySetInnerHTML={{ __html: t('about.buildP1') }} />
+            <p className="text-muted-foreground leading-relaxed max-w-2xl">{t('about.buildP2')}</p>
+          </section>
+
+          {/* Our Obsessions */}
+          <section className="col-span-12 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">{t('about.obsessionsLabel')}</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {(['details', 'clarity', 'longevity'] as const).map((key) => (
+                <div key={key} className="border border-border/30 p-6">
+                  <h3 className="font-display font-bold text-lg mb-3">{t(`about.${key}`)}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(`about.${key}Desc`)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Quote */}
+          <section className="col-span-12 lg:col-span-10 mb-16 py-12 border-t border-b border-border/30">
+            <blockquote className="text-xl lg:text-2xl font-display leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: t('about.quote') }} />
+            <p className="text-muted-foreground">{t('about.quoteFollow')}</p>
+          </section>
+
+          <Footer />
         </main>
       </>
     </AnimatedPage>

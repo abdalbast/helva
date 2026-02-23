@@ -31,7 +31,55 @@ const AI = () => {
         <GrainOverlay />
         <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
           <Navigation />
-          {/* ... keep existing code (all sections) ... */}
+
+          {/* Label */}
+          <div className="col-span-12 mb-2">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">{t('ai.label')}</span>
+          </div>
+
+          {/* Hero */}
+          <section className="col-span-12 lg:col-span-8 mb-16">
+            <h1 className="font-display font-extrabold text-5xl lg:text-7xl tracking-tighter uppercase leading-[0.9] mb-8">{t('ai.title')}</h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">{t('ai.subtitle')}</p>
+          </section>
+
+          {/* Capabilities */}
+          <section className="col-span-12 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">{t('ai.capabilitiesLabel')}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {capabilities.map((cap) => (
+                <div key={cap.titleKey} className="border border-border/30 p-8">
+                  <span className="text-2xl mb-4 block">{cap.icon}</span>
+                  <h2 className="font-display font-bold text-xl mb-3">{t(`ai.${cap.titleKey}`)}</h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(`ai.${cap.descKey}`)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Philosophy */}
+          <section className="col-span-12 lg:col-span-10 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('ai.philosophyLabel')}</span>
+            <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-6">{t('ai.philosophyTitle')}</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl">{t('ai.philosophyP1')}</p>
+            <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl">{t('ai.philosophyP2')}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {principles.map((p) => (
+                <div key={p.titleKey} className="border border-border/30 p-6">
+                  <h3 className="font-display font-bold text-lg mb-3">{t(`ai.${p.titleKey}`)}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(`ai.${p.descKey}`)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Integrating */}
+          <section className="col-span-12 mb-16 py-12 border-t border-b border-border/30">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('ai.integratingLabel')}</span>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t('ai.integratingDesc') }} />
+          </section>
+
+          <Footer />
         </main>
       </>
     </AnimatedPage>
