@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
 import AnimatedPage from '@/components/AnimatedPage';
-
+import LlmSummary from '@/components/LlmSummary';
 const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100),
   email: z.string().trim().email('Please enter a valid email').max(255),
@@ -65,6 +65,15 @@ const Contact = () => {
     <AnimatedPage>
       <>
         <PageMeta title={t('contact.title')} description={t('contact.subtitle')} path="/contact" lang={currentLang} />
+        <LlmSummary
+          quickAnswer="Contact Helva Group for projects, partnerships, and collaboration. Email hello@helva.group or use the contact form."
+          audience={["Founders seeking to start a project", "Agencies exploring partnerships", "Anyone wanting to reach Helva"]}
+          actions={["Submit the contact form", "Email hello@helva.group directly", "Email updates@helva.group for newsletters"]}
+          relatedPages={[
+            { label: "About Helva Group", href: "/en/about" },
+            { label: "Solutions and Services", href: "/en/solutions" },
+          ]}
+        />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
         <GrainOverlay />
         <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
