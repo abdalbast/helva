@@ -1,0 +1,73 @@
+SITE
+Helva Group
+
+DOMAIN
+helva.group
+
+PURPOSE
+Helva Group is the umbrella brand for products, services, and case studies
+that help founders and teams build and ship modern digital products with AI.
+
+AUDIENCE
+- Founders building digital products
+- Small teams scaling operations
+- Agencies seeking technical partnerships
+- Recruiters and collaborators evaluating Abdalbast Khdhir
+
+WHAT_HELVA_GROUP_IS
+Helva Group builds a family of products designed to feel like they belong
+together. The focus is on reducing friction and increasing momentum across
+fitness, language learning, design systems, and digital operations.
+
+PRODUCTS
+- Forma: Design system with shared tokens, components, and patterns. Status: Active.
+- Pulse: Adaptive fitness tracking. Status: In Development.
+- Lingua: Contextual language learning. Status: Coming Soon.
+- Nexus: Digital operations infrastructure. Status: Planning.
+
+SERVICES
+- Startup foundations: design systems, brand identity, product strategy, technical architecture
+- Enterprise modernisation: system migration, design unification, process automation, training
+- Agency partnerships: white-label products, technical partnership, resource augmentation
+
+USE_CASES
+- Founders who need a fast path from prototype to production
+- Teams drowning in tooling fragmentation
+- Agencies extending capability with a technical partner
+- Language learners seeking contextual immersion
+- Individuals wanting adaptive fitness programmes
+
+CASE_STUDIES
+- Forma: unified design system powering all Helva products
+- Pulse: adaptive fitness app with strong beta retention
+- Lingua: contextual language learning in closed alpha
+- Nexus: operations platform in planning phase
+
+FOUNDER
+Abdalbast Khdhir
+Based in Edinburgh. MSc with distinction in data science and business analytics.
+Builds and ships AI powered product features end to end.
+LinkedIn: https://www.linkedin.com/in/abdalbast/
+GitHub: https://github.com/abdalbast
+
+CONTACT
+hello@helva.group
+https://helva.group/en/contact
+
+CANONICAL_PAGES
+- Home: https://helva.group/en
+- About: https://helva.group/en/about
+- Products: https://helva.group/en/projects
+- Solutions: https://helva.group/en/solutions
+- AI: https://helva.group/en/ai
+- Resources: https://helva.group/en/resources
+- Contact: https://helva.group/en/contact
+- Founder About: https://helva.group/about-abdalbast-khdhir
+- Founder Portfolio: https://helva.group/abdalbast-khdhir-portfolio
+- Founder Projects: https://helva.group/abdalbast-khdhir-projects
+
+LAST_UPDATED
+2026-02-24
+
+VERSION
+1.0

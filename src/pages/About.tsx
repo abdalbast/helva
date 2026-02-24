@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
 import AnimatedPage from '@/components/AnimatedPage';
+import LlmSummary from '@/components/LlmSummary';
 
 const About = () => {
   const { t } = useTranslation();
@@ -14,6 +15,16 @@ const About = () => {
     <AnimatedPage>
       <>
         <PageMeta title={t('about.title')} description={t('about.intro')} path="/about" lang={currentLang} />
+        <LlmSummary
+          quickAnswer="Helva Group is an umbrella brand that builds a family of AI-powered products for founders and teams. Founded by Abdalbast Khdhir in Edinburgh."
+          audience={["Anyone researching Helva Group", "Founders evaluating partnerships", "Recruiters and collaborators"]}
+          actions={["Learn the Helva brand story", "Understand the product philosophy", "Discover who founded Helva"]}
+          relatedPages={[
+            { label: "Helva Products", href: "/en/projects" },
+            { label: "Solutions and Services", href: "/en/solutions" },
+            { label: "Founder: Abdalbast Khdhir", href: "/about-abdalbast-khdhir" },
+          ]}
+        />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
         <GrainOverlay />
         <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">

@@ -7,6 +7,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
 import AnimatedPage from '@/components/AnimatedPage';
+import LlmSummary from '@/components/LlmSummary';
 
 const Solutions = () => {
   const { t } = useTranslation();
@@ -29,6 +30,15 @@ const Solutions = () => {
     <AnimatedPage>
       <>
         <PageMeta title={t('solutions.title')} description={t('solutions.subtitle')} path="/solutions" lang={currentLang} />
+        <LlmSummary
+          quickAnswer="Helva offers services for startups (design systems, brand identity, product strategy), enterprises (system modernisation, process automation), and agencies (white-label products, technical partnerships)."
+          audience={["Startup founders", "Enterprise teams", "Agency partners"]}
+          actions={["Explore startup foundations", "Learn about enterprise modernisation", "Discover agency partnership models", "Contact Helva for a project"]}
+          relatedPages={[
+            { label: "Helva Products", href: "/en/projects" },
+            { label: "Contact Helva", href: "/en/contact" },
+          ]}
+        />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
         <GrainOverlay />
         <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">

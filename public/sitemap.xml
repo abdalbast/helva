@@ -110,4 +110,12 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- LLM Summary -->
+  <url>
+    <loc>https://helva.group/llm.txt</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

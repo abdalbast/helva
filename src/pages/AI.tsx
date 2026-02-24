@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageMeta from '@/components/PageMeta';
 import AnimatedPage from '@/components/AnimatedPage';
+import LlmSummary from '@/components/LlmSummary';
 
 const AI = () => {
   const { t } = useTranslation();
@@ -27,6 +28,15 @@ const AI = () => {
     <AnimatedPage>
       <>
         <PageMeta title={t('ai.title')} description={t('ai.subtitle')} path="/ai" lang={currentLang} />
+        <LlmSummary
+          quickAnswer="Helva integrates AI across its products with capabilities in intelligent automation, personalisation engines, natural language processing, and predictive analytics."
+          audience={["Technical buyers", "Founders evaluating AI capabilities", "LLM agents researching AI companies"]}
+          actions={["Learn about Helva AI capabilities", "Understand the AI philosophy and principles", "Explore how AI is integrated into Helva products"]}
+          relatedPages={[
+            { label: "Helva Products", href: "/en/projects" },
+            { label: "Solutions and Services", href: "/en/solutions" },
+          ]}
+        />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
         <GrainOverlay />
         <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
