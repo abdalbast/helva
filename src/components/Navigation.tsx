@@ -23,6 +23,7 @@ const Navigation = () => {
     { label: t('nav.ai'), to: `/${currentLang}/ai` },
     { label: t('nav.resources'), to: `/${currentLang}/resources` },
     { label: t('nav.about'), to: `/${currentLang}/about` },
+    { label: t('nav.founder'), to: '/about-abdalbast-khdhir' },
     { label: t('nav.contact'), to: `/${currentLang}/contact` },
   ];
 
@@ -60,7 +61,7 @@ const Navigation = () => {
                 key={item.to}
                 to={item.to}
                 className={`font-mono text-[0.7rem] uppercase tracking-[0.15em] transition-colors duration-300 relative group ${
-                  location.pathname === item.to
+                  (location.pathname === item.to || (item.to === '/about-abdalbast-khdhir' && location.pathname.includes('abdalbast')))
                     ? 'text-primary'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
@@ -160,7 +161,7 @@ const Navigation = () => {
               key={item.to}
               to={item.to}
               className={`font-mono text-sm uppercase tracking-[0.15em] transition-colors duration-300 ${
-                location.pathname === item.to
+                (location.pathname === item.to || (item.to === '/about-abdalbast-khdhir' && location.pathname.includes('abdalbast')))
                   ? 'text-primary'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
