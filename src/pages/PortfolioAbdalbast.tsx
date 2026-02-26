@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { z } from "zod";
+import AnimatedPage from "@/components/AnimatedPage";
+import GrainOverlay from "@/components/GrainOverlay";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -94,140 +99,147 @@ const PortfolioAbdalbast = () => {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>Abdalbast Khdhir Portfolio, Helva Group</title>
-        <meta name="description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Group, including production focused implementations and prototypes." />
-        <link rel="canonical" href="https://helva.group/abdalbast-khdhir-portfolio" />
-        <meta property="og:title" content="Abdalbast Khdhir Portfolio, Helva Group" />
-        <meta property="og:description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Group, including production focused implementations and prototypes." />
-        <meta property="og:image" content="/og/abdalbast-portfolio.jpg" />
-        <meta property="og:url" content="https://helva.group/abdalbast-khdhir-portfolio" />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          name: "Abdalbast Khdhir Portfolio",
-          url: "https://helva.group/abdalbast-khdhir-portfolio",
-          about: {
-            "@type": "Person",
-            name: "Abdalbast Khdhir",
-            sameAs: ["https://www.linkedin.com/in/abdalbast/", "https://github.com/abdalbast"],
-          },
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.group" },
-            { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://helva.group/abdalbast-khdhir-portfolio" },
-          ],
-        })}</script>
-      </Helmet>
+    <AnimatedPage>
+      <>
+        <Helmet>
+          <title>Abdalbast Khdhir Portfolio, Helva Group</title>
+          <meta name="description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Group, including production focused implementations and prototypes." />
+          <link rel="canonical" href="https://helva.group/abdalbast-khdhir-portfolio" />
+          <meta property="og:title" content="Abdalbast Khdhir Portfolio, Helva Group" />
+          <meta property="og:description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Group, including production focused implementations and prototypes." />
+          <meta property="og:image" content="/og/abdalbast-portfolio.jpg" />
+          <meta property="og:url" content="https://helva.group/abdalbast-khdhir-portfolio" />
+          <meta property="og:type" content="website" />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Abdalbast Khdhir Portfolio",
+            url: "https://helva.group/abdalbast-khdhir-portfolio",
+            about: {
+              "@type": "Person",
+              name: "Abdalbast Khdhir",
+              sameAs: ["https://www.linkedin.com/in/abdalbast/", "https://github.com/abdalbast"],
+            },
+          })}</script>
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.group" },
+              { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://helva.group/abdalbast-khdhir-portfolio" },
+            ],
+          })}</script>
+        </Helmet>
 
-      <div className="min-h-screen bg-white font-sans text-gray-900">
-        <main className="mx-auto max-w-[900px] px-6 py-16 md:py-24">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 font-mono text-xs bg-primary text-primary-foreground px-4 py-2">Skip to content</a>
+        <GrainOverlay />
+        <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
+          <Navigation />
+
+          {/* Back link */}
+          <div className="col-span-12 mb-2">
+            <Link to="/en" className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300">
+              ← Back to Helva Group
+            </Link>
+          </div>
+
           {/* Hero */}
-          <section className="mb-16">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl mb-6">Portfolio</h1>
-            <p className="text-lg leading-relaxed text-gray-700">
+          <section className="col-span-12 lg:col-span-8 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Founder portfolio</span>
+            <h1 className="font-display font-extrabold text-5xl lg:text-7xl tracking-tighter uppercase leading-[0.9] mb-8">Portfolio</h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
               A selection of work that shows how I take an idea from problem definition to a shipped feature. Each item below is written in a simple case study format so you can scan quickly.
             </p>
           </section>
 
           {/* Case studies */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-semibold mb-8">Selected case studies</h2>
+          <section className="col-span-12 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Case studies</span>
+            <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-8">Selected case studies</h2>
             <div className="space-y-6">
               {CASE_STUDIES.map((c) => (
-                <div key={c.title} className="rounded-lg border border-gray-200 p-6">
+                <div key={c.title} className="border border-border/30 p-6">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-                    <h3 className="text-lg font-semibold">{c.title}</h3>
-                    <span className="inline-block rounded-full border border-gray-300 px-3 py-0.5 text-xs font-medium text-gray-600 whitespace-nowrap">{c.status}</span>
+                    <h3 className="font-display font-bold text-lg">{c.title}</h3>
+                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] border border-border/50 px-3 py-0.5 text-muted-foreground whitespace-nowrap">{c.status}</span>
                   </div>
-                  <div className="grid gap-4 md:grid-cols-3 text-sm text-gray-700 mb-4">
-                    <div><span className="block text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">Problem</span>{c.problem}</div>
-                    <div><span className="block text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">Approach</span>{c.approach}</div>
-                    <div><span className="block text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">Outcome</span>{c.outcome}</div>
+                  <div className="grid gap-4 md:grid-cols-3 text-sm text-muted-foreground mb-4">
+                    <div><span className="block font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground/60 mb-1">Problem</span>{c.problem}</div>
+                    <div><span className="block font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground/60 mb-1">Approach</span>{c.approach}</div>
+                    <div><span className="block font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground/60 mb-1">Outcome</span>{c.outcome}</div>
                   </div>
-                  <p className="text-xs text-gray-500 mb-3">Stack: {c.stack}</p>
-                  <a href={c.href} className="text-sm font-medium text-gray-900 underline underline-offset-4 hover:text-gray-600">{c.linkLabel}</a>
+                  <p className="font-mono text-[0.6rem] text-muted-foreground/60 mb-3">Stack: {c.stack}</p>
+                  <a href={c.href} className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">{c.linkLabel}</a>
                 </div>
               ))}
             </div>
           </section>
 
           {/* What you can expect */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-semibold mb-4">What you can expect from my work</h2>
-            <p className="text-gray-700 mb-6">
+          <section className="col-span-12 lg:col-span-10 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Standards</span>
+            <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">What you can expect from my work</h2>
+            <p className="text-muted-foreground mb-6 max-w-2xl leading-relaxed">
               I optimise for reliable delivery, clarity, and measurable impact. I prefer simple architecture, strong interfaces, and fast iteration loops that are backed by evaluation where AI is involved.
             </p>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />End to end ownership from spec to production</li>
-              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />Evaluation as part of the feature lifecycle</li>
-              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />Clean data models and pragmatic APIs</li>
-              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />Grounded AI behaviour with guardrails</li>
-              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />Fast prototypes with a production path</li>
-              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />Documentation that reduces handoff friction</li>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />End to end ownership from spec to production</li>
+              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Evaluation as part of the feature lifecycle</li>
+              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Clean data models and pragmatic APIs</li>
+              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Grounded AI behaviour with guardrails</li>
+              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Fast prototypes with a production path</li>
+              <li className="flex gap-3"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />Documentation that reduces handoff friction</li>
             </ul>
           </section>
 
           {/* Links */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-semibold mb-6">Links</h2>
+          <section className="col-span-12 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">Links</span>
             <div className="flex flex-wrap gap-3">
-              <a href="/about-abdalbast-khdhir" className="inline-block rounded border border-gray-300 px-5 py-2.5 text-sm font-medium hover:bg-gray-50 transition-colors">About Abdalbast</a>
-              <a href="/abdalbast-khdhir-projects" className="inline-block rounded border border-gray-300 px-5 py-2.5 text-sm font-medium hover:bg-gray-50 transition-colors">Projects</a>
-              <a href="https://www.linkedin.com/in/abdalbast/" target="_blank" rel="noopener noreferrer" className="inline-block rounded border border-gray-300 px-5 py-2.5 text-sm font-medium hover:bg-gray-50 transition-colors">LinkedIn</a>
-              <a href="https://github.com/abdalbast" target="_blank" rel="noopener noreferrer" className="inline-block rounded border border-gray-300 px-5 py-2.5 text-sm font-medium hover:bg-gray-50 transition-colors">GitHub</a>
+              <Link to="/about-abdalbast-khdhir" className="font-mono text-[0.7rem] uppercase tracking-[0.15em] border border-border/50 px-5 py-2.5 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-300">About Abdalbast</Link>
+              <Link to="/abdalbast-khdhir-projects" className="font-mono text-[0.7rem] uppercase tracking-[0.15em] border border-border/50 px-5 py-2.5 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-300">Projects</Link>
+              <a href="https://www.linkedin.com/in/abdalbast/" target="_blank" rel="noopener noreferrer" className="font-mono text-[0.7rem] uppercase tracking-[0.15em] border border-border/50 px-5 py-2.5 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-300">LinkedIn</a>
+              <a href="https://github.com/abdalbast" target="_blank" rel="noopener noreferrer" className="font-mono text-[0.7rem] uppercase tracking-[0.15em] border border-border/50 px-5 py-2.5 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-300">GitHub</a>
             </div>
           </section>
 
           {/* Contact */}
-          <section id="contact" className="mb-20">
-            <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-            <p className="text-gray-700 mb-2">If you are hiring or want to collaborate, send a message.</p>
-            <p className="text-gray-700 mb-8"><a href="mailto:hello@helva.group" className="underline underline-offset-4">hello@helva.group</a></p>
+          <section id="contact" className="col-span-12 lg:col-span-8 mb-16">
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Get in touch</span>
+            <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">Contact</h2>
+            <p className="text-muted-foreground mb-2">If you are hiring or want to collaborate, send a message.</p>
+            <p className="text-muted-foreground mb-8"><a href="mailto:hello@helva.group" className="text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">hello@helva.group</a></p>
             {status === "sent" ? (
-              <p className="text-green-700">Message sent. Thank you.</p>
+              <p className="text-primary font-medium">Message sent. Thank you.</p>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
-                  <input id="name" type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400" />
-                  {errors.name && <p className="text-red-600 text-xs mt-1">{errors.name}</p>}
+                  <label htmlFor="name" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Name</label>
+                  <input id="name" type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                  {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                  <input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400" />
-                  {errors.email && <p className="text-red-600 text-xs mt-1">{errors.email}</p>}
+                  <label htmlFor="email" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Email</label>
+                  <input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                  {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
-                  <textarea id="message" rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400" />
-                  {errors.message && <p className="text-red-600 text-xs mt-1">{errors.message}</p>}
+                  <label htmlFor="message" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Message</label>
+                  <textarea id="message" rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
+                  {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
                 </div>
-                <button type="submit" disabled={status === "sending"} className="rounded bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800 transition-colors disabled:opacity-50">
+                <button type="submit" disabled={status === "sending"} className="font-mono text-[0.7rem] uppercase tracking-[0.15em] bg-primary text-primary-foreground px-5 py-2.5 hover:bg-accent transition-colors duration-300 disabled:opacity-50">
                   {status === "sending" ? "Sending…" : "Send message"}
                 </button>
-                {status === "error" && <p className="text-red-600 text-xs">Something went wrong. Please try again.</p>}
+                {status === "error" && <p className="text-destructive text-xs">Something went wrong. Please try again.</p>}
               </form>
             )}
           </section>
-        </main>
 
-        <footer className="border-t border-gray-200 py-8 px-6 text-center text-sm text-gray-500">
-          <p className="mb-2">© {new Date().getFullYear()} Helva Group</p>
-          <div className="flex justify-center gap-4">
-            <a href="/en" className="hover:text-gray-700">Home</a>
-            <a href="/en/privacy" className="hover:text-gray-700">Privacy</a>
-            <a href="/about-abdalbast-khdhir" className="hover:text-gray-700">About</a>
-            <a href="/abdalbast-khdhir-projects" className="hover:text-gray-700">Projects</a>
-          </div>
-        </footer>
-      </div>
-    </>
+          <Footer />
+        </main>
+      </>
+    </AnimatedPage>
   );
 };
 
