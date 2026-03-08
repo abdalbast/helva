@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { useContactForm } from "@/hooks/useContactForm";
 import PageLayout from "@/components/PageLayout";
+import ContactForm from "@/components/ContactForm";
+import BulletList from "@/components/BulletList";
+import { PILL_CLASS } from "@/lib/shared-styles";
 
 const CASE_STUDIES = [
   { title: "Helva Cloud", problem: "Early stage products need a fast path from prototype to production without rewriting everything.", approach: "Set up a repeatable delivery baseline with clear environments, clean data access patterns, and a deployment first mindset.", outcome: "Reduced time to ship new iterations and improved consistency across projects.", stack: "Next.js, TypeScript, Supabase, Vercel", status: "Active" },
@@ -20,12 +22,7 @@ const EXPECTATIONS = [
   "Documentation that reduces handoff friction",
 ];
 
-const PILL_CLASS =
-  "font-mono text-[0.7rem] uppercase tracking-[0.15em] border border-border/50 px-5 py-2.5 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-300";
-
 const PortfolioAbdalbast = () => {
-  const { form, hp, setHp, status, errors, updateField, handleSubmit } = useContactForm();
-
   return (
     <PageLayout>
       <Helmet>
@@ -93,14 +90,7 @@ const PortfolioAbdalbast = () => {
         <p className="text-muted-foreground mb-6 max-w-2xl leading-relaxed">
           I optimise for reliable delivery, clarity, and measurable impact. I prefer simple architecture, strong interfaces, and fast iteration loops that are backed by evaluation where AI is involved.
         </p>
-        <ul className="space-y-3 text-muted-foreground">
-          {EXPECTATIONS.map((item) => (
-            <li key={item} className="flex gap-3">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <BulletList items={EXPECTATIONS} />
       </section>
 
       {/* Links */}
@@ -120,32 +110,7 @@ const PortfolioAbdalbast = () => {
         <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">Contact</h2>
         <p className="text-muted-foreground mb-2">If you are hiring or want to collaborate, send a message.</p>
         <p className="text-muted-foreground mb-8"><a href="mailto:hello@helva.group" className="text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">hello@helva.group</a></p>
-        {status === "sent" ? (
-          <p className="text-primary font-medium">Message sent. Thank you.</p>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
-            <input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
-            <div>
-              <label htmlFor="portfolio-name" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Name</label>
-              <input id="portfolio-name" type="text" value={form.name} onChange={(e) => updateField('name', e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-              {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
-            </div>
-            <div>
-              <label htmlFor="portfolio-email" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Email</label>
-              <input id="portfolio-email" type="email" value={form.email} onChange={(e) => updateField('email', e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-              {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
-            </div>
-            <div>
-              <label htmlFor="portfolio-message" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Message</label>
-              <textarea id="portfolio-message" rows={4} value={form.message} onChange={(e) => updateField('message', e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-              {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
-            </div>
-            <button type="submit" disabled={status === "sending"} className="font-mono text-[0.7rem] uppercase tracking-[0.15em] bg-primary text-primary-foreground px-5 py-2.5 hover:bg-accent transition-colors duration-300 disabled:opacity-50">
-              {status === "sending" ? "Sending…" : "Send message"}
-            </button>
-            {status === "error" && <p className="text-destructive text-xs">Something went wrong. Please try again.</p>}
-          </form>
-        )}
+        <ContactForm idPrefix="portfolio" />
       </section>
     </PageLayout>
   );

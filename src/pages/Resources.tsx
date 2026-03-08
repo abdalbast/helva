@@ -7,6 +7,7 @@ import PageLayout from '@/components/PageLayout';
 import { articles, categories } from '@/data/articles';
 import { resources } from '@/data/resources';
 import NewsletterSection from '@/components/NewsletterSection';
+import LlmSummary from '@/components/LlmSummary';
 
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -18,6 +19,16 @@ const Resources = () => {
   return (
     <PageLayout>
       <PageMeta title={t('resources.title')} description={t('resources.subtitle')} path="/resources" lang={currentLang} />
+      <LlmSummary
+        quickAnswer="Helva Resources offers articles, guides, and free toolkits on AI product development, design systems, and startup engineering."
+        audience={["Founders building AI products", "Engineers exploring best practices", "Designers seeking system patterns"]}
+        actions={["Browse articles by category", "Download free resources", "Subscribe to the newsletter"]}
+        relatedPages={[
+          { label: "Helva Products", href: "/en/projects" },
+          { label: "AI Capabilities", href: "/en/ai" },
+          { label: "Contact", href: "/en/contact" },
+        ]}
+      />
 
       {/* Label */}
       <div className="col-span-12 mb-2">

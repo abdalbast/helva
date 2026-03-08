@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/hooks/use-theme';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +13,7 @@ const Navigation = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme } = useTheme();
   const { currentLang, changeLanguage } = useLanguage();
   const { t } = useTranslation();
@@ -42,6 +43,18 @@ const Navigation = () => {
     setMobileOpen(false);
     setLangOpen(false);
   }, [location.pathname]);
+
+  // Close language dropdown on click outside
+  useEffect(() => {
+    if (!langOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [langOpen]);
 
   return (
     <nav className="col-span-12 border-b border-foreground/10 pb-5 mb-10">
@@ -75,7 +88,7 @@ const Navigation = () => {
           <span className="hidden md:block w-px h-4 bg-border/50" />
 
           {/* Language Switcher */}
-          <div className="relative">
+          <div className="relative" ref={langRef}>
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"

@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
+import { PILL_CLASS } from "@/lib/shared-styles";
 
 type Project = {
   title: string;
@@ -24,9 +25,6 @@ const PROJECTS: Project[] = [
 
 const CATEGORIES = ["AI", "Full stack", "Automation", "Content systems", "Security concepts"];
 const STATUSES = ["Active", "Prototype", "Concept", "Ongoing", "Delivered"];
-
-const PILL_CLASS =
-  "font-mono text-[0.7rem] uppercase tracking-[0.15em] border border-border/50 px-5 py-2.5 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-300";
 
 const FilterPill = ({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) => (
   <button
@@ -92,7 +90,7 @@ const ProjectsAbdalbast = () => {
 
       <section className="col-span-12 lg:col-span-8 mb-6">
         <label htmlFor="project-search" className="sr-only">Search projects</label>
-        <input id="project-search" type="text" placeholder="Search projects" value={search} onChange={(e) => setSearch(e.target.value)} className="w-full max-w-md border border-border bg-background px-4 py-2.5 text-sm text-foreground font-mono focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input id="project-search" type="text" placeholder="Search projects" value={search} onChange={(e) => setSearch(e.target.value)} className="w-full max-w-md bg-transparent border border-border/30 px-4 py-3 text-sm text-foreground font-mono focus:outline-none focus:border-primary transition-colors duration-300" />
       </section>
 
       <section className="col-span-12 mb-10 space-y-4">

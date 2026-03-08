@@ -17,7 +17,7 @@ export function useContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [hp, setHp] = useState('');
   const [status, setStatus] = useState<FormStatus>('idle');
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Record<string, string | undefined>>({});
 
   const updateField = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -45,7 +45,8 @@ export function useContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...result.data, hp }),
       });
-      if (!res.ok) throw new Error();
+      const data = await res.json();
+      if (!res.ok || data.success === false) throw new Error();
       setStatus('sent');
       setForm({ name: '', email: '', message: '' });
     } catch {

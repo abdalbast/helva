@@ -30,7 +30,7 @@ const NewsletterSection = () => {
       if (!response.ok) throw new Error(data.error || 'Failed to subscribe');
       setMessage(data.message);
       setIsSubmitted(true);
-      trackEvent('newsletter_signup', { email });
+      trackEvent('newsletter_signup', { source: 'newsletter-section' });
       setEmail('');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong.');
