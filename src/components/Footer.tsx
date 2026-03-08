@@ -15,12 +15,6 @@ const Footer = () => {
           </Link>
           <p className="font-mono text-xs text-muted-foreground mt-2 tracking-wide">{t('footer.tagline')}</p>
         </div>
-        <div className="flex items-center gap-6">
-          {/* TODO: Replace # with real Helva social URLs */}
-          <a href="#" target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors duration-300">LinkedIn</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors duration-300">X</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-primary transition-colors duration-300">Instagram</a>
-        </div>
       </div>
       <div className="flex flex-wrap gap-x-8 gap-y-3 py-8 border-t border-b border-border/20">
         {['projects', 'solutions', 'ai', 'resources', 'about', 'contact'].map((key) => (

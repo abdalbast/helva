@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { useContactForm } from "@/hooks/useContactForm";
 import PageLayout from "@/components/PageLayout";
+import ContactForm from "@/components/ContactForm";
+import BulletList from "@/components/BulletList";
+import { PILL_CLASS } from "@/lib/shared-styles";
 
 const PROJECTS = [
   { title: "Helva Cloud", body: "A lightweight setup for shipping prototypes quickly with a clear path to production quality delivery.", linkLabel: "View project", href: "#" },
@@ -32,23 +34,7 @@ const COLLABORATION = [
   "Agent workflows with guardrails and observable behaviour",
 ];
 
-const BulletList = ({ items }: { items: string[] }) => (
-  <ul className="space-y-3 text-muted-foreground">
-    {items.map((item) => (
-      <li key={item} className="flex gap-3">
-        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-        {item}
-      </li>
-    ))}
-  </ul>
-);
-
-const PILL_CLASS =
-  "font-mono text-[0.7rem] uppercase tracking-[0.15em] border border-border/50 px-5 py-2.5 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-300";
-
 const AboutAbdalbast = () => {
-  const { form, hp, setHp, status, errors, updateField, handleSubmit } = useContactForm();
-
   return (
     <PageLayout>
       <Helmet>
@@ -145,32 +131,7 @@ const AboutAbdalbast = () => {
         <p className="text-muted-foreground mb-8">
           <a href="mailto:hello@helva.group" className="text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">hello@helva.group</a>
         </p>
-        {status === "sent" ? (
-          <p className="text-primary font-medium">Message sent. Thank you.</p>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
-            <input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
-            <div>
-              <label htmlFor="about-name" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Name</label>
-              <input id="about-name" type="text" value={form.name} onChange={(e) => updateField('name', e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-              {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
-            </div>
-            <div>
-              <label htmlFor="about-email" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Email</label>
-              <input id="about-email" type="email" value={form.email} onChange={(e) => updateField('email', e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-              {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
-            </div>
-            <div>
-              <label htmlFor="about-message" className="block font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">Message</label>
-              <textarea id="about-message" rows={4} value={form.message} onChange={(e) => updateField('message', e.target.value)} className="w-full border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring" />
-              {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
-            </div>
-            <button type="submit" disabled={status === "sending"} className="font-mono text-[0.7rem] uppercase tracking-[0.15em] bg-primary text-primary-foreground px-5 py-2.5 hover:bg-accent transition-colors duration-300 disabled:opacity-50">
-              {status === "sending" ? "Sending…" : "Send message"}
-            </button>
-            {status === "error" && <p className="text-destructive text-xs">Something went wrong. Please try again.</p>}
-          </form>
-        )}
+        <ContactForm idPrefix="about" />
       </section>
     </PageLayout>
   );

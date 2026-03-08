@@ -1,6 +1,4 @@
-import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -73,17 +71,14 @@ const AppRoutes = () => {
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ErrorBoundary>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <AppRoutes />
-            <CookieConsent />
-          </BrowserRouter>
-        </ErrorBoundary>
-      </TooltipProvider>
+      <ErrorBoundary>
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <AppRoutes />
+          <CookieConsent />
+        </BrowserRouter>
+      </ErrorBoundary>
     </QueryClientProvider>
   </HelmetProvider>
 );

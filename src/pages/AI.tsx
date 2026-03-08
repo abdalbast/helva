@@ -79,7 +79,7 @@ const AI = () => {
       {/* Integrating */}
       <section className="col-span-12 mb-16 py-12 border-t border-b border-border/30">
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('ai.integratingLabel')}</span>
-        <p className="text-muted-foreground leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: t('ai.integratingDesc') }} />
+        <p className="text-muted-foreground leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t('ai.integratingDesc')) }} />
       </section>
     </PageLayout>
   );
