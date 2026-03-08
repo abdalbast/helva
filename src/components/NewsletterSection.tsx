@@ -55,7 +55,7 @@ const NewsletterSection = () => {
         ) : (
           <div className="animate-reveal"><p className="text-primary font-mono text-sm tracking-wide">{message}</p></div>
         )}
-        {error && <p className="mt-4 text-red-500 font-mono text-sm">{error}</p>}
+        {error && <p className="mt-4 text-destructive font-mono text-sm">{error}</p>}
       </div>
     </section>
   );

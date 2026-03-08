@@ -37,14 +37,3 @@ export function trackPageView(path: string) {
   posthog.capture('$pageview', { $current_url: window.location.href, path });
 }
 
-/** Identify a user (for future auth integration) */
-export function identifyUser(id: string, traits?: Record<string, unknown>) {
-  if (!initialized) return;
-  posthog.identify(id, traits);
-}
-
-/** Reset identity on logout */
-export function resetAnalytics() {
-  if (!initialized) return;
-  posthog.reset();
-}
