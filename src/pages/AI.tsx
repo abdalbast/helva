@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/hooks/useLanguage';
+import DOMPurify from 'dompurify';
 import PageMeta from '@/components/PageMeta';
 import PageLayout from '@/components/PageLayout';
 import LlmSummary from '@/components/LlmSummary';
