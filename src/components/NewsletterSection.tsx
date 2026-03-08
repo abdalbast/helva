@@ -4,6 +4,7 @@ import { trackEvent } from '@/lib/analytics';
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
+  const [hp, setHp] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
