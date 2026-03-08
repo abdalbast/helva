@@ -49,7 +49,7 @@ const CookieConsent = () => {
         </p>
         <p className="text-xs text-muted-foreground leading-relaxed mb-4">
           {t('cookie.description')}{' '}
-          <Link to={`/${currentLang}/privacy`} className="underline hover:text-primary transition-colors">
+          <Link to={`/${currentLang}/privacy`} className="underline hover:text-primary transition-colors" aria-label={t('cookie.learnMore') + ' — ' + t('cookie.title')}>
             {t('cookie.learnMore')}
           </Link>
         </p>
