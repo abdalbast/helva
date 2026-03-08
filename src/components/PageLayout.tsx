@@ -21,7 +21,7 @@ const PageLayout = ({ children }: PageLayoutProps) => (
       Skip to content
     </a>
     <GrainOverlay />
-    <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
+    <main id="main-content" className="min-h-screen grid grid-cols-12 p-6 lg:p-12 gap-6">
       <Navigation />
       {children}
       <Footer />
