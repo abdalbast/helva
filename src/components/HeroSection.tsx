@@ -49,17 +49,19 @@ const HeroSection = () => {
       <div className="animate-reveal stagger-2">
         <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-5 block">{t('home.joinCircle')}</span>
         {status !== 'success' && status !== 'already' ? (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
-            <div className="relative flex-1">
-              <label htmlFor="hero-newsletter-email" className="sr-only">Email</label>
-              <input id="hero-newsletter-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('home.emailPlaceholder')} required disabled={status === 'loading'} className="w-full bg-transparent border-b-2 border-border/50 py-3.5 px-0 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300 font-light text-lg disabled:opacity-50" />
-              <input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
-            </div>
-            <button type="submit" disabled={status === 'loading'} className="bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-display font-medium tracking-wide uppercase text-sm transition-all duration-300 hover:opacity-90 hover:shadow-[0_0_24px_hsla(40,68%,52%,0.3)] hover:backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed">
-              {status === 'loading' ? t('home.joining') : t('home.join')}
-            </button>
-          </form>
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground/60 mt-4">Join 500+ founders and operators</p>
+          <>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
+              <div className="relative flex-1">
+                <label htmlFor="hero-newsletter-email" className="sr-only">Email</label>
+                <input id="hero-newsletter-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('home.emailPlaceholder')} required disabled={status === 'loading'} className="w-full bg-transparent border-b-2 border-border/50 py-3.5 px-0 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300 font-light text-lg disabled:opacity-50" />
+                <input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
+              </div>
+              <button type="submit" disabled={status === 'loading'} className="bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-display font-medium tracking-wide uppercase text-sm transition-all duration-300 hover:opacity-90 hover:shadow-[0_0_24px_hsla(40,68%,52%,0.3)] hover:backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed">
+                {status === 'loading' ? t('home.joining') : t('home.join')}
+              </button>
+            </form>
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground/60 mt-4">Join 500+ founders and operators</p>
+          </>
         ) : (
           <div className="animate-reveal max-w-md">
             {renderMessage()}
