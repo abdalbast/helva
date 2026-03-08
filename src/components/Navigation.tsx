@@ -57,7 +57,7 @@ const Navigation = () => {
   }, [langOpen]);
 
   return (
-    <nav className="col-span-12 border-b border-foreground/10 pb-5 mb-10">
+    <nav className="col-span-12 border-b border-foreground/10 pb-5 mb-16">
       <div className="flex justify-between items-center">
         <Link
           to={`/${currentLang}`}
