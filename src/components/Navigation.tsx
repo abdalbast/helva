@@ -92,7 +92,7 @@ const Navigation = () => {
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"
-              aria-label="Change language"
+              aria-label={`${currentLang.toUpperCase()} — Change language`}
             >
               {currentLang.toUpperCase()}
             </button>
