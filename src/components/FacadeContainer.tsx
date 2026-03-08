@@ -51,7 +51,7 @@ const FacadeContainer = () => {
   return (
     <section className="col-span-12 lg:col-span-6 lg:col-start-7 flex gap-4 h-[450px] lg:h-[75vh] items-end mt-16 lg:mt-0">
       {segments.map((segment, index) => {
-        const depth = (index + 1) * 10;
+        const depth = (index + 1) * 14;
         const translateX = (mouseX - 0.5) * depth;
 
         return (

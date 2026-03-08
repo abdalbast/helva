@@ -183,7 +183,8 @@
 
   .building-segment:hover {
     flex: 1.8 !important;
-    filter: brightness(1.1);
+    filter: brightness(1.05);
+    box-shadow: 0 8px 32px hsla(40, 68%, 52%, 0.15);
   }
 
   /* Window glow effect */
