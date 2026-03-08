@@ -88,7 +88,7 @@ const Navigation = () => {
           <span className="hidden md:block w-px h-4 bg-border/50" />
 
           {/* Language Switcher */}
-          <div className="relative">
+          <div className="relative" ref={langRef}>
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"

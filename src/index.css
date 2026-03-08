@@ -160,6 +160,21 @@
   .stagger-3 { animation-delay: 0.3s; opacity: 0; }
   .stagger-4 { animation-delay: 0.4s; opacity: 0; }
 
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    .stagger-1, .stagger-2, .stagger-3, .stagger-4 {
+      animation-delay: 0s;
+      opacity: 1;
+    }
+    .city-slide-out, .city-slide-in {
+      animation: none;
+    }
+  }
+
   /* Building segment transition */
   .building-segment {
     transition: var(--transition-smooth);
