@@ -13,6 +13,7 @@ const Navigation = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme } = useTheme();
   const { currentLang, changeLanguage } = useLanguage();
   const { t } = useTranslation();
