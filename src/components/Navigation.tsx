@@ -57,11 +57,11 @@ const Navigation = () => {
   }, [langOpen]);
 
   return (
-    <nav className="col-span-12 border-b border-foreground/10 pb-5 mb-16">
+    <nav className="col-span-12 border-b border-foreground/10 pb-5 mb-10">
       <div className="flex justify-between items-center">
         <Link
           to={`/${currentLang}`}
-          className="font-display font-extrabold text-[1.65rem] tracking-tighter uppercase hover:text-primary transition-colors duration-300"
+          className="font-display font-extrabold text-2xl tracking-tighter uppercase hover:text-primary transition-colors duration-300"
         >
           Helva
         </Link>
