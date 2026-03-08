@@ -7,6 +7,7 @@ import PageLayout from '@/components/PageLayout';
 import { articles, categories } from '@/data/articles';
 import { resources } from '@/data/resources';
 import NewsletterSection from '@/components/NewsletterSection';
+import LlmSummary from '@/components/LlmSummary';
 
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
