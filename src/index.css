@@ -87,6 +87,7 @@
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     font-family: var(--font-display);
+    letter-spacing: -0.025em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
