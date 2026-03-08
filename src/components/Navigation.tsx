@@ -44,6 +44,18 @@ const Navigation = () => {
     setLangOpen(false);
   }, [location.pathname]);
 
+  // Close language dropdown on click outside
+  useEffect(() => {
+    if (!langOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [langOpen]);
+
   return (
     <nav className="col-span-12 border-b border-foreground/10 pb-5 mb-10">
       <div className="flex justify-between items-center">
