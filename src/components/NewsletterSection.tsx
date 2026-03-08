@@ -4,6 +4,7 @@ import { trackEvent } from '@/lib/analytics';
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
+  const [hp, setHp] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +25,7 @@ const NewsletterSection = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+      const response = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'helva-newsletter', hp }) });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Failed to subscribe');
       setMessage(data.message);
@@ -49,6 +50,7 @@ const NewsletterSection = () => {
             <div className="relative flex-1 max-w-sm">
               <label htmlFor="newsletter-email" className="sr-only">Email</label>
               <input id="newsletter-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t('home.emailPlaceholder')} required disabled={isLoading} className="w-full bg-transparent border-b-2 border-border/50 py-3 px-0 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300 font-light text-base disabled:opacity-50" />
+              <input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
             </div>
             <button type="submit" disabled={isLoading} className="bg-primary text-primary-foreground px-8 py-3 font-display font-medium tracking-wide uppercase text-sm transition-all duration-300 hover:opacity-90 hover:shadow-[0_0_20px_hsla(40,68%,52%,0.3)] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:cursor-not-allowed">{isLoading ? t('newsletter.joining') : t('newsletter.join')}</button>
           </form>
