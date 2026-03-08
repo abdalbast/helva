@@ -43,11 +43,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="col-span-12 lg:col-span-5 flex flex-col justify-center mt-10 lg:mt-0">
-      <h1 className="animate-reveal font-display font-extrabold text-[clamp(3rem,8vw,6rem)] leading-[0.9] mb-6 text-primary tracking-tighter"><Trans i18nKey="home.headline" components={{ br: <br /> }} /></h1>
-      <p className="animate-reveal stagger-1 text-lg max-w-[400px] opacity-80 font-light leading-relaxed mb-10">{t('home.subheadline')}</p>
+    <section className="col-span-12 lg:col-span-5 flex flex-col justify-center mt-16 lg:mt-0">
+      <h1 className="animate-reveal font-display font-extrabold text-[clamp(3.5rem,9vw,7rem)] leading-[0.88] mb-8 text-primary tracking-tighter"><Trans i18nKey="home.headline" components={{ br: <br /> }} /></h1>
+      <p className="animate-reveal stagger-1 text-xl max-w-[440px] opacity-80 font-light leading-[1.6] mb-14">{t('home.subheadline')}</p>
       <div className="animate-reveal stagger-2">
-        <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 block">{t('home.joinCircle')}</span>
+        <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-5 block">{t('home.joinCircle')}</span>
         {status !== 'success' && status !== 'already' ? (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
             <div className="relative flex-1">
