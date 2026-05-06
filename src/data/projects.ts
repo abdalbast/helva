@@ -9,131 +9,112 @@ export interface ProjectTestimonial {
   role: string;
 }
 
+export interface AudienceCard {
+  label: string;
+  description: string;
+}
+
+export interface WorkflowStep {
+  index: string;
+  title: string;
+  description: string;
+}
+
 export interface Project {
   index: string;
   slug: string;
   title: string;
   category: string;
-  status: 'Active' | 'In Development' | 'Coming Soon' | 'Planning';
+  status: 'Live' | 'In development' | 'Research' | 'Planned';
   year: string;
   description: string;
   heroTagline: string;
   problem: string;
   solution: string;
   outcome: string;
-  metrics: ProjectMetric[];
+  metrics?: ProjectMetric[];
   testimonial?: ProjectTestimonial;
   tags: string[];
+  audience?: AudienceCard[];
+  workflow?: WorkflowStep[];
+  differentiators?: string[];
+  futureFeatures?: string[];
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
 export const projects: Project[] = [
   {
     index: '01',
-    slug: 'forma',
-    title: 'Forma',
-    category: 'Design System',
-    status: 'Active',
-    year: '2024',
+    slug: 'deqnus',
+    title: 'Deqnus',
+    category: 'AI Translation',
+    status: 'Live',
+    year: '2025',
     description:
-      'A comprehensive design system built for scale. Unified components, tokens, and patterns that bring consistency across all Helva products.',
-    heroTagline: 'One system. Every product. Total consistency.',
+      'AI-powered Kurdish–English translation built for accuracy in an underserved language pair. Real-time bidirectional translation with dialect awareness.',
+    heroTagline: 'Kurdish translation that finally works.',
     problem:
-      "As Helva's product family grew, each team developed its own component library and visual language. The result was fragmented user experiences, duplicated engineering effort, and a brand that felt inconsistent across touchpoints. Designers spent more time recreating components than solving real problems.",
+      'Kurdish is one of the most underserved languages in machine translation. Existing tools produce unreliable output, miss dialectal nuance, and fail on idiomatic expressions. Millions of Kurdish speakers have no trustworthy digital translation tool.',
     solution:
-      "We built Forma -- a living design system with a shared token architecture, a versioned component library, and documentation that bridges design and engineering. Every color, spacing value, and interaction pattern flows from a single source of truth. Teams adopt Forma incrementally, and contributions feed back into the system.",
+      'Deqnus uses fine-tuned language models trained on curated Kurdish–English parallel corpora. It supports Sorani script, handles idiomatic phrases, and provides contextual alternatives. The interface is minimal — paste text, get a translation, copy the result.',
     outcome:
-      'Forma now powers every Helva product. Design-to-development handoff time dropped dramatically, and new features ship with pixel-perfect brand consistency from day one. The system has become a competitive advantage -- new products launch faster because the foundations are already in place.',
-    metrics: [
-      { label: 'Components', value: '120+' },
-      { label: 'Design Tokens', value: '340' },
-      { label: 'Faster Handoff', value: '60%' },
-      { label: 'Products Using Forma', value: '4' },
+      'Deqnus is live and serving users at deqnus.vercel.app. It is the first dedicated Kurdish–English AI translation tool built with dialect-level accuracy in mind.',
+    tags: ['AI', 'NLP', 'Kurdish', 'Translation'],
+    audience: [
+      { label: 'Kurdish diaspora', description: 'Communicate across languages with family, institutions, and employers.' },
+      { label: 'Translators & journalists', description: 'Draft and verify Kurdish–English translations faster.' },
+      { label: 'Researchers & NGOs', description: 'Process Kurdish-language documents and reports at scale.' },
     ],
-    testimonial: {
-      quote:
-        'Forma changed how we think about building products. We stopped arguing about button styles and started solving real user problems.',
-      author: 'Sara Lindstrom',
-      role: 'Lead Designer, Helva',
-    },
-    tags: ['Design Systems', 'Component Library', 'Brand Consistency'],
+    differentiators: [
+      'Purpose-built for Kurdish — not a generic model with Kurdish bolted on.',
+      'Sorani-first with dialect-aware output.',
+      'Lightweight, fast, and free to use.',
+    ],
+    futureFeatures: [
+      'Kurmanji dialect support',
+      'Document-level translation',
+      'API access for developers',
+      'Mobile app',
+    ],
+    ctaLabel: 'Try Deqnus',
+    ctaHref: 'https://deqnus.vercel.app',
   },
   {
     index: '02',
-    slug: 'pulse',
-    title: 'Pulse',
-    category: 'Health & Fitness',
-    status: 'In Development',
-    year: '2024',
-    description:
-      'Intelligent fitness tracking that adapts to your rhythm. Personalized programs, progress insights, and seamless integration with your daily life.',
-    heroTagline: 'Fitness that learns your rhythm.',
-    problem:
-      "Most fitness apps treat users as data points -- generic programs, overwhelming metrics, and no understanding of real-life constraints. People start motivated but disengage within weeks because the experience doesn't adapt to their changing schedules, energy levels, or goals.",
-    solution:
-      'Pulse uses adaptive algorithms to build fitness programs around your actual life. It learns from your activity patterns, adjusts difficulty based on recovery signals, and integrates with calendar data to suggest optimal workout windows. The interface strips away noise -- you see only what matters for today.',
-    outcome:
-      'Early beta users show significantly higher retention compared to traditional fitness apps. The adaptive scheduling feature alone accounts for a major increase in weekly workout completion. Pulse is on track for public launch in Q3 2025.',
-    metrics: [
-      { label: 'Beta Users', value: '2,400' },
-      { label: 'Retention (30-day)', value: '74%' },
-      { label: 'Workout Completion', value: '+38%' },
-      { label: 'Target Launch', value: 'Q3 2025' },
-    ],
-    testimonial: {
-      quote:
-        "It's the first app that actually understands I have a life outside the gym. The suggestions feel human, not algorithmic.",
-      author: 'Marcus Eriksson',
-      role: 'Beta Tester',
-    },
-    tags: ['Health Tech', 'Adaptive AI', 'Mobile App'],
-  },
-  {
-    index: '03',
-    slug: 'lingua',
-    title: 'Lingua',
-    category: 'Language Learning',
-    status: 'Coming Soon',
+    slug: 'helva-chat',
+    title: 'Helva Chat',
+    category: 'Conversational AI',
+    status: 'In development',
     year: '2025',
     description:
-      'Language learning reimagined. Contextual immersion, spaced repetition, and real-world application combined into one cohesive experience.',
-    heroTagline: 'Language through context, not drills.',
+      'A multilingual AI assistant designed for European regulatory and cultural context. Private, compliant, and transparent by default.',
+    heroTagline: 'AI you can actually trust.',
     problem:
-      'Traditional language apps gamify vocabulary memorization but fail at producing confident speakers. Learners accumulate streaks without being able to hold a basic conversation. The gap between knowing words and using them in context remains enormous.',
+      'Most AI assistants are built for English-first, US-centric contexts. European users face poor multilingual support, opaque data handling, and models that don\'t understand local regulation, culture, or language nuance. Enterprises can\'t adopt them without compliance risk.',
     solution:
-      'Lingua builds language skills through contextual immersion. Instead of isolated flashcards, learners engage with real-world scenarios -- ordering at a cafe, navigating a city, discussing work projects. Spaced repetition is woven into narrative arcs so review feels natural, not repetitive. AI-powered conversation partners adapt to your proficiency in real time.',
+      'Helva Chat is a conversational AI layer built for European users and organisations. It supports multiple languages natively, respects GDPR by design, and provides transparent reasoning. It is built to be embedded into workflows — not used as a novelty.',
     outcome:
-      'Internal testing shows learners reach conversational proficiency in roughly half the time compared to traditional methods. The contextual approach produces higher confidence scores and lower dropout rates. Lingua is currently in closed alpha with an initial focus on Swedish and Kurdish (Sorani).',
-    metrics: [
-      { label: 'Alpha Testers', value: '180' },
-      { label: 'Languages (Launch)', value: '2' },
-      { label: 'Faster Fluency', value: '~50%' },
-      { label: 'Confidence Score', value: '4.6/5' },
+      'Helva Chat is in active development. Early architecture focuses on multilingual reasoning, source attribution, and a plugin system for domain-specific knowledge.',
+    tags: ['AI', 'LLM', 'Multilingual', 'GDPR'],
+    audience: [
+      { label: 'European enterprises', description: 'Deploy conversational AI without compliance anxiety.' },
+      { label: 'Multilingual teams', description: 'Work across languages without switching tools.' },
+      { label: 'Regulated industries', description: 'AI with audit trails, source attribution, and data residency.' },
     ],
-    tags: ['EdTech', 'AI Conversation', 'Spaced Repetition'],
-  },
-  {
-    index: '04',
-    slug: 'nexus',
-    title: 'Nexus',
-    category: 'Operations',
-    status: 'Planning',
-    year: '2025',
-    description:
-      'Digital operations infrastructure for growing teams. Workflow automation, knowledge management, and seamless collaboration tools.',
-    heroTagline: 'Operations infrastructure that scales with you.',
-    problem:
-      'Growing teams drown in tooling fragmentation. Knowledge lives in scattered documents, workflows depend on tribal memory, and collaboration requires constant context-switching between platforms. The operational overhead of scaling becomes the bottleneck, not the work itself.',
-    solution:
-      'Nexus unifies workflow automation, knowledge management, and team collaboration into a single platform. It connects to existing tools rather than replacing them, creating an operational layer that captures institutional knowledge and automates recurring processes. The design philosophy is radical simplicity -- powerful features surfaced only when needed.',
-    outcome:
-      'Nexus is in the architectural planning phase, with a design sprint scheduled for Q2 2025. Early research interviews with 30+ teams have validated the core thesis: the biggest productivity drain for scaling teams is not missing features -- it is missing connections between existing ones.',
-    metrics: [
-      { label: 'Research Interviews', value: '30+' },
-      { label: 'Design Sprint', value: 'Q2 2025' },
-      { label: 'Alpha Target', value: 'Q4 2025' },
-      { label: 'Focus', value: '10-50 person teams' },
+    differentiators: [
+      'European-first — multilingual from day one, not as an afterthought.',
+      'GDPR-compliant architecture with data residency options.',
+      'Transparent reasoning with source attribution.',
     ],
-    tags: ['SaaS', 'Workflow Automation', 'Knowledge Management'],
+    futureFeatures: [
+      'Plugin system for domain knowledge',
+      'On-premise deployment option',
+      'Voice interface',
+      'Workflow automation triggers',
+    ],
+    ctaLabel: 'Join the waitlist',
+    ctaHref: undefined,
   },
 ];
 
