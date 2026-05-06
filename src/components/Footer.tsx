@@ -17,8 +17,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-wrap gap-x-8 gap-y-3 py-8 border-t border-b border-border/20">
-        {['projects', 'solutions', 'ai', 'resources', 'about', 'contact'].map((key) => (
-          <Link key={key} to={`/${currentLang}/${key}`} className="font-mono text-xs uppercase tracking-[0.15em] text-foreground/70 hover:text-primary transition-colors duration-300">
+        {[
+          { key: 'products', path: 'products' },
+          { key: 'solutions', path: 'solutions' },
+          { key: 'ai', path: 'ai' },
+          { key: 'thesis', path: 'thesis' },
+          { key: 'about', path: 'about' },
+          { key: 'contact', path: 'contact' },
+        ].map(({ key, path }) => (
+          <Link key={key} to={`/${currentLang}/${path}`} className="font-mono text-xs uppercase tracking-[0.15em] text-foreground/70 hover:text-primary transition-colors duration-300">
             {t(`nav.${key}`)}
           </Link>
         ))}

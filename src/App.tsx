@@ -10,15 +10,14 @@ import { usePageTracking } from "@/hooks/usePageTracking";
 import '@/i18n/config';
 import CookieConsent from "./components/CookieConsent";
 
-// Lazy-loaded route pages — each gets its own chunk
+// Lazy-loaded route pages
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Projects = lazy(() => import("./pages/Projects"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Solutions = lazy(() => import("./pages/Solutions"));
 const AI = lazy(() => import("./pages/AI"));
-const Resources = lazy(() => import("./pages/Resources"));
-const ArticleDetail = lazy(() => import("./pages/ArticleDetail"));
+const Thesis = lazy(() => import("./pages/Thesis"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
@@ -28,6 +27,13 @@ const PortfolioAbdalbast = lazy(() => import("./pages/PortfolioAbdalbast"));
 const ProjectsAbdalbast = lazy(() => import("./pages/ProjectsAbdalbast"));
 
 const queryClient = new QueryClient();
+
+/** Redirect helper for legacy routes */
+const LangRedirect = ({ from, to }: { from: string; to: string }) => {
+  const location = useLocation();
+  const lang = location.pathname.split('/')[1] || 'en';
+  return <Navigate to={`/${lang}/${to}`} replace />;
+};
 
 /** Inner component so usePageTracking has access to router context */
 const AppRoutes = () => {
@@ -49,12 +55,18 @@ const AppRoutes = () => {
           <Route path="/:lang">
             <Route index element={<Index />} />
             <Route path="about" element={<About />} />
-            <Route path="projects" element={<Projects />} />
+            {/* Canonical product routes */}
+            <Route path="products" element={<Projects />} />
+            <Route path="products/:slug" element={<ProjectDetail />} />
+            {/* Legacy project routes redirect to products */}
+            <Route path="projects" element={<Navigate to="../products" replace />} />
             <Route path="projects/:slug" element={<ProjectDetail />} />
             <Route path="solutions" element={<Solutions />} />
             <Route path="ai" element={<AI />} />
-            <Route path="resources" element={<Resources />} />
-            <Route path="resources/:slug" element={<ArticleDetail />} />
+            <Route path="thesis" element={<Thesis />} />
+            {/* Legacy resources redirect to thesis */}
+            <Route path="resources" element={<Navigate to="../thesis" replace />} />
+            <Route path="resources/:slug" element={<Navigate to="../thesis" replace />} />
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />
