@@ -19,10 +19,10 @@ const Navigation = () => {
   const { t } = useTranslation();
 
   const navItems = [
-    { label: t('nav.projects'), to: `/${currentLang}/projects` },
+    { label: t('nav.products'), to: `/${currentLang}/products` },
     { label: t('nav.solutions'), to: `/${currentLang}/solutions` },
     { label: t('nav.ai'), to: `/${currentLang}/ai` },
-    { label: t('nav.resources'), to: `/${currentLang}/resources` },
+    { label: t('nav.thesis'), to: `/${currentLang}/thesis` },
     { label: t('nav.about'), to: `/${currentLang}/about` },
     { label: t('nav.founder'), to: '/about-abdalbast-khdhir' },
     { label: t('nav.contact'), to: `/${currentLang}/contact` },
