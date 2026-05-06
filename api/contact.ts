@@ -39,6 +39,8 @@ function isRateLimited(ip: string): boolean {
 }
 
 function escapeCsvField(field: string): string {
+  // Prevent CSV formula injection by prefixing dangerous first characters
+  if (/^[=+\-@]/.test(field)) field = "'" + field;
   if (field.includes(',') || field.includes('"') || field.includes('\n')) {
     return `"${field.replace(/"/g, '""')}"`;
   }
