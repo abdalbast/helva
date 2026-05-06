@@ -64,11 +64,11 @@ const Contact = () => {
     <PageLayout>
       <PageMeta title={t('contact.title')} description={t('contact.subtitle')} path="/contact" lang={currentLang} />
       <LlmSummary
-        quickAnswer="Contact Helva Group for projects, partnerships, and collaboration. Email hello@helva.group or use the contact form."
+        quickAnswer="Contact Helva Ltd. for projects, partnerships, and collaboration. Email founder@helva.io or use the contact form."
         audience={["Founders seeking to start a project", "Agencies exploring partnerships", "Anyone wanting to reach Helva"]}
-        actions={["Submit the contact form", "Email hello@helva.group directly", "Email updates@helva.group for newsletters"]}
+        actions={["Submit the contact form", "Email founder@helva.io directly", "Email founder@helva.io for newsletters"]}
         relatedPages={[
-          { label: "About Helva Group", href: "/en/about" },
+          { label: "About Helva Ltd.", href: "/en/about" },
           { label: "Solutions and Services", href: "/en/solutions" },
         ]}
       />
@@ -140,11 +140,11 @@ const Contact = () => {
         <div className="border border-border/30 p-6 space-y-6">
           <div>
             <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">{t('contact.emailLabel')}</span>
-            <a href="mailto:hello@helva.group" className="font-mono text-sm text-foreground hover:text-primary transition-colors">hello@helva.group</a>
+            <a href="mailto:founder@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">founder@helva.io</a>
           </div>
           <div>
             <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">{t('contact.updatesLabel')}</span>
-            <a href="mailto:updates@helva.group" className="font-mono text-sm text-foreground hover:text-primary transition-colors">updates@helva.group</a>
+            <a href="mailto:founder@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">founder@helva.io</a>
           </div>
         </div>
       </section>

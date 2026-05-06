@@ -26,30 +26,30 @@ const PortfolioAbdalbast = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Abdalbast Khdhir Portfolio, Helva Group</title>
-        <meta name="description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Group, including production focused implementations and prototypes." />
-        <link rel="canonical" href="https://helva.group/abdalbast-khdhir-portfolio" />
-        <meta property="og:title" content="Abdalbast Khdhir Portfolio, Helva Group" />
-        <meta property="og:description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Group, including production focused implementations and prototypes." />
-        <meta property="og:url" content="https://helva.group/abdalbast-khdhir-portfolio" />
+        <title>Abdalbast Khdhir Portfolio, Helva Ltd.</title>
+        <meta name="description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Ltd., including production focused implementations and prototypes." />
+        <link rel="canonical" href="https://helva.io/abdalbast-khdhir-portfolio" />
+        <meta property="og:title" content="Abdalbast Khdhir Portfolio, Helva Ltd." />
+        <meta property="og:description" content="Portfolio of selected product and AI engineering work by Abdalbast Khdhir at Helva Ltd., including production focused implementations and prototypes." />
+        <meta property="og:url" content="https://helva.io/abdalbast-khdhir-portfolio" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org", "@type": "WebPage", name: "Abdalbast Khdhir Portfolio",
-          url: "https://helva.group/abdalbast-khdhir-portfolio",
+          url: "https://helva.io/abdalbast-khdhir-portfolio",
           about: { "@type": "Person", name: "Abdalbast Khdhir", sameAs: ["https://www.linkedin.com/in/abdalbast/", "https://github.com/abdalbast"] },
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org", "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.group" },
-            { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://helva.group/abdalbast-khdhir-portfolio" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.io" },
+            { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://helva.io/abdalbast-khdhir-portfolio" },
           ],
         })}</script>
       </Helmet>
 
       {/* Back link */}
       <div className="col-span-12 mb-2">
-        <Link to="/en" className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300">← Back to Helva Group</Link>
+        <Link to="/en" className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300">← Back to Helva Ltd.</Link>
       </div>
 
       {/* Hero */}
@@ -109,7 +109,7 @@ const PortfolioAbdalbast = () => {
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Get in touch</span>
         <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">Contact</h2>
         <p className="text-muted-foreground mb-2">If you are hiring or want to collaborate, send a message.</p>
-        <p className="text-muted-foreground mb-8"><a href="mailto:hello@helva.group" className="text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">hello@helva.group</a></p>
+        <p className="text-muted-foreground mb-8"><a href="mailto:founder@helva.io" className="text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">founder@helva.io</a></p>
         <ContactForm idPrefix="portfolio" />
       </section>
     </PageLayout>

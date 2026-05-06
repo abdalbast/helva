@@ -12,7 +12,7 @@
   },
   "footer": {
     "tagline": "AI products for language, knowledge, and trust",
-    "copyright": "© 2026 Helva Group. All rights reserved.",
+    "copyright": "© 2026 Helva Ltd. All rights reserved.",
     "privacy": "Privacy",
     "terms": "Terms"
   },
@@ -36,7 +36,7 @@
     "rightsTitle": "Your Rights",
     "rightsDesc": "You have the right to access, correct, or delete your personal data at any time. You can withdraw cookie consent by clearing your browser's local storage. For newsletter subscribers, every email includes an unsubscribe link.",
     "contactTitle": "Contact",
-    "contactDesc": "For any privacy-related questions or requests, please contact us at updates@helva.group.",
+    "contactDesc": "For any privacy-related questions or requests, please contact us at founder@helva.io.",
     "lastUpdated": "Last updated: February 2026"
   },
   "terms": {
@@ -46,9 +46,9 @@
     "useTitle": "Use of Service",
     "useDesc": "By accessing this website, you agree to use it in good faith and in compliance with applicable laws. You may not use our services for any unlawful purpose or in a way that could damage, disable, or impair the site.",
     "ipTitle": "Intellectual Property",
-    "ipDesc": "All content on this site — including text, graphics, logos, and design — is the property of Helva Group and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.",
+    "ipDesc": "All content on this site — including text, graphics, logos, and design — is the property of Helva Ltd. and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.",
     "liabilityTitle": "Limitation of Liability",
-    "liabilityDesc": "Helva Group provides this website and its content on an 'as is' basis. We make no warranties, expressed or implied, and shall not be liable for any damages arising from the use of our services.",
+    "liabilityDesc": "Helva Ltd. provides this website and its content on an 'as is' basis. We make no warranties, expressed or implied, and shall not be liable for any damages arising from the use of our services.",
     "changesTitle": "Changes to Terms",
     "changesDesc": "We reserve the right to update these terms at any time. Continued use of the site after changes constitutes acceptance of the new terms. Material changes will be communicated via our website.",
     "lastUpdated": "Last updated: February 2026"
@@ -291,7 +291,7 @@
     "thankYou": "Thank you",
     "thankYouDesc": "Your message has been sent. We'll get back to you soon.",
     "errorTitle": "Something went wrong",
-    "errorDesc": "We couldn't send your message. Please try again or email us directly at hello@helva.group.",
+    "errorDesc": "We couldn't send your message. Please try again or email us directly at founder@helva.io.",
     "tryAgain": "← Try again",
     "emailLabel": "Email",
     "updatesLabel": "Updates",

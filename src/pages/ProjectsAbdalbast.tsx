@@ -57,35 +57,35 @@ const ProjectsAbdalbast = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Abdalbast Khdhir Projects, Helva Group</title>
-        <meta name="description" content="Projects directory for Abdalbast Khdhir at Helva Group, including AI product prototypes and shipped work." />
-        <link rel="canonical" href="https://helva.group/abdalbast-khdhir-projects" />
-        <meta property="og:title" content="Abdalbast Khdhir Projects, Helva Group" />
-        <meta property="og:description" content="Projects directory for Abdalbast Khdhir at Helva Group, including AI product prototypes and shipped work." />
-        <meta property="og:url" content="https://helva.group/abdalbast-khdhir-projects" />
+        <title>Abdalbast Khdhir Projects, Helva Ltd.</title>
+        <meta name="description" content="Projects directory for Abdalbast Khdhir at Helva Ltd., including AI product prototypes and shipped work." />
+        <link rel="canonical" href="https://helva.io/abdalbast-khdhir-projects" />
+        <meta property="og:title" content="Abdalbast Khdhir Projects, Helva Ltd." />
+        <meta property="og:description" content="Projects directory for Abdalbast Khdhir at Helva Ltd., including AI product prototypes and shipped work." />
+        <meta property="og:url" content="https://helva.io/abdalbast-khdhir-projects" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org", "@type": "CollectionPage", name: "Abdalbast Khdhir Projects",
-          url: "https://helva.group/abdalbast-khdhir-projects",
+          url: "https://helva.io/abdalbast-khdhir-projects",
           about: { "@type": "Person", name: "Abdalbast Khdhir", sameAs: ["https://www.linkedin.com/in/abdalbast/", "https://github.com/abdalbast"] },
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org", "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.group" },
-            { "@type": "ListItem", position: 2, name: "Projects", item: "https://helva.group/abdalbast-khdhir-projects" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.io" },
+            { "@type": "ListItem", position: 2, name: "Projects", item: "https://helva.io/abdalbast-khdhir-projects" },
           ],
         })}</script>
       </Helmet>
 
       <div className="col-span-12 mb-2">
-        <Link to="/en" className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300">← Back to Helva Group</Link>
+        <Link to="/en" className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300">← Back to Helva Ltd.</Link>
       </div>
 
       <section className="col-span-12 lg:col-span-8 mb-12">
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Founder projects</span>
         <h1 className="font-display font-extrabold text-5xl lg:text-7xl tracking-tighter uppercase leading-[0.9] mb-8">Projects</h1>
-        <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">A living directory of work across Helva Group. Use search or filters to find what is relevant.</p>
+        <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">A living directory of work across Helva Ltd. Use search or filters to find what is relevant.</p>
       </section>
 
       <section className="col-span-12 lg:col-span-8 mb-6">

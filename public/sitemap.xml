@@ -4,11 +4,11 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://helva.group/en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv" />
-    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar" />
+    <loc>https://helva.io/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.io/en" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.io/sv" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.io/ku" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.io/ar" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -16,11 +16,11 @@
 
   <!-- Products -->
   <url>
-    <loc>https://helva.group/en/products</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/products" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/products" />
-    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/products" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/products" />
+    <loc>https://helva.io/en/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.io/en/products" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.io/sv/products" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.io/ku/products" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.io/ar/products" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -28,7 +28,7 @@
 
   <!-- Deqnus -->
   <url>
-    <loc>https://helva.group/en/products/deqnus</loc>
+    <loc>https://helva.io/en/products/deqnus</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -36,7 +36,7 @@
 
   <!-- Helva Chat -->
   <url>
-    <loc>https://helva.group/en/products/helva-chat</loc>
+    <loc>https://helva.io/en/products/helva-chat</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -44,11 +44,11 @@
 
   <!-- Solutions -->
   <url>
-    <loc>https://helva.group/en/solutions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/solutions" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/solutions" />
-    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/solutions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/solutions" />
+    <loc>https://helva.io/en/solutions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.io/en/solutions" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.io/sv/solutions" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.io/ku/solutions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.io/ar/solutions" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -56,11 +56,11 @@
 
   <!-- AI -->
   <url>
-    <loc>https://helva.group/en/ai</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/ai" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/ai" />
-    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/ai" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/ai" />
+    <loc>https://helva.io/en/ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.io/en/ai" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.io/sv/ai" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.io/ku/ai" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.io/ar/ai" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -68,11 +68,11 @@
 
   <!-- Thesis -->
   <url>
-    <loc>https://helva.group/en/thesis</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/thesis" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/thesis" />
-    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/thesis" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/thesis" />
+    <loc>https://helva.io/en/thesis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.io/en/thesis" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.io/sv/thesis" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.io/ku/thesis" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.io/ar/thesis" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -80,11 +80,11 @@
 
   <!-- About -->
   <url>
-    <loc>https://helva.group/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/about" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/about" />
-    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/about" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/about" />
+    <loc>https://helva.io/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.io/en/about" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.io/sv/about" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.io/ku/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.io/ar/about" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -92,11 +92,11 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://helva.group/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://helva.group/en/contact" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.group/sv/contact" />
-    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.group/ku/contact" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.group/ar/contact" />
+    <loc>https://helva.io/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helva.io/en/contact" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://helva.io/sv/contact" />
+    <xhtml:link rel="alternate" hreflang="ku" href="https://helva.io/ku/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://helva.io/ar/contact" />
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -104,7 +104,7 @@
 
   <!-- About Abdalbast Khdhir -->
   <url>
-    <loc>https://helva.group/about-abdalbast-khdhir</loc>
+    <loc>https://helva.io/about-abdalbast-khdhir</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -112,7 +112,7 @@
 
   <!-- Abdalbast Khdhir Portfolio -->
   <url>
-    <loc>https://helva.group/abdalbast-khdhir-portfolio</loc>
+    <loc>https://helva.io/abdalbast-khdhir-portfolio</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -120,7 +120,7 @@
 
   <!-- Abdalbast Khdhir Projects -->
   <url>
-    <loc>https://helva.group/abdalbast-khdhir-projects</loc>
+    <loc>https://helva.io/abdalbast-khdhir-projects</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -128,7 +128,7 @@
 
   <!-- LLM Summary -->
   <url>
-    <loc>https://helva.group/llm.txt</loc>
+    <loc>https://helva.io/llm.txt</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>

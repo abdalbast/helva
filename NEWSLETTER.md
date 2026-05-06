@@ -14,7 +14,7 @@ User submits form → Vercel serverless function → GitHub API → CSV in priva
 - ✅ Case-insensitive deduplication
 - ✅ Rate limiting (5 requests/minute per IP)
 - ✅ Honeypot field for bot protection
-- ✅ CORS allowlist for helva.group domains
+- ✅ CORS allowlist for helva.io domains
 - ✅ Source tracking per subscriber
 - ✅ ISO timestamp for each subscription
 
@@ -85,7 +85,7 @@ POST /api/subscribe
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `email` | string | ✅ | Subscriber email |
-| `source` | string | ❌ | Subscription source (default: "helva.group") |
+| `source` | string | ❌ | Subscription source (default: "helva.io") |
 | `hp` | string | ❌ | Honeypot field (must be empty) |
 
 ### Response
@@ -119,7 +119,7 @@ POST /api/subscribe
 ### Example curl Request
 
 ```bash
-curl -X POST https://helva.group/api/subscribe \
+curl -X POST https://helva.io/api/subscribe \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "source": "curl-test"}'
 ```
@@ -205,7 +205,7 @@ user2@example.com,landing-page,2026-01-13T11:45:22.123Z
 ## Security Notes
 
 - The GitHub token should only have access to the specific newsletter repository
-- CORS is configured to only allow requests from helva.group domains
+- CORS is configured to only allow requests from helva.io domains
 - Honeypot field silently succeeds for bots (no error response)
 - All emails are normalized (trimmed, lowercased) for deduplication
 

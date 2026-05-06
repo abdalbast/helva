@@ -10,8 +10,8 @@ const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
 const GITHUB_CONTACTS_PATH = process.env.GITHUB_CONTACTS_PATH || 'contacts.csv';
 
 const ALLOWED_ORIGINS = [
-  'https://helva.group',
-  'https://www.helva.group',
+  'https://helva.io',
+  'https://www.helva.io',
   'http://localhost:3000',
   'http://localhost:3001',
   'http://localhost:5173',

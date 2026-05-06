@@ -2,7 +2,7 @@ SITE
 Helva
 
 DOMAIN
-helva.group
+helva.io
 
 PURPOSE
 Helva builds AI products for underserved languages, multilingual knowledge,
@@ -42,22 +42,22 @@ LinkedIn: https://www.linkedin.com/in/abdalbast/
 GitHub: https://github.com/abdalbast
 
 CONTACT
-hello@helva.group
-https://helva.group/en/contact
+founder@helva.io
+https://helva.io/en/contact
 
 CANONICAL_PAGES
-- Home: https://helva.group/en
-- Products: https://helva.group/en/products
-- Deqnus: https://helva.group/en/products/deqnus
-- Helva Chat: https://helva.group/en/products/helva-chat
-- Solutions: https://helva.group/en/solutions
-- AI: https://helva.group/en/ai
-- Thesis: https://helva.group/en/thesis
-- About: https://helva.group/en/about
-- Contact: https://helva.group/en/contact
-- Founder About: https://helva.group/about-abdalbast-khdhir
-- Founder Portfolio: https://helva.group/abdalbast-khdhir-portfolio
-- Founder Projects: https://helva.group/abdalbast-khdhir-projects
+- Home: https://helva.io/en
+- Products: https://helva.io/en/products
+- Deqnus: https://helva.io/en/products/deqnus
+- Helva Chat: https://helva.io/en/products/helva-chat
+- Solutions: https://helva.io/en/solutions
+- AI: https://helva.io/en/ai
+- Thesis: https://helva.io/en/thesis
+- About: https://helva.io/en/about
+- Contact: https://helva.io/en/contact
+- Founder About: https://helva.io/about-abdalbast-khdhir
+- Founder Portfolio: https://helva.io/abdalbast-khdhir-portfolio
+- Founder Projects: https://helva.io/abdalbast-khdhir-projects
 
 LAST_UPDATED
 2026-05-06

@@ -11,8 +11,8 @@ const GITHUB_CSV_PATH = process.env.GITHUB_CSV_PATH || 'subscribers.csv';
 
 // CORS allowlist
 const ALLOWED_ORIGINS = [
-    'https://helva.group',
-    'https://www.helva.group',
+    'https://helva.io',
+    'https://www.helva.io',
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:5173',
@@ -224,7 +224,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Determine source
     const subscriberSource = (typeof source === 'string' && source.trim())
         ? source.trim().slice(0, 100)
-        : 'helva.group';
+        : 'helva.io';
 
     try {
         // Get current CSV from GitHub
