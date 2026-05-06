@@ -54,6 +54,8 @@ function normalizeEmail(email: string): string {
 }
 
 function escapeCsvField(field: string): string {
+    // Prevent CSV formula injection by prefixing dangerous first characters
+    if (/^[=+\-@]/.test(field)) field = "'" + field;
     if (field.includes(',') || field.includes('"') || field.includes('\n')) {
         return `"${field.replace(/"/g, '""')}"`;
     }
@@ -221,7 +223,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Determine source
     const subscriberSource = (typeof source === 'string' && source.trim())
-        ? source.trim()
+        ? source.trim().slice(0, 100)
         : 'helva.group';
 
     try {
