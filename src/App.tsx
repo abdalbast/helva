@@ -28,12 +28,6 @@ const ProjectsAbdalbast = lazy(() => import("./pages/ProjectsAbdalbast"));
 
 const queryClient = new QueryClient();
 
-/** Redirect helper for legacy routes */
-const LangRedirect = ({ from, to }: { from: string; to: string }) => {
-  const location = useLocation();
-  const lang = location.pathname.split('/')[1] || 'en';
-  return <Navigate to={`/${lang}/${to}`} replace />;
-};
 
 /** Inner component so usePageTracking has access to router context */
 const AppRoutes = () => {
