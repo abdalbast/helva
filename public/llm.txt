@@ -1,52 +1,43 @@
 SITE
-Helva Group
+Helva
 
 DOMAIN
 helva.group
 
 PURPOSE
-Helva Group is the umbrella brand for products, services, and case studies
-that help founders and teams build and ship modern digital products with AI.
+Helva builds AI products for underserved languages, multilingual knowledge,
+and trusted European AI.
 
 AUDIENCE
-- Founders building digital products
-- Small teams scaling operations
-- Agencies seeking technical partnerships
+- Kurdish diaspora and multilingual communities
+- European enterprises seeking compliant AI
+- Investors and partners evaluating Helva
+- Researchers and NGOs working with underserved languages
 - Recruiters and collaborators evaluating Abdalbast Khdhir
 
-WHAT_HELVA_GROUP_IS
-Helva Group builds a family of products designed to feel like they belong
-together. The focus is on reducing friction and increasing momentum across
-fitness, language learning, design systems, and digital operations.
+WHAT_HELVA_IS
+Helva is an AI product company focused on language. It builds purpose-built
+AI products — each with its own fine-tuned model, interface, and evaluation
+loop — for underserved languages and European-compliant AI.
 
 PRODUCTS
-- Forma: Design system with shared tokens, components, and patterns. Status: Active.
-- Pulse: Adaptive fitness tracking. Status: In Development.
-- Lingua: Contextual language learning. Status: Coming Soon.
-- Nexus: Digital operations infrastructure. Status: Planning.
+- Deqnus: AI-powered Kurdish–English translation. Sorani-first, dialect-aware. Status: Live. URL: https://deqnus.vercel.app
+- Helva Chat: Multilingual AI assistant for European regulatory and cultural context. GDPR-compliant, transparent reasoning. Status: In development.
 
-SERVICES
-- Startup foundations: design systems, brand identity, product strategy, technical architecture
-- Enterprise modernisation: system migration, design unification, process automation, training
-- Agency partnerships: white-label products, technical partnership, resource augmentation
+SOLUTIONS
+- Language workflows: document translation, real-time multilingual chat, custom model fine-tuning, API integration
+- Trusted European AI: GDPR-compliant deployment, data residency, audit trails, compliance documentation
+- Partner pilots: structured pilot programmes, domain model co-development, evaluation & benchmarking, research partnerships
 
-USE_CASES
-- Founders who need a fast path from prototype to production
-- Teams drowning in tooling fragmentation
-- Agencies extending capability with a technical partner
-- Language learners seeking contextual immersion
-- Individuals wanting adaptive fitness programmes
-
-CASE_STUDIES
-- Forma: unified design system powering all Helva products
-- Pulse: adaptive fitness app with strong beta retention
-- Lingua: contextual language learning in closed alpha
-- Nexus: operations platform in planning phase
+THESIS
+Most AI ignores most languages. The world's AI infrastructure is built for
+English. Helva exists to close that gap — not with general-purpose models,
+but with purpose-built products that treat every language as a first-class citizen.
 
 FOUNDER
 Abdalbast Khdhir
-Based in Edinburgh. MSc with distinction in data science and business analytics.
-Builds and ships AI powered product features end to end.
+Based in Edinburgh. Kurdish, multilingual. MSc with distinction in data science
+and business analytics. Builds AI products because his family needs them.
 LinkedIn: https://www.linkedin.com/in/abdalbast/
 GitHub: https://github.com/abdalbast
 
@@ -56,18 +47,20 @@ https://helva.group/en/contact
 
 CANONICAL_PAGES
 - Home: https://helva.group/en
-- About: https://helva.group/en/about
-- Products: https://helva.group/en/projects
+- Products: https://helva.group/en/products
+- Deqnus: https://helva.group/en/products/deqnus
+- Helva Chat: https://helva.group/en/products/helva-chat
 - Solutions: https://helva.group/en/solutions
 - AI: https://helva.group/en/ai
-- Resources: https://helva.group/en/resources
+- Thesis: https://helva.group/en/thesis
+- About: https://helva.group/en/about
 - Contact: https://helva.group/en/contact
 - Founder About: https://helva.group/about-abdalbast-khdhir
 - Founder Portfolio: https://helva.group/abdalbast-khdhir-portfolio
 - Founder Projects: https://helva.group/abdalbast-khdhir-projects
 
 LAST_UPDATED
-2026-02-24
+2026-05-06
 
 VERSION
-1.0
+2.0
