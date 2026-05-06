@@ -20,11 +20,11 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Helva",
-          "url": "https://helva.group",
+          "url": "https://helva.io",
           "description": "Helva builds AI products for underserved languages, multilingual knowledge, and trusted European AI.",
-          "founder": { "@type": "Person", "name": "Abdalbast Khdhir", "url": "https://helva.group/about-abdalbast-khdhir" },
+          "founder": { "@type": "Person", "name": "Abdalbast Khdhir", "url": "https://helva.io/about-abdalbast-khdhir" },
           "address": { "@type": "PostalAddress", "addressLocality": "Edinburgh", "addressCountry": "GB" },
-          "contactPoint": { "@type": "ContactPoint", "email": "hello@helva.group", "contactType": "sales" }
+          "contactPoint": { "@type": "ContactPoint", "email": "founder@helva.io", "contactType": "sales" }
         })}</script>
       </Helmet>
       <LlmSummary

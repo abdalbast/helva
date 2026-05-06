@@ -13,8 +13,8 @@ const About = () => {
     <PageLayout>
       <PageMeta title={t('about.title')} description={t('about.intro')} path="/about" lang={currentLang} />
       <LlmSummary
-        quickAnswer="Helva Group is an umbrella brand that builds a family of AI-powered products for founders and teams. Founded by Abdalbast Khdhir in Edinburgh."
-        audience={["Anyone researching Helva Group", "Founders evaluating partnerships", "Recruiters and collaborators"]}
+        quickAnswer="Helva Ltd. is an umbrella brand that builds a family of AI-powered products for founders and teams. Founded by Abdalbast Khdhir in Edinburgh."
+        audience={["Anyone researching Helva Ltd.", "Founders evaluating partnerships", "Recruiters and collaborators"]}
         actions={["Learn the Helva brand story", "Understand the product philosophy", "Discover who founded Helva"]}
         relatedPages={[
           { label: "Helva Products", href: "/en/projects" },

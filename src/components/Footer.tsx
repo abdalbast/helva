@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="flex items-center gap-4">
           <Link to={`/${currentLang}/privacy`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.privacy')}</Link>
           <Link to={`/${currentLang}/terms`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.terms')}</Link>
-          <a href="mailto:updates@helva.group" className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">updates@helva.group</a>
+          <a href="mailto:founder@helva.io" className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">founder@helva.io</a>
         </div>
       </div>
     </footer>

@@ -8,11 +8,11 @@ interface PageMetaProps {
   lang?: string;
 }
 
-const BASE_URL = 'https://helva.group';
+const BASE_URL = 'https://helva.io';
 
 const PageMeta = ({ title, description, path, lang = 'en' }: PageMetaProps) => {
   const url = `${BASE_URL}/${lang}${path === '/' ? '' : path}`;
-  const fullTitle = path === '/' && lang === 'en' ? title : `${title} — Helva Group`;
+  const fullTitle = path === '/' && lang === 'en' ? title : `${title} — Helva Ltd.`;
 
   return (
     <Helmet>

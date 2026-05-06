@@ -17,7 +17,7 @@ const BACKGROUND = [
   "MSc with distinction in data science and business analytics",
   "Experience across operations, IT systems, and data work in real environments",
   "Comfortable owning delivery from requirements to production",
-  "Based in Edinburgh and working through Helva Group",
+  "Based in Edinburgh and working through Helva Ltd.",
 ];
 
 const PROCESS = [
@@ -39,17 +39,17 @@ const AboutAbdalbast = () => {
     <PageLayout>
       <Helmet>
         <title>Abdalbast Khdhir, About</title>
-        <meta name="description" content="About Abdalbast Khdhir at Helva Group. Shipping production AI features with a focus on reliability, evaluation, and end to end delivery." />
-        <link rel="canonical" href="https://helva.group/about-abdalbast-khdhir" />
+        <meta name="description" content="About Abdalbast Khdhir at Helva Ltd. Shipping production AI features with a focus on reliability, evaluation, and end to end delivery." />
+        <link rel="canonical" href="https://helva.io/about-abdalbast-khdhir" />
         <meta property="og:title" content="Abdalbast Khdhir, About" />
-        <meta property="og:description" content="About Abdalbast Khdhir at Helva Group. Shipping production AI features with a focus on reliability, evaluation, and end to end delivery." />
-        <meta property="og:url" content="https://helva.group/about-abdalbast-khdhir" />
+        <meta property="og:description" content="About Abdalbast Khdhir at Helva Ltd. Shipping production AI features with a focus on reliability, evaluation, and end to end delivery." />
+        <meta property="og:url" content="https://helva.io/about-abdalbast-khdhir" />
         <meta property="og:type" content="profile" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org", "@type": "Person", name: "Abdalbast Khdhir",
-            url: "https://helva.group/about-abdalbast-khdhir",
-            worksFor: { "@type": "Organization", name: "Helva Group", url: "https://helva.group" },
+            url: "https://helva.io/about-abdalbast-khdhir",
+            worksFor: { "@type": "Organization", name: "Helva Ltd.", url: "https://helva.io" },
             address: { "@type": "PostalAddress", addressLocality: "Edinburgh", addressCountry: "GB" },
             sameAs: ["https://www.linkedin.com/in/abdalbast/", "https://github.com/abdalbast"],
           })}
@@ -58,8 +58,8 @@ const AboutAbdalbast = () => {
           {JSON.stringify({
             "@context": "https://schema.org", "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.group" },
-              { "@type": "ListItem", position: 2, name: "About Abdalbast Khdhir", item: "https://helva.group/about-abdalbast-khdhir" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://helva.io" },
+              { "@type": "ListItem", position: 2, name: "About Abdalbast Khdhir", item: "https://helva.io/about-abdalbast-khdhir" },
             ],
           })}
         </script>
@@ -73,7 +73,7 @@ const AboutAbdalbast = () => {
           I build and ship AI powered product features end to end, from prototype to production. My focus is getting real systems working reliably in the hands of users, with clear evaluation, measurable outcomes, and maintainable engineering.
         </p>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
-          This page is the short version of who I am and the work I do at Helva Group. If you want the fastest overview, use the links below, or scroll for selected work and working style.
+          This page is the short version of who I am and the work I do at Helva Ltd. If you want the fastest overview, use the links below, or scroll for selected work and working style.
         </p>
         <div className="flex flex-wrap gap-3">
           <a href="https://www.linkedin.com/in/abdalbast/" target="_blank" rel="noopener noreferrer" className={PILL_CLASS}>LinkedIn</a>
@@ -129,7 +129,7 @@ const AboutAbdalbast = () => {
         <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">Contact</h2>
         <p className="text-muted-foreground mb-2">If you want to collaborate, hire, or talk about shipping AI into real products, reach out.</p>
         <p className="text-muted-foreground mb-8">
-          <a href="mailto:hello@helva.group" className="text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">hello@helva.group</a>
+          <a href="mailto:founder@helva.io" className="text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4">founder@helva.io</a>
         </p>
         <ContactForm idPrefix="about" />
       </section>

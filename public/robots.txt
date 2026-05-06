@@ -22,7 +22,7 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://helva.group/sitemap.xml
+Sitemap: https://helva.io/sitemap.xml
 
 # LLM-readable site summary
-# https://helva.group/llm.txt
+# https://helva.io/llm.txt

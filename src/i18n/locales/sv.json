@@ -10,7 +10,7 @@
   },
   "footer": {
     "tagline": "Digital arkitektur för den moderna världen",
-    "copyright": "© 2026 Helva Group. Alla rättigheter förbehållna.",
+    "copyright": "© 2026 Helva Ltd. Alla rättigheter förbehållna.",
     "privacy": "Integritet",
     "terms": "Villkor"
   },
@@ -34,7 +34,7 @@
     "rightsTitle": "Dina rättigheter",
     "rightsDesc": "Du har rätt att få tillgång till, korrigera eller radera dina personuppgifter när som helst. Du kan återkalla cookiesamtycke genom att rensa din webbläsares lokala lagring.",
     "contactTitle": "Kontakt",
-    "contactDesc": "För integritetsrelaterade frågor, kontakta oss på updates@helva.group.",
+    "contactDesc": "För integritetsrelaterade frågor, kontakta oss på founder@helva.io.",
     "lastUpdated": "Senast uppdaterad: februari 2026"
   },
   "terms": {
@@ -44,9 +44,9 @@
     "useTitle": "Användning av tjänsten",
     "useDesc": "Genom att besöka denna webbplats godkänner du att använda den i god tro och i enlighet med tillämplig lagstiftning.",
     "ipTitle": "Immateriella rättigheter",
-    "ipDesc": "Allt innehåll på denna webbplats — inklusive text, grafik, logotyper och design — tillhör Helva Group och skyddas av immaterialrättsliga lagar.",
+    "ipDesc": "Allt innehåll på denna webbplats — inklusive text, grafik, logotyper och design — tillhör Helva Ltd. och skyddas av immaterialrättsliga lagar.",
     "liabilityTitle": "Ansvarsbegränsning",
-    "liabilityDesc": "Helva Group tillhandahåller denna webbplats och dess innehåll i befintligt skick. Vi lämnar inga garantier och ansvarar inte för skador som uppstår vid användning av våra tjänster.",
+    "liabilityDesc": "Helva Ltd. tillhandahåller denna webbplats och dess innehåll i befintligt skick. Vi lämnar inga garantier och ansvarar inte för skador som uppstår vid användning av våra tjänster.",
     "changesTitle": "Ändringar av villkoren",
     "changesDesc": "Vi förbehåller oss rätten att uppdatera dessa villkor när som helst. Fortsatt användning av webbplatsen efter ändringar innebär godkännande av de nya villkoren.",
     "lastUpdated": "Senast uppdaterad: februari 2026"
@@ -209,7 +209,7 @@
     "thankYou": "Tack",
     "thankYouDesc": "Ditt meddelande har skickats. Vi återkommer snart.",
     "errorTitle": "Något gick fel",
-    "errorDesc": "Vi kunde inte skicka ditt meddelande. Försök igen eller maila oss direkt på hello@helva.group.",
+    "errorDesc": "Vi kunde inte skicka ditt meddelande. Försök igen eller maila oss direkt på founder@helva.io.",
     "tryAgain": "← Försök igen",
     "emailLabel": "E-post",
     "updatesLabel": "Uppdateringar",
