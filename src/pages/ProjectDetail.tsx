@@ -15,9 +15,9 @@ const ProjectDetail = () => {
     return (
       <PageLayout>
         <section className="col-span-12 lg:col-span-6 lg:col-start-4 py-24 text-center">
-          <h1 className="font-display font-extrabold text-4xl text-primary tracking-tighter mb-4">{t('projects.projectNotFound')}</h1>
-          <p className="text-foreground/60 mb-8">{t('projects.projectNotFoundDesc')}</p>
-          <Link to={`/${currentLang}/projects`} className="font-mono text-xs uppercase tracking-[0.15em] text-primary hover:text-primary/80 transition-colors">{t('projects.backToProjects')}</Link>
+          <h1 className="font-display font-extrabold text-4xl text-primary tracking-tighter mb-4">{t('products.productNotFound')}</h1>
+          <p className="text-foreground/60 mb-8">{t('products.productNotFoundDesc')}</p>
+          <Link to={`/${currentLang}/products`} className="font-mono text-xs uppercase tracking-[0.15em] text-primary hover:text-primary/80 transition-colors">{t('products.backToProducts')}</Link>
         </section>
       </PageLayout>
     );
@@ -28,10 +28,10 @@ const ProjectDetail = () => {
 
   return (
     <PageLayout>
-      <PageMeta title={tp('title')} description={tp('description')} path={`/projects/${project.slug}`} lang={currentLang} />
+      <PageMeta title={tp('title')} description={tp('description')} path={`/products/${project.slug}`} lang={currentLang} />
       {/* Back navigation */}
       <div className="col-span-12 mb-4">
-        <Link to={`/${currentLang}/projects`} className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300">← {t('projects.backToProjects')}</Link>
+        <Link to={`/${currentLang}/products`} className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300">{t('products.backToProducts')}</Link>
       </div>
 
       {/* Hero */}
@@ -60,6 +60,19 @@ const ProjectDetail = () => {
               ))}
             </div>
           </div>
+          {project.ctaLabel && (
+            <div className="pt-2">
+              {project.ctaHref ? (
+                <a href={project.ctaHref} target="_blank" rel="noopener noreferrer" className="inline-block font-mono text-xs uppercase tracking-[0.15em] border border-foreground px-6 py-2.5 hover:bg-foreground hover:text-background transition-colors duration-300">
+                  {project.ctaLabel} →
+                </a>
+              ) : (
+                <Link to={`/${currentLang}/contact`} className="inline-block font-mono text-xs uppercase tracking-[0.15em] border border-foreground px-6 py-2.5 hover:bg-foreground hover:text-background transition-colors duration-300">
+                  {project.ctaLabel} →
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
@@ -75,18 +88,64 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Metrics */}
-      <section className="col-span-12 mb-16">
-        <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">Key metrics</span>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {project.metrics.map((m) => (
-            <div key={m.label} className="border border-border/30 p-6 text-center">
-              <span className="font-display font-extrabold text-2xl text-primary block mb-1">{m.value}</span>
-              <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">{m.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Metrics — only if present */}
+      {project.metrics && project.metrics.length > 0 && (
+        <section className="col-span-12 mb-16">
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">Key metrics</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {project.metrics.map((m) => (
+              <div key={m.label} className="border border-border/30 p-6 text-center">
+                <span className="font-display font-extrabold text-2xl text-primary block mb-1">{m.value}</span>
+                <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">{m.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Audience */}
+      {project.audience && project.audience.length > 0 && (
+        <section className="col-span-12 mb-16">
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">Who it's for</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {project.audience.map((a) => (
+              <div key={a.label} className="border border-border/30 p-6">
+                <h3 className="font-display font-bold text-lg mb-3">{a.label}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{a.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Differentiators */}
+      {project.differentiators && project.differentiators.length > 0 && (
+        <section className="col-span-12 mb-16">
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">What makes it different</span>
+          <ul className="space-y-3 max-w-2xl">
+            {project.differentiators.map((d, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
+                <span className="text-muted-foreground leading-relaxed">{d}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Future features */}
+      {project.futureFeatures && project.futureFeatures.length > 0 && (
+        <section className="col-span-12 mb-16">
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">Roadmap</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {project.futureFeatures.map((f, i) => (
+              <div key={i} className="border border-border/30 p-4">
+                <span className="font-mono text-xs text-muted-foreground">{f}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Testimonial */}
       {project.testimonial && (
@@ -101,10 +160,10 @@ const ProjectDetail = () => {
       {/* Other projects */}
       {otherProjects.length > 0 && (
         <section className="col-span-12 mb-16">
-          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">Other projects</span>
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">{t('products.otherProducts')}</span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {otherProjects.map((p) => (
-              <Link key={p.slug} to={`/${currentLang}/projects/${p.slug}`} className="group border border-border/30 p-6 hover:border-primary/30 transition-colors duration-300">
+              <Link key={p.slug} to={`/${currentLang}/products/${p.slug}`} className="group border border-border/30 p-6 hover:border-primary/30 transition-colors duration-300">
                 <span className="font-mono text-xs text-muted-foreground">{p.index}</span>
                 <h3 className="font-display font-bold text-xl mt-2 mb-2 group-hover:text-primary transition-colors duration-300">{t(`data.projects.${p.slug}.title`)}</h3>
                 <p className="text-sm text-muted-foreground">{t(`data.projects.${p.slug}.description`)}</p>
