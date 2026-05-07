@@ -66,7 +66,7 @@ const BuildingSegment = ({
             <svg viewBox="0 0 120 50" className="w-full" style={{ height: 40 }} preserveAspectRatio="none">
               {/* Shadow / outline layer */}
               <path
-                d="M0,50 L0,36 L15,36 L15,26 L30,26 L30,18 L45,18 L45,10 L55,4 L65,10 L75,18 L75,18 L90,18 L90,26 L105,26 L105,36 L120,36 L120,50 Z"
+                d="M0,50 L0,36 L15,36 L15,26 L30,26 L30,18 L45,18 L45,10 L60,4 L75,10 L75,18 L90,18 L90,26 L105,26 L105,36 L120,36 L120,50 Z"
                 fill="currentColor"
                 className="text-foreground/12"
               />
