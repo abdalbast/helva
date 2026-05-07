@@ -7,6 +7,7 @@ import FacadeContainer from '@/components/FacadeContainer';
 import PageMeta from '@/components/PageMeta';
 import PageLayout from '@/components/PageLayout';
 import LlmSummary from '@/components/LlmSummary';
+import HomeNewsletterSection from '@/components/HomeNewsletterSection';
 
 const Index = () => {
   const { currentLang } = useLanguage();
@@ -120,10 +121,10 @@ const Index = () => {
         <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-8">{t('home.roadmapTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { label: 'Q1 2025', desc: t('home.roadmapQ1') },
-            { label: 'Q2 2025', desc: t('home.roadmapQ2') },
-            { label: 'Q3 2025', desc: t('home.roadmapQ3') },
-            { label: 'Q4 2025', desc: t('home.roadmapQ4') },
+            { label: 'Q1 2026', desc: t('home.roadmapQ1') },
+            { label: 'Q2 2026', desc: t('home.roadmapQ2') },
+            { label: 'Q3 2026', desc: t('home.roadmapQ3') },
+            { label: 'Q4 2026', desc: t('home.roadmapQ4') },
           ].map((item) => (
             <div key={item.label} className="border border-border/30 p-6">
               <span className="font-mono text-xs text-primary mb-3 block">{item.label}</span>
@@ -144,6 +145,8 @@ const Index = () => {
           {t('home.finalCtaCta')} →
         </Link>
       </section>
+
+      <HomeNewsletterSection />
     </PageLayout>
   );
 };
