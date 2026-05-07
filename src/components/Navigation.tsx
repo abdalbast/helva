@@ -5,7 +5,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { useTranslation } from 'react-i18next';
 import { supportedLanguages, languageNames, SupportedLanguage } from '@/i18n/config';
 
-const cities = ['Edinburgh', 'Portland', 'Sulaimani', 'Erbil'];
+const cities = ['Edinburgh', 'Stockholm', 'Columbus', 'Portland', 'Sulaimani', 'Erbil'];
 
 const Navigation = () => {
   const location = useLocation();

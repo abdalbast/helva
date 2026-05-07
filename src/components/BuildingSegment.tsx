@@ -62,10 +62,10 @@ const BuildingSegment = ({
 
       {/* Segment Title */}
       <div
-        className="font-display font-extrabold text-xl whitespace-nowrap absolute bottom-[120px] right-5"
+        className="font-display font-extrabold text-xl whitespace-nowrap absolute bottom-[120px] left-5"
         style={{
-          transform: 'rotate(90deg)',
-          transformOrigin: 'right bottom',
+          transform: 'rotate(-90deg)',
+          transformOrigin: 'left bottom',
         }}
       >
         {title}

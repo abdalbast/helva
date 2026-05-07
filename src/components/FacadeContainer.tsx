@@ -3,7 +3,7 @@ import BuildingSegment from './BuildingSegment';
 
 const segments = [
   {
-    title: 'Deqnus',
+    title: 'COMPLETENESS',
     label: 'Whole',
     index: '01',
     windowCount: 6,
@@ -11,7 +11,7 @@ const segments = [
     heightClass: 'h-full',
   },
   {
-    title: 'Code',
+    title: 'WARMTH',
     label: 'Human',
     index: '02',
     windowCount: 8,
@@ -19,7 +19,7 @@ const segments = [
     heightClass: 'h-[85%]',
   },
   {
-    title: 'Chat',
+    title: 'SYSTEMS',
     label: 'Scalable',
     index: '03',
     windowCount: 6,
@@ -27,7 +27,7 @@ const segments = [
     heightClass: 'h-[95%]',
   },
   {
-    title: 'Game',
+    title: 'LONGEVITY',
     label: 'Enduring',
     index: '04',
     windowCount: 4,
