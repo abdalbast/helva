@@ -50,70 +50,142 @@ const BuildingSegment = ({
     setLitWindows([]);
   }, []);
 
+  /* ───────── Roof renderers ───────── */
+
   const renderRoof = () => {
+    // Each roof uses the building's own color for the fill,
+    // derived from the colorClass (bg-gamla-*).
+    const fillClass = colorClass.replace('bg-', 'text-');
+
     switch (roofShape) {
       case 'stepped':
-        // Crow-step gable like the terracotta building in Gamla Stan
+        // Crow-step gable with decorative cross-finials at each step,
+        // matching the terracotta building in the reference.
         return (
-          <div className="absolute -top-[24px] left-0 right-0 flex justify-center">
-            <svg viewBox="0 0 100 30" className="w-full h-[24px]" preserveAspectRatio="none">
+          <div className="absolute left-0 right-0 bottom-full flex justify-center" style={{ marginBottom: -1 }}>
+            <svg viewBox="0 0 120 50" className="w-full" style={{ height: 40 }} preserveAspectRatio="none">
+              {/* Shadow / outline layer */}
               <path
-                d="M0,30 L0,18 L12,18 L12,12 L24,12 L24,6 L38,6 L38,0 L62,0 L62,6 L76,6 L76,12 L88,12 L88,18 L100,18 L100,30 Z"
+                d="M0,50 L0,36 L15,36 L15,26 L30,26 L30,18 L45,18 L45,10 L55,4 L65,10 L75,18 L75,18 L90,18 L90,26 L105,26 L105,36 L120,36 L120,50 Z"
                 fill="currentColor"
-                className="text-foreground/20"
+                className="text-foreground/12"
               />
+              {/* Main gable fill */}
               <path
-                d="M2,30 L2,20 L14,20 L14,14 L26,14 L26,8 L40,8 L40,2 L60,2 L60,8 L74,8 L74,14 L86,14 L86,20 L98,20 L98,30 Z"
+                d="M2,50 L2,38 L17,38 L17,28 L32,28 L32,20 L47,20 L47,12 L55,6 L63,12 L73,20 L73,20 L88,20 L88,28 L103,28 L103,38 L118,38 L118,50 Z"
                 fill="currentColor"
-                className={colorClass.replace('bg-', 'text-')}
+                className={fillClass}
               />
+              {/* Cross finials at each step */}
+              {[
+                [9, 36], [24, 26], [38, 18],
+                [82, 18], [96, 26], [111, 36],
+              ].map(([cx, cy], i) => (
+                <g key={i} className="text-foreground/30">
+                  <line x1={cx} y1={(cy as number) - 6} x2={cx} y2={(cy as number) - 1} stroke="currentColor" strokeWidth="1.2" />
+                  <line x1={(cx as number) - 2} y1={(cy as number) - 4} x2={(cx as number) + 2} y2={(cy as number) - 4} stroke="currentColor" strokeWidth="1" />
+                </g>
+              ))}
+              {/* Central finial / spire */}
+              <line x1="55" y1="0" x2="55" y2="6" stroke="currentColor" strokeWidth="1.2" className="text-foreground/35" />
+              <polygon points="53,1 55,-2 57,1" fill="currentColor" className="text-foreground/25" />
+              {/* Cornice line at base */}
+              <line x1="0" y1="49" x2="120" y2="49" stroke="currentColor" strokeWidth="1" className="text-foreground/10" />
             </svg>
           </div>
         );
+
       case 'arched':
-        // Rounded pediment like the teal/green building
+        // Rounded baroque pediment with a central oculus window,
+        // like the teal/green building in Gamla Stan.
         return (
-          <div className="absolute -top-[20px] left-0 right-0 flex justify-center">
-            <svg viewBox="0 0 100 24" className="w-full h-[20px]" preserveAspectRatio="none">
+          <div className="absolute left-0 right-0 bottom-full flex justify-center" style={{ marginBottom: -1 }}>
+            <svg viewBox="0 0 100 36" className="w-full" style={{ height: 32 }} preserveAspectRatio="none">
+              {/* Shadow layer */}
               <path
-                d="M0,24 L0,12 Q50,-8 100,12 L100,24 Z"
+                d="M0,36 L0,22 Q50,-10 100,22 L100,36 Z"
                 fill="currentColor"
-                className="text-foreground/20"
+                className="text-foreground/12"
               />
+              {/* Main arch fill */}
               <path
-                d="M2,24 L2,13 Q50,-6 98,13 L98,24 Z"
+                d="M2,36 L2,23 Q50,-7 98,23 L98,36 Z"
                 fill="currentColor"
-                className={colorClass.replace('bg-', 'text-')}
+                className={fillClass}
               />
+              {/* Oculus (circular window) */}
+              <circle cx="50" cy="18" r="5" fill="currentColor" className="text-foreground/15" />
+              <circle cx="50" cy="18" r="3.5" fill="currentColor" className={fillClass} />
+              <circle cx="50" cy="18" r="3.5" fill="currentColor" className="text-background/20" />
+              {/* Oculus cross muntin */}
+              <line x1="50" y1="14.5" x2="50" y2="21.5" stroke="currentColor" strokeWidth="0.6" className="text-foreground/20" />
+              <line x1="46.5" y1="18" x2="53.5" y2="18" stroke="currentColor" strokeWidth="0.6" className="text-foreground/20" />
+              {/* Keystone accent at apex */}
+              <path d="M48,10 L50,7 L52,10 Z" fill="currentColor" className="text-foreground/15" />
+              {/* Arch outline */}
+              <path
+                d="M2,23 Q50,-7 98,23"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-foreground/10"
+              />
+              {/* Cornice line */}
+              <line x1="0" y1="35" x2="100" y2="35" stroke="currentColor" strokeWidth="1" className="text-foreground/8" />
             </svg>
           </div>
         );
+
       case 'peaked':
-        // Simple triangular pediment with a finial
+        // Dutch bell gable with a curved silhouette and a circular finial,
+        // like the yellow building in the reference.
         return (
-          <div className="absolute -top-[22px] left-0 right-0 flex justify-center">
-            <svg viewBox="0 0 100 28" className="w-full h-[22px]" preserveAspectRatio="none">
+          <div className="absolute left-0 right-0 bottom-full flex justify-center" style={{ marginBottom: -1 }}>
+            <svg viewBox="0 0 100 40" className="w-full" style={{ height: 34 }} preserveAspectRatio="none">
+              {/* Shadow layer */}
               <path
-                d="M0,28 L0,16 L50,0 L100,16 L100,28 Z"
+                d="M0,40 L0,28 C5,28 10,24 15,22 C25,16 35,12 42,8 Q50,2 58,8 C65,12 75,16 85,22 C90,24 95,28 100,28 L100,40 Z"
                 fill="currentColor"
-                className="text-foreground/20"
+                className="text-foreground/12"
               />
+              {/* Main bell gable fill */}
               <path
-                d="M2,28 L2,17 L50,2 L98,17 L98,28 Z"
+                d="M2,40 L2,30 C7,30 12,26 17,24 C27,18 37,14 44,10 Q50,4 56,10 C63,14 73,18 83,24 C88,26 93,30 98,30 L98,40 Z"
                 fill="currentColor"
-                className={colorClass.replace('bg-', 'text-')}
+                className={fillClass}
               />
-              {/* Finial */}
-              <circle cx="50" cy="3" r="2.5" fill="currentColor" className="text-foreground/30" />
+              {/* Scrollwork volutes */}
+              <path d="M10,28 Q6,24 12,22" fill="none" stroke="currentColor" strokeWidth="0.8" className="text-foreground/15" />
+              <path d="M90,28 Q94,24 88,22" fill="none" stroke="currentColor" strokeWidth="0.8" className="text-foreground/15" />
+              {/* Central circular finial */}
+              <circle cx="50" cy="5" r="3.5" fill="currentColor" className="text-foreground/20" />
+              <circle cx="50" cy="5" r="2.2" fill="currentColor" className={fillClass} />
+              {/* Finial dot */}
+              <circle cx="50" cy="5" r="1" fill="currentColor" className="text-foreground/25" />
+              {/* Cornice line */}
+              <line x1="0" y1="39" x2="100" y2="39" stroke="currentColor" strokeWidth="1" className="text-foreground/8" />
             </svg>
           </div>
         );
+
       default:
-        // Flat roof with a subtle cornice
+        // Flat / mansard-style roof with a darker upper band,
+        // like the navy-topped pink building in the reference.
         return (
-          <div className="absolute -top-[6px] left-0 right-0">
-            <div className="h-[3px] bg-foreground/15 mx-0" />
-            <div className="h-[3px] bg-foreground/10 mx-1 mt-[1px]" />
+          <div className="absolute left-0 right-0 bottom-full" style={{ marginBottom: -1 }}>
+            <svg viewBox="0 0 100 14" className="w-full" style={{ height: 12 }} preserveAspectRatio="none">
+              {/* Mansard slope */}
+              <path
+                d="M0,14 L0,6 L4,2 L96,2 L100,6 L100,14 Z"
+                fill="currentColor"
+                className="text-foreground/18"
+              />
+              {/* Ridge cap */}
+              <rect x="4" y="1" width="92" height="2" rx="0.5" fill="currentColor" className="text-foreground/10" />
+              {/* Cornice lines */}
+              <line x1="0" y1="13" x2="100" y2="13" stroke="currentColor" strokeWidth="1" className="text-foreground/10" />
+              <line x1="1" y1="11" x2="99" y2="11" stroke="currentColor" strokeWidth="0.5" className="text-foreground/6" />
+            </svg>
           </div>
         );
     }
@@ -138,8 +210,9 @@ const BuildingSegment = ({
       {/* Roof */}
       {renderRoof()}
 
-      {/* Cornice / floor divider line */}
-      <div className="absolute top-[8px] left-[6px] right-[6px] h-[1px] bg-foreground/8" />
+      {/* Upper cornice band */}
+      <div className="absolute top-[2px] left-0 right-0 h-[3px] bg-foreground/8" />
+      <div className="absolute top-[6px] left-[3px] right-[3px] h-[1px] bg-foreground/5" />
 
       {/* Windows grid */}
       <div
@@ -174,14 +247,19 @@ const BuildingSegment = ({
 
       {/* Mid-floor cornice band */}
       <div className="absolute left-[4px] right-[4px] bg-foreground/6 h-[2px]" style={{ top: '55%' }} />
+      <div className="absolute left-[2px] right-[2px] bg-foreground/4 h-[1px]" style={{ top: 'calc(55% + 3px)' }} />
+
+      {/* Lower cornice / string course */}
+      <div className="absolute left-0 right-0 bg-foreground/6 h-[2px]" style={{ bottom: '28px' }} />
 
       {/* Doorway */}
       {hasDoorway && (
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
           <div className="relative">
-            <div className="w-[16px] h-[22px] bg-foreground/25 rounded-t-[3px]" />
-            {/* Door frame highlight */}
-            <div className="absolute -top-[1px] -left-[2px] -right-[2px] h-[1px] bg-foreground/15" />
+            {/* Door arch */}
+            <div className="w-[16px] h-[22px] bg-foreground/25 rounded-t-[4px]" />
+            {/* Door frame surround */}
+            <div className="absolute -top-[1px] -left-[2px] -right-[2px] h-[24px] rounded-t-[5px] border border-foreground/10 pointer-events-none" />
             {/* Door knob */}
             <div className="absolute bottom-[8px] right-[3px] w-[1.5px] h-[1.5px] rounded-full bg-stone-wash/50" />
           </div>
