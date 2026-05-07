@@ -66,29 +66,17 @@ const BuildingSegment = ({
             <svg viewBox="0 0 120 50" className="w-full" style={{ height: 40 }} preserveAspectRatio="none">
               {/* Shadow / outline layer */}
               <path
-                d="M0,50 L0,36 L15,36 L15,26 L30,26 L30,18 L45,18 L45,10 L55,4 L65,10 L75,18 L75,18 L90,18 L90,26 L105,26 L105,36 L120,36 L120,50 Z"
+                d="M0,50 L0,36 L15,36 L15,26 L30,26 L30,18 L45,18 L45,10 L60,4 L75,10 L75,18 L90,18 L90,26 L105,26 L105,36 L120,36 L120,50 Z"
                 fill="currentColor"
                 className="text-foreground/12"
               />
               {/* Main gable fill */}
+              {/* Main symmetrical gable fill */}
               <path
-                d="M2,50 L2,38 L17,38 L17,28 L32,28 L32,20 L47,20 L47,12 L55,6 L63,12 L73,20 L73,20 L88,20 L88,28 L103,28 L103,38 L118,38 L118,50 Z"
+                d="M2,50 L2,38 L17,38 L17,28 L32,28 L32,20 L47,20 L47,12 L60,6 L73,12 L73,20 L88,20 L88,28 L103,28 L103,38 L118,38 L118,50 Z"
                 fill="currentColor"
                 className={fillClass}
               />
-              {/* Cross finials at each step */}
-              {[
-                [9, 36], [24, 26], [38, 18],
-                [82, 18], [96, 26], [111, 36],
-              ].map(([cx, cy], i) => (
-                <g key={i} className="text-foreground/30">
-                  <line x1={cx} y1={(cy as number) - 6} x2={cx} y2={(cy as number) - 1} stroke="currentColor" strokeWidth="1.2" />
-                  <line x1={(cx as number) - 2} y1={(cy as number) - 4} x2={(cx as number) + 2} y2={(cy as number) - 4} stroke="currentColor" strokeWidth="1" />
-                </g>
-              ))}
-              {/* Central finial / spire */}
-              <line x1="55" y1="0" x2="55" y2="6" stroke="currentColor" strokeWidth="1.2" className="text-foreground/35" />
-              <polygon points="53,1 55,-2 57,1" fill="currentColor" className="text-foreground/25" />
               {/* Cornice line at base */}
               <line x1="0" y1="49" x2="120" y2="49" stroke="currentColor" strokeWidth="1" className="text-foreground/10" />
             </svg>
