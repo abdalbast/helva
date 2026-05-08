@@ -13,8 +13,16 @@
   "footer": {
     "tagline": "AI products for language, knowledge, and trust",
     "copyright": "© 2026 Helva Ltd. All rights reserved.",
+    "ariaLabel": "Footer navigation",
+    "careers": "Careers",
+    "trustCentre": "Trust Centre",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "sections": {
+      "explore": "Explore",
+      "company": "Company",
+      "trust": "Trust"
+    }
   },
   "cookie": {
     "title": "We value your privacy",
@@ -55,7 +63,7 @@
   },
   "home": {
     "headline": "Language.<br/>Knowledge.<br/>Trust.",
-    "subheadline": "Helva builds AI products for underserved languages, multilingual knowledge, and trusted UK AI.",
+    "subheadline": "Helva builds responsible AI products for underserved languages, multilingual access, and trusted UK digital infrastructure.",
     "joinCircle": "Stay Updated",
     "emailPlaceholder": "your@email.com",
     "join": "Join",

@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 import { HelmetProvider } from "react-helmet-async";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense } from "react";
-import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { usePageTracking } from "@/hooks/usePageTracking";
 import '@/i18n/config';
@@ -84,7 +83,6 @@ const App = () => (
       <ErrorBoundary>
         <Sonner />
         <BrowserRouter>
-          <ScrollToTop />
           <AppRoutes />
           <CookieConsent />
         </BrowserRouter>

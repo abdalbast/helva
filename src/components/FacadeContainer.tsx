@@ -3,8 +3,8 @@ import BuildingSegment from './BuildingSegment';
 
 const segments = [
   {
-    title: 'COMPLETENESS',
-    label: 'Whole',
+    title: 'RESPONSIBLE AI',
+    label: 'Trustworthy',
     index: '01',
     windowRows: 3,
     windowCols: 2,
@@ -13,8 +13,8 @@ const segments = [
     roofShape: 'arched' as const,
   },
   {
-    title: 'WARMTH',
-    label: 'Human',
+    title: 'UK SOVEREIGNTY',
+    label: 'Compliant',
     index: '02',
     windowRows: 4,
     windowCols: 2,
@@ -23,8 +23,8 @@ const segments = [
     roofShape: 'flat' as const,
   },
   {
-    title: 'SYSTEMS',
-    label: 'Scalable',
+    title: 'DIGITAL INCLUSION',
+    label: 'Accessible',
     index: '03',
     windowRows: 3,
     windowCols: 3,
@@ -33,8 +33,8 @@ const segments = [
     roofShape: 'stepped' as const,
   },
   {
-    title: 'LONGEVITY',
-    label: 'Enduring',
+    title: 'UNDERSERVED LANGUAGES',
+    label: 'First Class',
     index: '04',
     windowRows: 3,
     windowCols: 2,

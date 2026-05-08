@@ -84,70 +84,80 @@ const Contact = () => {
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">{t('contact.subtitle')}</p>
       </section>
 
-      {/* Contact Form / Success / Error */}
-      <section className="col-span-12 lg:col-span-8 mb-16">
-        {status === 'sent' ? (
-          <div className="border border-border/30 p-12 text-center">
-            <h2 className="font-display font-bold text-2xl mb-4">{t('contact.thankYou')}</h2>
-            <p className="text-muted-foreground mb-6">{t('contact.thankYouDesc')}</p>
-          </div>
-        ) : status === 'error' ? (
-          <div className="border border-border/30 p-12 text-center">
-            <h2 className="font-display font-bold text-2xl mb-4">{t('contact.errorTitle')}</h2>
-            <p className="text-muted-foreground mb-6">{t('contact.errorDesc')}</p>
-            <button onClick={() => setStatus('idle')} className="font-mono text-xs text-primary hover:underline">{t('contact.tryAgain')}</button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Honeypot — invisible to users, catches bots */}
-            <input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
-            <div>
-              <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
-                {t('contact.name')} <span className="text-primary">{t('contact.required')}</span>
-              </label>
-              <input type="text" name="name" value={form.name} onChange={handleChange} placeholder={t('contact.namePlaceholder')} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors" />
-              {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
+      <div className="col-span-12 mb-16 grid gap-8 lg:grid-cols-12 items-start">
+        {/* Contact Form / Success / Error */}
+        <section className="lg:col-span-8">
+          {status === 'sent' ? (
+            <div className="border border-border/30 p-12 text-center">
+              <h2 className="font-display font-bold text-2xl mb-4">{t('contact.thankYou')}</h2>
+              <p className="text-muted-foreground mb-6">{t('contact.thankYouDesc')}</p>
             </div>
-            <div>
-              <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
-                {t('contact.email')} <span className="text-primary">{t('contact.required')}</span>
-              </label>
-              <input type="email" name="email" value={form.email} onChange={handleChange} placeholder={t('contact.emailPlaceholder')} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors" />
-              {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
+          ) : status === 'error' ? (
+            <div className="border border-border/30 p-12 text-center">
+              <h2 className="font-display font-bold text-2xl mb-4">{t('contact.errorTitle')}</h2>
+              <p className="text-muted-foreground mb-6">{t('contact.errorDesc')}</p>
+              <button onClick={() => setStatus('idle')} className="font-mono text-xs text-primary hover:underline">{t('contact.tryAgain')}</button>
             </div>
-            <div>
-              <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
-                {t('contact.company')}
-              </label>
-              <input type="text" name="company" value={form.company} onChange={handleChange} placeholder={t('contact.companyPlaceholder')} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors" />
-            </div>
-            <div>
-              <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
-                {t('contact.message')} <span className="text-primary">{t('contact.required')}</span>
-              </label>
-              <textarea name="message" value={form.message} onChange={handleChange} placeholder={t('contact.messagePlaceholder')} rows={6} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors resize-none" />
-              {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
-            </div>
-            <button type="submit" disabled={status === 'sending'} className="font-mono text-xs uppercase tracking-[0.15em] border border-foreground px-8 py-3 hover:bg-foreground hover:text-background transition-colors duration-300 disabled:opacity-50">
-              {status === 'sending' ? t('contact.sending') : t('contact.send')}
-            </button>
-          </form>
-        )}
-      </section>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot — invisible to users, catches bots */}
+              <input type="text" name="hp" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', top: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
+              <div>
+                <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
+                  {t('contact.name')} <span className="text-primary">{t('contact.required')}</span>
+                </label>
+                <input type="text" name="name" value={form.name} onChange={handleChange} placeholder={t('contact.namePlaceholder')} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors" />
+                {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
+              </div>
+              <div>
+                <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
+                  {t('contact.email')} <span className="text-primary">{t('contact.required')}</span>
+                </label>
+                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder={t('contact.emailPlaceholder')} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors" />
+                {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
+              </div>
+              <div>
+                <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
+                  {t('contact.company')}
+                </label>
+                <input type="text" name="company" value={form.company} onChange={handleChange} placeholder={t('contact.companyPlaceholder')} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors" />
+              </div>
+              <div>
+                <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
+                  {t('contact.message')} <span className="text-primary">{t('contact.required')}</span>
+                </label>
+                <textarea name="message" value={form.message} onChange={handleChange} placeholder={t('contact.messagePlaceholder')} rows={6} className="w-full bg-transparent border border-border/30 px-4 py-3 font-mono text-sm focus:outline-none focus:border-primary transition-colors resize-none" />
+                {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
+              </div>
+              <button type="submit" disabled={status === 'sending'} className="font-mono text-xs uppercase tracking-[0.15em] border border-foreground px-8 py-3 hover:bg-foreground hover:text-background transition-colors duration-300 disabled:opacity-50">
+                {status === 'sending' ? t('contact.sending') : t('contact.send')}
+              </button>
+            </form>
+          )}
+        </section>
 
-      {/* Contact info sidebar */}
-      <section className="col-span-12 lg:col-span-4 mb-16">
-        <div className="border border-border/30 p-6 space-y-6">
-          <div>
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">{t('contact.emailLabel')}</span>
-            <a href="mailto:founder@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">founder@helva.io</a>
+        {/* Contact info sidebar */}
+        <section className="lg:col-span-4 lg:self-start">
+          <div className="border border-border/30 p-6 space-y-6 lg:mt-0">
+            <div>
+              <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">Collab &amp; Partnership</span>
+              <a href="mailto:founder@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">founder@helva.io</a>
+            </div>
+            <div>
+              <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">Feedback</span>
+              <a href="mailto:feedback@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">feedback@helva.io</a>
+            </div>
+            <div>
+              <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">Support</span>
+              <a href="mailto:support@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">support@helva.io</a>
+            </div>
+            <div>
+              <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">Careers</span>
+              <a href="mailto:recruit@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">recruit@helva.io</a>
+            </div>
           </div>
-          <div>
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">Recruit</span>
-            <a href="mailto:recruit@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">recruit@helva.io</a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </PageLayout>
   );
 };
