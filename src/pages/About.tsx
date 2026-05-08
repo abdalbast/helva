@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Fragment } from 'react';
 import DOMPurify from 'dompurify';
 import PageMeta from '@/components/PageMeta';
 import PageLayout from '@/components/PageLayout';
@@ -36,16 +37,14 @@ const About = () => {
       </section>
 
       <section className="col-span-12 lg:col-span-8 mb-16">
-        <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Founder</span>
-        <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">Abdalbast Khdhir</h2>
-        <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl">
-          Helva is founded by Abdalbast Khdhir in Edinburgh. If you want the personal background behind the company, this is the place to start.
-        </p>
+        <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('about.founderLabel')}</span>
+        <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">{t('about.founderName')}</h2>
+        <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl">{t('about.founderIntro')}</p>
         <Link
           to="/about-abdalbast-khdhir"
           className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4"
         >
-          View founder profile
+          {t('about.founderCta')}
         </Link>
       </section>
 
@@ -62,14 +61,25 @@ const About = () => {
       <section className="col-span-12 mb-16">
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">{t('about.nameLabel')}</span>
         <p className="text-muted-foreground leading-relaxed mb-8 max-w-2xl">{t('about.nameIntro')}</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {(['completeness', 'warmth', 'shareability'] as const).map((key) => (
-            <div key={key} className="border border-border/30 p-6">
-              <h3 className="font-display font-bold text-lg mb-3">{t(`about.${key}`)}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(`about.${key}Desc`)) }} />
-            </div>
+        <dl className="grid grid-cols-12 gap-x-0 max-w-3xl">
+          {(['completeness', 'warmth', 'shareability'] as const).map((key, index) => (
+            <Fragment key={key}>
+              <dt
+                className={`col-span-12 md:col-span-4 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground text-start pe-5 ${
+                  index > 0 ? 'pt-6 border-t border-border/30' : ''
+                }`}
+              >
+                {t(`about.${key}`)}
+              </dt>
+              <dd
+                className={`col-span-12 md:col-span-8 text-muted-foreground leading-relaxed text-start ps-5 pb-6 ${
+                  index > 0 ? 'pt-6 border-t border-border/30' : ''
+                }`}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(`about.${key}Desc`)) }}
+              />
+            </Fragment>
           ))}
-        </div>
+        </dl>
       </section>
 
       {/* What We Build */}
@@ -83,14 +93,17 @@ const About = () => {
       {/* Our Obsessions */}
       <section className="col-span-12 mb-16">
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">{t('about.obsessionsLabel')}</span>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {(['details', 'clarity', 'longevity'] as const).map((key) => (
-            <div key={key} className="border border-border/30 p-6">
-              <h3 className="font-display font-bold text-lg mb-3">{t(`about.${key}`)}</h3>
+        <ol className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10 list-none ps-0 m-0">
+          {(['details', 'clarity', 'longevity'] as const).map((key, i) => (
+            <li key={key} className="text-start">
+              <span className="font-mono text-[0.7rem] tracking-[0.2em] text-muted-foreground">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 className="font-display font-bold text-xl mt-3 mb-2">{t(`about.${key}`)}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{t(`about.${key}Desc`)}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       {/* Quote */}
