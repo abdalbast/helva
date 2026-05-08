@@ -59,8 +59,8 @@
     "join": "Gå med",
     "joining": "Ansluter...",
     "subscribeAnother": "Prenumerera med en annan e-post",
-    "welcomeMessage": "✓ Välkommen till kretsen! Du är nu prenumerant.",
-    "alreadyMessage": "✓ Du är redan en del av kretsen!",
+    "welcomeMessage": "Välkommen till kretsen! Du är nu prenumerant.",
+    "alreadyMessage": "Du är redan en del av kretsen!",
     "errorMessage": "Något gick fel. Försök igen."
   },
   "about": {

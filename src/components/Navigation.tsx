@@ -5,12 +5,38 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { useTranslation } from 'react-i18next';
 import { supportedLanguages, languageNames, SupportedLanguage } from '@/i18n/config';
 
-const cities = ['Edinburgh', 'Stockholm', 'Columbus', 'Portland', 'Sulaimani', 'Erbil'];
+const cities = ['Edinburgh'];
+
+const ThemeIcon = ({ theme }: { theme: string }) => {
+  if (theme === 'dark') {
+    return (
+      <svg className="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+        <circle cx="12" cy="12" r="4.25" stroke="currentColor" strokeWidth="1.35" />
+        <path
+          d="M12 3.25v2.15M12 18.6v2.15M3.25 12h2.15M18.6 12h2.15M5.82 5.82l1.52 1.52M16.66 16.66l1.52 1.52M18.18 5.82l-1.52 1.52M7.34 16.66l-1.52 1.52"
+          stroke="currentColor"
+          strokeWidth="1.35"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path
+        d="M18.35 14.25A7.35 7.35 0 0 1 9.75 5.65 7.75 7.75 0 1 0 18.35 14.25Z"
+        stroke="currentColor"
+        strokeWidth="1.35"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 
 const Navigation = () => {
   const location = useLocation();
-  const [currentCityIndex, setCurrentCityIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
@@ -27,17 +53,6 @@ const Navigation = () => {
     { label: t('nav.founder'), to: '/about-abdalbast-khdhir' },
     { label: t('nav.contact'), to: `/${currentLang}/contact` },
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentCityIndex((prev) => (prev + 1) % cities.length);
-        setIsAnimating(false);
-      }, 500);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -123,22 +138,18 @@ const Navigation = () => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+            className="flex h-5 w-5 items-center justify-center text-muted-foreground hover:text-foreground transition-colors duration-300"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? '☀' : '●'}
+            <ThemeIcon theme={theme} />
           </button>
 
           <span className="hidden md:block w-px h-4 bg-border/50" />
 
           {/* City Hub - desktop */}
           <div className="hidden md:flex relative h-4 overflow-hidden min-w-[80px] items-center justify-end">
-            <span
-              className={`font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground/70 absolute right-0 ${
-                isAnimating ? 'city-slide-out' : 'city-slide-in'
-              }`}
-            >
-              {cities[currentCityIndex]}
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground/70">
+              {cities[0]}
             </span>
           </div>
 
@@ -202,12 +213,8 @@ const Navigation = () => {
 
           {/* City Hub - mobile */}
           <div className="relative h-4 overflow-hidden flex items-center pt-2 border-t border-border/20">
-            <span
-              className={`font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground/70 absolute ${
-                isAnimating ? 'city-slide-out' : 'city-slide-in'
-              }`}
-            >
-              {cities[currentCityIndex]}
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground/70">
+              {cities[0]}
             </span>
           </div>
         </div>

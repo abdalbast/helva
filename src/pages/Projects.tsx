@@ -23,8 +23,8 @@ const Projects = () => {
     <PageLayout>
       <PageMeta title={t('products.title')} description={t('products.subtitle')} path="/products" lang={currentLang} />
       <LlmSummary
-        quickAnswer="Helva builds AI products for underserved languages: Deqnus (Kurdish–English translation, live) and Helva Chat (European multilingual AI assistant, in development)."
-        audience={["Users seeking Kurdish translation", "Enterprises evaluating European AI", "Investors reviewing the product portfolio"]}
+        quickAnswer="Helva builds AI products for underserved languages: Deqnus (Kurdish–English translation, live) and Helva Chat (UK multilingual AI assistant, in development)."
+        audience={["Users seeking Kurdish translation", "Enterprises evaluating UK AI", "Investors reviewing the product portfolio"]}
         actions={["Try Deqnus for Kurdish translation", "Learn about Helva Chat", "Contact Helva for partnerships"]}
         relatedPages={[
           { label: "Solutions", href: "/en/solutions" },
