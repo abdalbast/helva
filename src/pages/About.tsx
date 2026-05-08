@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 import DOMPurify from 'dompurify';
 import PageMeta from '@/components/PageMeta';
@@ -32,6 +33,20 @@ const About = () => {
       <section className="col-span-12 lg:col-span-8 mb-16">
         <h1 className="font-display font-extrabold text-5xl lg:text-7xl tracking-tighter uppercase leading-[0.9] mb-8">{t('about.title')}</h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">{t('about.intro')}</p>
+      </section>
+
+      <section className="col-span-12 lg:col-span-8 mb-16">
+        <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Founder</span>
+        <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-4">Abdalbast Khdhir</h2>
+        <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl">
+          Helva is founded by Abdalbast Khdhir in Edinburgh. If you want the personal background behind the company, this is the place to start.
+        </p>
+        <Link
+          to="/about-abdalbast-khdhir"
+          className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-foreground hover:text-primary transition-colors duration-300 underline underline-offset-4"
+        >
+          View founder profile
+        </Link>
       </section>
 
       {/* The Challenge */}
