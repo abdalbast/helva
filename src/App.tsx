@@ -21,6 +21,8 @@ const Thesis = lazy(() => import("./pages/Thesis"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const TrustCentre = lazy(() => import("./pages/TrustCentre"));
+const Careers = lazy(() => import("./pages/Careers"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AboutAbdalbast = lazy(() => import("./pages/AboutAbdalbast"));
 const PortfolioAbdalbast = lazy(() => import("./pages/PortfolioAbdalbast"));
@@ -64,6 +66,8 @@ const AppRoutes = () => {
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />
+            <Route path="trust" element={<TrustCentre />} />
+            <Route path="careers" element={<Careers />} />
           </Route>
 
           {/* Catch-all */}
