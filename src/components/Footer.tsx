@@ -55,14 +55,14 @@ const Footer = () => {
         ))}
       </div>
       <div className="flex flex-wrap items-center gap-3 py-6 border-b border-border/20">
-        {trustMarks.map(({ label, icon }) => (
+        {trustMarks.map(({ label, src, alt }) => (
           <div
             key={label}
             className="group flex h-10 items-center gap-2.5 border border-border/25 bg-foreground/[0.025] px-3 text-muted-foreground/70 transition-colors duration-300 hover:border-primary/35 hover:text-primary"
             aria-label={label}
             title={label}
           >
-            {icon}
+            <img src={src} alt={alt} className="h-5 w-auto shrink-0 object-contain" loading="lazy" />
             <span className="font-mono text-[0.62rem] uppercase tracking-[0.16em]">{label}</span>
           </div>
         ))}
