@@ -88,22 +88,22 @@ export const projects: Project[] = [
     status: 'In development',
     year: '2025',
     description:
-      'A multilingual AI assistant designed for European regulatory and cultural context. Private, compliant, and transparent by default.',
+      'A multilingual AI assistant designed for UK regulatory and cultural context. Private, compliant, and transparent by default.',
     heroTagline: 'AI you can actually trust.',
     problem:
-      'Most AI assistants are built for English-first, US-centric contexts. European users face poor multilingual support, opaque data handling, and models that don\'t understand local regulation, culture, or language nuance. Enterprises can\'t adopt them without compliance risk.',
+      'Most AI assistants are built for English-first, US-centric contexts. UK users face poor multilingual support, opaque data handling, and models that don\'t understand local regulation, culture, or language nuance. Enterprises can\'t adopt them without compliance risk.',
     solution:
-      'Helva Chat is a conversational AI layer built for European users and organisations. It supports multiple languages natively, respects GDPR by design, and provides transparent reasoning. It is built to be embedded into workflows — not used as a novelty.',
+      'Helva Chat is a conversational AI layer built for UK users and organisations. It supports multiple languages natively, respects GDPR by design, and provides transparent reasoning. It is built to be embedded into workflows — not used as a novelty.',
     outcome:
       'Helva Chat is in active development. Early architecture focuses on multilingual reasoning, source attribution, and a plugin system for domain-specific knowledge.',
     tags: ['AI', 'LLM', 'Multilingual', 'GDPR'],
     audience: [
-      { label: 'European enterprises', description: 'Deploy conversational AI without compliance anxiety.' },
+      { label: 'UK enterprises', description: 'Deploy conversational AI without compliance anxiety.' },
       { label: 'Multilingual teams', description: 'Work across languages without switching tools.' },
       { label: 'Regulated industries', description: 'AI with audit trails, source attribution, and data residency.' },
     ],
     differentiators: [
-      'European-first — multilingual from day one, not as an afterthought.',
+      'UK-first — multilingual from day one, not as an afterthought.',
       'GDPR-compliant architecture with data residency options.',
       'Transparent reasoning with source attribution.',
     ],

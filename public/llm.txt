@@ -6,11 +6,11 @@ helva.io
 
 PURPOSE
 Helva builds AI products for underserved languages, multilingual knowledge,
-and trusted European AI.
+and trusted UK AI.
 
 AUDIENCE
 - Kurdish diaspora and multilingual communities
-- European enterprises seeking compliant AI
+- UK enterprises seeking compliant AI
 - Investors and partners evaluating Helva
 - Researchers and NGOs working with underserved languages
 - Recruiters and collaborators evaluating Abdalbast Khdhir
@@ -18,15 +18,15 @@ AUDIENCE
 WHAT_HELVA_IS
 Helva is an AI product company focused on language. It builds purpose-built
 AI products — each with its own fine-tuned model, interface, and evaluation
-loop — for underserved languages and European-compliant AI.
+loop — for underserved languages and UK-compliant AI.
 
 PRODUCTS
 - Deqnus: AI-powered Kurdish–English translation. Sorani-first, dialect-aware. Status: Live. URL: https://deqnus.vercel.app
-- Helva Chat: Multilingual AI assistant for European regulatory and cultural context. GDPR-compliant, transparent reasoning. Status: In development.
+- Helva Chat: Multilingual AI assistant for UK regulatory and cultural context. GDPR-compliant, transparent reasoning. Status: In development.
 
 SOLUTIONS
 - Language workflows: document translation, real-time multilingual chat, custom model fine-tuning, API integration
-- Trusted European AI: GDPR-compliant deployment, data residency, audit trails, compliance documentation
+- Trusted UK AI: GDPR-compliant deployment, data residency, audit trails, compliance documentation
 - Partner pilots: structured pilot programmes, domain model co-development, evaluation & benchmarking, research partnerships
 
 THESIS

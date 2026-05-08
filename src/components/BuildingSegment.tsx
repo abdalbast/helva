@@ -180,6 +180,8 @@ const BuildingSegment = ({
   };
 
   return (
+    // The first segment needs a slightly larger left inset so the vertical
+    // label reads cleanly against the facade instead of hugging the edge.
     <div
       className={`building-segment flex-1 ${heightClass} relative cursor-pointer overflow-visible flex flex-col justify-end animate-reveal ${staggerClass}`}
       style={{ transform: `translateX(${translateX}px)` }}
@@ -256,7 +258,7 @@ const BuildingSegment = ({
 
       {/* Segment Title */}
       <div
-        className="font-display font-extrabold text-xl whitespace-nowrap absolute bottom-[120px] left-5 z-20"
+        className="font-display font-extrabold text-xl whitespace-nowrap absolute bottom-[120px] left-8 z-20"
         style={{
           transform: 'rotate(-90deg)',
           transformOrigin: 'left bottom',
@@ -267,7 +269,7 @@ const BuildingSegment = ({
 
       {/* Building Label */}
       <div
-        className="font-mono text-xs uppercase tracking-[0.3em] mb-5 opacity-60 relative z-20 pl-5"
+        className="font-mono text-xs uppercase tracking-[0.3em] mb-5 opacity-60 relative z-20 pl-8"
         style={{
           writingMode: 'vertical-rl',
           textOrientation: 'mixed',

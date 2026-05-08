@@ -20,8 +20,8 @@ const Thesis = () => {
     <PageLayout>
       <PageMeta title={t('thesis.title')} description={t('thesis.subtitle')} path="/thesis" lang={currentLang} />
       <LlmSummary
-        quickAnswer="Helva's thesis: most AI ignores most languages. Helva builds purpose-built AI products for underserved languages and trusted European AI."
-        audience={["Investors evaluating Helva", "Partners assessing alignment", "Journalists covering European AI"]}
+        quickAnswer="Helva's thesis: most AI ignores most languages. Helva builds purpose-built AI products for underserved languages and trusted UK AI."
+        audience={["Investors evaluating Helva", "Partners assessing alignment", "Journalists covering UK AI"]}
         actions={["Read the core thesis", "Understand the market opportunity", "Learn about founder-market fit"]}
         relatedPages={[
           { label: "Helva Products", href: "/en/products" },

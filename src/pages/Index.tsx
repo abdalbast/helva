@@ -7,13 +7,14 @@ import FacadeContainer from '@/components/FacadeContainer';
 import PageMeta from '@/components/PageMeta';
 import PageLayout from '@/components/PageLayout';
 import LlmSummary from '@/components/LlmSummary';
+import NewsletterSection from '@/components/NewsletterSection';
 
 const Index = () => {
   const { currentLang } = useLanguage();
   const { t } = useTranslation();
 
   return (
-    <PageLayout>
+    <PageLayout afterFooter={<NewsletterSection />}>
       <PageMeta title={t('home.headline').replace(/<br\/?>/g, ' ')} description={t('home.subheadline')} path="/" lang={currentLang} />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify({
@@ -21,15 +22,15 @@ const Index = () => {
           "@type": "Organization",
           "name": "Helva",
           "url": "https://helva.io",
-          "description": "Helva builds AI products for underserved languages, multilingual knowledge, and trusted European AI.",
+          "description": "Helva builds AI products for underserved languages, multilingual knowledge, and trusted UK AI.",
           "founder": { "@type": "Person", "name": "Abdalbast Khdhir", "url": "https://helva.io/about-abdalbast-khdhir" },
           "address": { "@type": "PostalAddress", "addressLocality": "Edinburgh", "addressCountry": "GB" },
           "contactPoint": { "@type": "ContactPoint", "email": "founder@helva.io", "contactType": "sales" }
         })}</script>
       </Helmet>
       <LlmSummary
-        quickAnswer="Helva builds AI products for underserved languages and trusted European AI. Products: Deqnus (Kurdish–English translation, live) and Helva Chat (multilingual AI assistant, in development)."
-        audience={["Founders and investors evaluating Helva", "Users seeking Kurdish translation tools", "Enterprises looking for European-compliant AI"]}
+        quickAnswer="Helva builds AI products for underserved languages and trusted UK AI. Products: Deqnus (Kurdish–English translation, live) and Helva Chat (multilingual AI assistant, in development)."
+        audience={["Founders and investors evaluating Helva", "Users seeking Kurdish translation tools", "Enterprises looking for UK-compliant AI"]}
         actions={["Try Deqnus for Kurdish translation", "Learn about Helva Chat", "Read the Helva thesis", "Contact Helva"]}
         relatedPages={[
           { label: "Helva Products", href: "/en/products" },
@@ -120,10 +121,10 @@ const Index = () => {
         <h2 className="font-display font-bold text-3xl lg:text-4xl tracking-tight mb-8">{t('home.roadmapTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { label: 'Q1 2025', desc: t('home.roadmapQ1') },
-            { label: 'Q2 2025', desc: t('home.roadmapQ2') },
-            { label: 'Q3 2025', desc: t('home.roadmapQ3') },
-            { label: 'Q4 2025', desc: t('home.roadmapQ4') },
+            { label: 'Q1 2026', desc: t('home.roadmapQ1') },
+            { label: 'Q2 2026', desc: t('home.roadmapQ2') },
+            { label: 'Q3 2026', desc: t('home.roadmapQ3') },
+            { label: 'Q4 2026', desc: t('home.roadmapQ4') },
           ].map((item) => (
             <div key={item.label} className="border border-border/30 p-6">
               <span className="font-mono text-xs text-primary mb-3 block">{item.label}</span>

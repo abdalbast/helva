@@ -6,13 +6,14 @@ import AnimatedPage from '@/components/AnimatedPage';
 
 interface PageLayoutProps {
   children: ReactNode;
+  afterFooter?: ReactNode;
 }
 
 /**
  * Shared page shell: skip-to-content link, grain overlay, 12-column grid with Navigation and Footer.
  * Wraps children in AnimatedPage for route transitions.
  */
-const PageLayout = ({ children }: PageLayoutProps) => (
+const PageLayout = ({ children, afterFooter }: PageLayoutProps) => (
   <AnimatedPage>
     <a
       href="#main-content"
@@ -24,6 +25,7 @@ const PageLayout = ({ children }: PageLayoutProps) => (
     <main id="main-content" className="min-h-screen grid grid-cols-12 p-5 lg:p-10 gap-5">
       <Navigation />
       {children}
+      {afterFooter}
       <Footer />
     </main>
   </AnimatedPage>
