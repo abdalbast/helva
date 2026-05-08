@@ -69,7 +69,9 @@ const Footer = () => {
       </div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8">
         <p className="font-mono text-[0.65rem] text-muted-foreground/60 tracking-wide">{t('footer.copyright')}</p>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
+          <Link to={`/${currentLang}/trust`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">Trust Centre</Link>
+          <Link to={`/${currentLang}/careers`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">Careers</Link>
           <Link to={`/${currentLang}/privacy`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.privacy')}</Link>
           <Link to={`/${currentLang}/terms`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.terms')}</Link>
           <a href="mailto:founder@helva.io" className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">founder@helva.io</a>
