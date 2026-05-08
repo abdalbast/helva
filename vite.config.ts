@@ -10,6 +10,9 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     strictPort: true,
   },
+  build: {
+    target: "esnext",
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
