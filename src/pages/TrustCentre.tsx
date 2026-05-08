@@ -21,6 +21,7 @@ const subprocessors = [
   { name: 'Supabase', logo: '/logos/supabase.png', purpose: 'Database, authentication and storage', entity: 'Supabase, Inc.', location: 'United States' },
   { name: 'Convex', logo: '/logos/convex.png', purpose: 'Real-time backend and database', entity: 'Convex, Inc.', location: 'United States' },
   { name: 'Resend', logo: '/logos/resend.png', purpose: 'Transactional email delivery', entity: 'Resend, Inc.', location: 'United States' },
+  { name: 'PostHog', logo: '/logos/posthog.svg', purpose: 'Product analytics and event tracking', entity: 'PostHog, Inc.', location: 'United States' },
   { name: 'Tavily', logo: '/logos/tavily.png', purpose: 'AI-powered web search', entity: 'Tavily, Inc.', location: 'United States' },
   { name: 'Brave Search', logo: '/logos/brave-search.png', purpose: 'Web search API', entity: 'Brave Software, Inc.', location: 'United States' },
   { name: 'ElevenLabs', logo: '/logos/elevenlabs.png', purpose: 'Voice synthesis and audio AI', entity: 'ElevenLabs, Inc.', location: 'United States' },

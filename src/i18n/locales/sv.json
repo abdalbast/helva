@@ -1,8 +1,10 @@
 {
   "nav": {
+    "products": "Produkter",
     "projects": "Projekt",
     "solutions": "Lösningar",
     "ai": "AI",
+    "thesis": "Tes",
     "resources": "Resurser",
     "about": "Om oss",
     "founder": "Grundare",
@@ -11,8 +13,16 @@
   "footer": {
     "tagline": "Digital arkitektur för den moderna världen",
     "copyright": "© 2026 Helva Ltd. Alla rättigheter förbehållna.",
+    "ariaLabel": "Sidfotsnavigering",
+    "careers": "Karriär",
+    "trustCentre": "Trust Centre",
     "privacy": "Integritet",
-    "terms": "Villkor"
+    "terms": "Villkor",
+    "sections": {
+      "explore": "Utforska",
+      "company": "Företag",
+      "trust": "Förtroende"
+    }
   },
   "cookie": {
     "title": "Vi värnar om din integritet",

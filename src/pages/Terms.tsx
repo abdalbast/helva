@@ -9,9 +9,8 @@ const Terms = () => {
 
   const sections = [
     { title: 'useTitle', desc: 'useDesc' },
-    { title: 'intellectualPropertyTitle', desc: 'intellectualPropertyDesc' },
-    { title: 'limitationsTitle', desc: 'limitationsDesc' },
-    { title: 'governingLawTitle', desc: 'governingLawDesc' },
+    { title: 'ipTitle', desc: 'ipDesc' },
+    { title: 'liabilityTitle', desc: 'liabilityDesc' },
     { title: 'changesTitle', desc: 'changesDesc' },
   ];
 
