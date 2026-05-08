@@ -12,6 +12,20 @@ import NewsletterSection from '@/components/NewsletterSection';
 const Index = () => {
   const { currentLang } = useLanguage();
   const { t } = useTranslation();
+  const partnerLogos = [
+    {
+      name: 'The Cube Incubator at University of Plymouth',
+      src: 'https://d3bpgcke55gfwt.cloudfront.net/assets/uoplogomono-c97c99e65962b59f3d62b73f869b9c0734247dd78a11ba00dc856f675f29e108.svg',
+      alt: 'The Cube Incubator at University of Plymouth logo',
+      className: 'h-7 sm:h-8 w-auto',
+    },
+    {
+      name: 'American University of Iraq, Sulaimani',
+      src: 'https://auis.edu.krd/themes/auis2024/images/logo-mob.png',
+      alt: 'American University of Iraq, Sulaimani logo',
+      className: 'h-7 sm:h-8 w-auto',
+    },
+  ];
 
   return (
     <PageLayout afterFooter={<NewsletterSection />}>
@@ -46,13 +60,27 @@ const Index = () => {
       {/* Proof Strip */}
       <section className="col-span-12 py-12 border-t border-border/30 mt-16">
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6 block">{t('home.proofLabel')}</span>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {['proof1', 'proof2', 'proof3'].map((key) => (
-            <div key={key} className="flex items-start gap-3">
-              <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
-              <span className="text-foreground/80 text-sm leading-relaxed">{t(`home.${key}`)}</span>
-            </div>
-          ))}
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <p className="max-w-2xl text-base lg:text-lg leading-relaxed text-foreground/75">
+            Backed by The Cube Incubator at University of Plymouth, UK and American University of Iraq, Sulaimani.
+          </p>
+          <div className="flex flex-wrap items-center gap-6">
+            {partnerLogos.map((logo) => (
+              <div
+                key={logo.name}
+                className="flex h-14 items-center justify-center rounded-none border border-border/25 bg-background px-5"
+                title={logo.name}
+                aria-label={logo.name}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={`${logo.className} object-contain`}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

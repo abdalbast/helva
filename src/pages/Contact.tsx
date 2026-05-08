@@ -143,8 +143,8 @@ const Contact = () => {
             <a href="mailto:founder@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">founder@helva.io</a>
           </div>
           <div>
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">{t('contact.updatesLabel')}</span>
-            <a href="mailto:founder@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">founder@helva.io</a>
+            <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground block mb-2">Recruit</span>
+            <a href="mailto:recruit@helva.io" className="font-mono text-sm text-foreground hover:text-primary transition-colors">recruit@helva.io</a>
           </div>
         </div>
       </section>

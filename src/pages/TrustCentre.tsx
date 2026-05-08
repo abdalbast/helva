@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: 'Where is my data stored?',
-    a: 'Data is primarily stored in the European Union and the United States through our cloud infrastructure providers. We use appropriate safeguards, including Standard Contractual Clauses, for any cross-border transfers.',
+    a: 'Where we control storage, customer data is stored in UK data centres only. We design our infrastructure and vendor choices to keep data within the United Kingdom and avoid cross-border storage.',
   },
   {
     q: 'How does Helva handle AI model data?',
@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: 'Is Helva GDPR compliant?',
-    a: 'Yes. Helva Ltd. is a UK-registered company that processes data in accordance with UK GDPR and the EU General Data Protection Regulation. Our privacy policy and data processing practices reflect these obligations.',
+    a: 'Yes. Helva Ltd. is a UK-registered company that processes data in accordance with UK GDPR and the UK Data Protection Act 2018. Our privacy policy and data processing practices are designed around UK compliance.',
   },
   {
     q: 'How can I request data deletion?',
@@ -79,7 +79,7 @@ const TrustCentre = () => {
     <PageLayout>
       <PageMeta
         title="Trust Centre — Helva"
-        description="Helva's Trust Centre: security practices, subprocessors, compliance updates, and frequently asked questions about data handling."
+        description="Helva's UK-first Trust Centre: compliance practices, UK data-centre storage, subprocessors, updates, and data-handling FAQs."
         path="/trust"
         lang={currentLang}
       />
@@ -95,7 +95,7 @@ const TrustCentre = () => {
           Trust Centre
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-          Helva is committed to transparency and responsible data handling. Here you can review our security practices, see which third-party services we use, and find answers to common questions about how we protect your data.
+          Helva is committed to UK compliance and responsible data handling. Where we control storage, customer data stays in UK data centres only. Here you can review our security practices, see which third-party services we use, and find answers to common questions about how we protect your data.
         </p>
       </section>
 
@@ -134,10 +134,10 @@ const OverviewTab = () => (
     <section>
       <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Our Commitment</span>
       <p className="text-muted-foreground leading-relaxed mb-4">
-        Helva Ltd. is registered in Scotland (Companies House) and operates under UK and EU data protection regulations. We design our products with privacy by default and security at every layer.
+        Helva Ltd. is registered in Scotland (Companies House) and operates under UK data protection law. We design our products with privacy by default, security at every layer, and UK-only storage where we control the data layer.
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        We believe that trust is built through transparency. This Trust Centre is our way of providing clear, accessible information about how we handle data, which services we rely on, and how we respond to evolving compliance requirements.
+        We believe that trust is built through transparency. This Trust Centre is our way of providing clear, accessible information about how we handle data, which services we rely on, and how we keep our compliance posture aligned with UK expectations.
       </p>
     </section>
 
@@ -147,8 +147,8 @@ const OverviewTab = () => (
         {[
           { title: 'Encryption', desc: 'All data is encrypted in transit (TLS 1.3) and at rest (AES-256). API keys and secrets are stored in dedicated vaults.' },
           { title: 'Access Control', desc: 'Role-based access with the principle of least privilege. All administrative actions are logged and auditable.' },
-          { title: 'Infrastructure', desc: 'Hosted on industry-leading cloud platforms with SOC 2 and ISO 27001 certifications. Multi-region redundancy where applicable.' },
-          { title: 'Incident Response', desc: 'We maintain a documented incident response plan. Any data breach affecting personal data will be communicated within 72 hours as required by GDPR.' },
+          { title: 'Infrastructure', desc: 'Customer data is hosted in UK data centres only, with infrastructure choices made to support UK compliance and data residency.' },
+          { title: 'Incident Response', desc: 'We maintain a documented incident response plan. Any data breach affecting personal data will be communicated within 72 hours as required by UK GDPR.' },
         ].map(({ title, desc }) => (
           <div key={title} className="border border-border/30 p-6">
             <h3 className="font-display font-bold text-lg mb-3">{title}</h3>
@@ -161,7 +161,7 @@ const OverviewTab = () => (
     <section>
       <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 block">Compliance</span>
       <div className="flex flex-wrap gap-4">
-        {['UK GDPR', 'EU GDPR', 'UK Data Protection Act 2018', 'ePrivacy Directive'].map((item) => (
+        {['UK GDPR', 'UK Data Protection Act 2018', 'PECR', 'UK data residency'].map((item) => (
           <span key={item} className="font-mono text-xs border border-border/30 px-4 py-2 text-muted-foreground">
             {item}
           </span>
