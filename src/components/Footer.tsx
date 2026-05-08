@@ -49,7 +49,7 @@ const Footer = () => {
           { key: 'about', path: 'about' },
           { key: 'contact', path: 'contact' },
         ].map(({ key, path }) => (
-          <Link key={key} to={`/${currentLang}/${path}`} className="font-mono text-xs uppercase tracking-[0.15em] text-foreground/70 hover:text-primary transition-colors duration-300">
+          <Link key={key} to={`/${currentLang}/${path}`} className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors duration-300">
             {t(`nav.${key}`)}
           </Link>
         ))}
@@ -58,24 +58,22 @@ const Footer = () => {
         {trustMarks.map(({ label, src, alt }) => (
           <div
             key={label}
-            className="group flex h-10 items-center gap-2.5 border border-border/25 bg-foreground/[0.025] px-3 text-muted-foreground/70 transition-colors duration-300 hover:border-primary/35 hover:text-primary"
-            aria-label={label}
-            title={label}
+            className="flex h-10 items-center gap-2.5 border border-border/25 bg-foreground/[0.025] px-3 text-muted-foreground"
           >
             <img src={src} alt={alt} className="h-5 w-auto shrink-0 object-contain" loading="lazy" />
-            <span className="font-mono text-[0.62rem] uppercase tracking-[0.16em]">{label}</span>
+            <span className="font-mono text-xs uppercase tracking-[0.16em]">{label}</span>
           </div>
         ))}
       </div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8">
-        <p className="font-mono text-[0.65rem] text-muted-foreground/60 tracking-wide">{t('footer.copyright')}</p>
-        <div className="flex flex-wrap items-center gap-4">
-          <Link to={`/${currentLang}/trust`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">Trust Centre</Link>
-          <Link to={`/${currentLang}/careers`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">Careers</Link>
-          <Link to={`/${currentLang}/contact`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">Contact</Link>
-          <Link to={`/${currentLang}/privacy`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.privacy')}</Link>
-          <Link to={`/${currentLang}/terms`} className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.terms')}</Link>
-          <a href="mailto:founder@helva.io" className="font-mono text-[0.65rem] text-muted-foreground/60 hover:text-primary transition-colors duration-300 tracking-wide">founder@helva.io</a>
+        <p className="font-mono text-xs text-muted-foreground tracking-wide">{t('footer.copyright')}</p>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+          <Link to={`/${currentLang}/trust`} className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide">Trust Centre</Link>
+          <Link to={`/${currentLang}/careers`} className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide">Careers</Link>
+          <Link to={`/${currentLang}/contact`} className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide">Contact</Link>
+          <Link to={`/${currentLang}/privacy`} className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.privacy')}</Link>
+          <Link to={`/${currentLang}/terms`} className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide">{t('footer.terms')}</Link>
+          <a href="mailto:founder@helva.io" className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide">founder@helva.io</a>
         </div>
       </div>
     </footer>
