@@ -23,8 +23,8 @@ const segments = [
     roofShape: 'flat' as const,
   },
   {
-    title: 'DIGITAL INCLUSION',
-    label: 'Accessible',
+    title: 'UNDERSERVED LANGUAGES',
+    label: 'First Class',
     index: '03',
     windowRows: 3,
     windowCols: 3,
@@ -33,8 +33,8 @@ const segments = [
     roofShape: 'stepped' as const,
   },
   {
-    title: 'UNDERSERVED LANGUAGES',
-    label: 'First Class',
+    title: 'DIGITAL INCLUSION',
+    label: 'Accessible',
     index: '04',
     windowRows: 3,
     windowCols: 2,
