@@ -256,12 +256,17 @@ const BuildingSegment = ({
         </div>
       )}
 
-      {/* Segment Title */}
+      {/* Segment Title — rotated, sized to fit the building height */}
       <div
-        className="font-display font-extrabold text-sm sm:text-xl whitespace-nowrap absolute bottom-[88px] left-5 z-20 sm:bottom-[120px] sm:left-8"
+        className="font-display font-extrabold whitespace-nowrap absolute z-20 leading-none"
         style={{
+          fontSize: 'clamp(0.65rem, 1.6vw, 1.25rem)',
+          letterSpacing: '-0.01em',
+          bottom: '32%',
+          left: 'clamp(0.75rem, 1.6vw, 2rem)',
           transform: 'rotate(-90deg)',
           transformOrigin: 'left bottom',
+          maxWidth: '60%',
         }}
       >
         {title}
@@ -269,8 +274,12 @@ const BuildingSegment = ({
 
       {/* Building Label */}
       <div
-        className="font-mono text-[0.55rem] uppercase tracking-[0.22em] mb-4 opacity-60 relative z-20 pl-5 sm:mb-5 sm:pl-8 sm:text-xs sm:tracking-[0.3em]"
+        className="font-mono uppercase opacity-60 relative z-20 whitespace-nowrap"
         style={{
+          fontSize: 'clamp(0.45rem, 0.9vw, 0.75rem)',
+          letterSpacing: 'clamp(0.15em, 0.4vw, 0.3em)',
+          paddingLeft: 'clamp(0.75rem, 1.6vw, 2rem)',
+          marginBottom: 'clamp(0.75rem, 1.6vw, 1.25rem)',
           writingMode: 'vertical-rl',
           textOrientation: 'mixed',
         }}
