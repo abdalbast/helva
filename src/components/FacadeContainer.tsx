@@ -52,15 +52,24 @@ const FacadeContainer = () => {
       setMouseX(e.clientX / window.innerWidth);
     };
 
+    const query = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    if (!query.matches) {
+      return undefined;
+    }
+
     document.addEventListener('mousemove', handleMouseMove);
     return () => document.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <section className="col-span-12 lg:col-span-6 lg:col-start-7 flex gap-3 h-[400px] lg:h-[70vh] items-end mt-16 lg:mt-0">
+    <section
+      className="col-span-12 lg:col-span-6 lg:col-start-7 flex h-[18rem] min-w-0 items-end gap-1 overflow-hidden pt-12 sm:h-[24rem] sm:gap-2 sm:overflow-visible lg:h-[70vh] lg:gap-3 lg:pt-0"
+      aria-label="Helva operating principles shown as a Stockholm-inspired facade"
+    >
       {segments.map((segment, index) => {
         const depth = (index + 1) * 10;
-        const translateX = (mouseX - 0.5) * depth + 24;
+        const translateX = (mouseX - 0.5) * depth;
 
         return (
           <BuildingSegment

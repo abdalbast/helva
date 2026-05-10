@@ -180,9 +180,11 @@
     transition: var(--transition-smooth);
   }
 
-  .building-segment:hover {
-    flex: 1.8 !important;
-    filter: brightness(1.1);
+  @media (hover: hover) and (pointer: fine) {
+    .building-segment:hover {
+      flex: 1.8 !important;
+      filter: brightness(1.1);
+    }
   }
 
   /* Window glow effect */

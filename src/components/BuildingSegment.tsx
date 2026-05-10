@@ -183,7 +183,7 @@ const BuildingSegment = ({
     // The first segment needs a slightly larger left inset so the vertical
     // label reads cleanly against the facade instead of hugging the edge.
     <div
-      className={`building-segment flex-1 ${heightClass} relative cursor-pointer overflow-visible flex flex-col justify-end animate-reveal ${staggerClass}`}
+      className={`building-segment flex-1 ${heightClass} relative min-w-0 overflow-visible flex flex-col justify-end animate-reveal ${staggerClass} motion-safe:hover:cursor-pointer`}
       style={{ transform: `translateX(${translateX}px)` }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -210,7 +210,7 @@ const BuildingSegment = ({
         style={{ top: '14%' }}
       >
         <div
-          className="grid gap-x-3 gap-y-4"
+          className="grid gap-x-1.5 gap-y-3 sm:gap-x-3 sm:gap-y-4"
           style={{ gridTemplateColumns: `repeat(${windowCols}, 1fr)` }}
         >
           {Array.from({ length: totalWindows }).map((_, i) => {
@@ -219,7 +219,7 @@ const BuildingSegment = ({
               <div
                 key={i}
                 className={`relative transition-all duration-300 ${isLit ? 'window-lit' : ''}`}
-                style={{ width: 12, height: 18 }}
+                style={{ width: 'clamp(0.5rem, 1.8vw, 0.75rem)', height: 'clamp(0.75rem, 2.6vw, 1.125rem)' }}
               >
                 {/* Window frame */}
                 <div className={`absolute inset-0 rounded-t-[2px] ${isLit ? 'bg-stone-wash' : 'bg-background/25'}`} />
@@ -258,7 +258,7 @@ const BuildingSegment = ({
 
       {/* Segment Title */}
       <div
-        className="font-display font-extrabold text-xl whitespace-nowrap absolute bottom-[120px] left-8 z-20"
+        className="font-display font-extrabold text-sm sm:text-xl whitespace-nowrap absolute bottom-[88px] left-5 z-20 sm:bottom-[120px] sm:left-8"
         style={{
           transform: 'rotate(-90deg)',
           transformOrigin: 'left bottom',
@@ -269,7 +269,7 @@ const BuildingSegment = ({
 
       {/* Building Label */}
       <div
-        className="font-mono text-xs uppercase tracking-[0.3em] mb-5 opacity-60 relative z-20 pl-8"
+        className="font-mono text-[0.55rem] uppercase tracking-[0.22em] mb-4 opacity-60 relative z-20 pl-5 sm:mb-5 sm:pl-8 sm:text-xs sm:tracking-[0.3em]"
         style={{
           writingMode: 'vertical-rl',
           textOrientation: 'mixed',
